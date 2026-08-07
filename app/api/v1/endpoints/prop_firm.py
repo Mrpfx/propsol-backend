@@ -7,17 +7,17 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from app.db.session import get_session
 from app.dependencies.auth import get_current_user
 from app.models.user import User
-from app.schema.propfirm_registration import PropFirmRegistrationCreate, PropFirmRegistrationRead
+from app.schema.propfirm_registration import PropFirmRegistrationCreate, PropFirmRegistrationRead, PropFirmRegistrationUpdate
 from app.service.propfirm_registration_service import PropFirmRegistrationService
 
 router = APIRouter()
 
 async def create_registration_notification(user_id: UUID, propfirm_name: str, order_id: str):
     """Background task to create notification for new registration"""
-    from app.db.session import async_session_maker
+    from app.db.session import AsyncSessionLocal
     from app.service.notification_service import NotificationService
 
-    async with async_session_maker() as session:
+    async with AsyncSessionLocal() as session:
         notification_service = NotificationService(session)
         await notification_service.create_registration_created_notification(
             user_id=user_id,
@@ -69,3 +69,25 @@ async def read_propfirm_registration(
     if not registration or registration.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Registration not found")
     return registration
+
+@router.patch("/{registration_id}", response_model=PropFirmRegistrationRead)
+async def update_propfirm_registration(
+    registration_id: UUID,
+    registration_in: PropFirmRegistrationUpdate,
+    background_tasks: BackgroundTasks,
+    current_user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    service = PropFirmRegistrationService(session)
+    registration = await service.get_registration(registration_id)
+
+    if not registration or registration.user_id != current_user.id:
+        raise HTTPException(status_code=404, detail="Registration not found")
+
+    updated_registration = await service.update_registration(
+        registration_id=registration_id,
+        update_data=registration_in,
+        background_tasks=background_tasks
+    )
+
+    return updated_registration

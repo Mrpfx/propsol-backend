@@ -81,6 +81,12 @@ class WalletService:
         if not referrer:
             return None
 
+        # Check if this user has already generated a referral earning
+        # We only pay bonus for the first purchase (new user)
+        existing_earnings = await self.earning_repo.count_by_referred_user(referred_user_id)
+        if existing_earnings > 0:
+            return None
+
         # Get or create referrer's wallet
         wallet = await self.wallet_repo.get_or_create(referrer.id)
 

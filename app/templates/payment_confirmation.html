@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Payment Confirmation{% endblock %}
+
+{% block content %}
+<h2>Payment Confirmed</h2>
+<p>Dear {{ name }},</p>
+<p>Thank you for choosing PropSol.</p>
+<p>Your payment has been successfully received, and your challenge assistance is now scheduled.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Package:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ package_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Amount:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${{ amount }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Pass Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ pass_type }}</td>
+    </tr>
+</table>
+<p>Our team will proceed based on the service option you selected. You may monitor progress while allowing the process
+    to run uninterrupted.</p>
+<p>Typical completion timelines range between <strong>30–60 trading days</strong>, depending on challenge structure and
+    market conditions.</p>
+<p>Further updates will be shared as execution progresses.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">View Dashboard</a>
+<p style="margin-top: 30px;">Sincerely,<br>PropSol Team<br>
+    <a href="mailto:Hello@propfirmsol.com">Hello@propfirmsol.com</a><br>
+    <a href="https://www.propfirmsol.com">www.propfirmsol.com</a>
+</p>
+{% endblock %}

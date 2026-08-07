@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}[Admin] PropFirm Registration Submitted{% endblock %}
+
+{% block content %}
+<h2>New PropFirm Registration</h2>
+<p>A user has submitted a new prop firm registration.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">User:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ user_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Email:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ user_email }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Account Cost:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${{ account_cost }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Pass Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ pass_type }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Created:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ created_at }}</td>
+    </tr>
+</table>
+
+<p style="background-color: #f0f9ff; padding: 15px; border-radius: 6px; color: #1e40af;">
+    <strong>Next Step:</strong> User needs to submit credentials to proceed.
+</p>
+
+<a href="https://propfirmsol.com/admin/registrations" class="button">View in Admin Panel</a>
+{% endblock %}

@@ -184,7 +184,7 @@ async def create_support_message(
     return await service.create_support_ticket(support_in, background_tasks)
 
 
-@router.get("", response_model=list[SupportRead])
+@router.get("/", response_model=list[SupportRead])
 async def get_all_support_messages(
     skip: int = Query(0, ge=0),
     limit: int = Query(100, ge=1, le=500),

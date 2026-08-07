@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Congratulations - Challenge Passed!{% endblock %}
+
+{% block content %}
+<h2 style="color: #059669;">🎉 Congratulations!</h2>
+<p>Dear {{ name }},</p>
+<p>We are pleased to inform you that your prop firm challenge has been <strong style="color: #059669;">successfully
+        completed</strong>.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+</table>
+<p>Account access will now be returned to you. You may proceed according to your prop firm's next steps.</p>
+<div style="background-color: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h3 style="margin-top: 0; color: #059669;">PropSol Trading System Access</h3>
+    <p style="margin-bottom: 0;">You may also receive optional access to the PropSol Trading System, designed to support
+        execution discipline, monitoring, and structured risk management.</p>
+</div>
+<p>Thank you for trusting PropSol.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">View Your Account</a>
+<p style="margin-top: 30px;">Warm regards,<br>PropSol Team</p>
+{% endblock %}

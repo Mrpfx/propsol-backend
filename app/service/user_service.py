@@ -52,6 +52,16 @@ class UserService:
         # Send Verification Email
         await self.send_verification_email(user, background_tasks)
 
+        # Send Registration Confirmation Email
+        from app.service.mail import send_email as send_registration_email
+        background_tasks.add_task(
+            send_registration_email,
+            email_to=user.email,
+            subject="Welcome to PropSol",
+            template_name="registration_confirmation.html",
+            context={"name": user.name}
+        )
+
         return user
 
     async def get_user_by_email(self, email: str) -> Optional[User]:

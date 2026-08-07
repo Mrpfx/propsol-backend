@@ -4,17 +4,17 @@ from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from sqlmodel.ext.asyncio.session import AsyncSession
 
 from app.db.session import get_session
-from app.dependencies.auth import get_current_admin
+from app.dependencies.auth import get_current_admin, require_role
 from app.models.admin import Admin
 from app.models.user_purchased_package import UserPurchasedPackage
-from app.schema.admin import AdminCreate, AdminRead, AdminUpdate
+from app.schema.admin import AdminCreate, AdminRead, AdminUpdate, AdminEmailRequest, AdminPasswordReset
 from app.schema.user import UserRead, UserUpdate
 from app.schema.transactions import TransactionRead
 from app.schema.user_purchased_package import UserPurchasedPackageCreate, UserPurchasedPackageRead
 from app.schema.wallet import WithdrawalStatusUpdate, AdminWithdrawalListResponse
 
 from app.service.admin_service import AdminService
-from app.schema.propfirm_registration import PropFirmRegistrationRead, PropFirmRegistrationUpdate
+from app.schema.propfirm_registration import PropFirmRegistrationRead, PropFirmRegistrationUpdate, PropFirmRegistrationAdminRead
 from app.service.propfirm_registration_service import PropFirmRegistrationService
 from uuid import UUID
 from app.service.mail import send_email
@@ -23,9 +23,10 @@ from app.models.user import User
 router = APIRouter()
 
 
-@router.post("", response_model=AdminRead)
+@router.post("/", response_model=AdminRead)
 async def create_admin(
     admin_in: AdminCreate,
+    current_admin: Admin = Depends(require_role("super_admin")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -42,6 +43,7 @@ async def create_admin(
     return admin
 
 
+
 @router.get("/me", response_model=AdminRead)
 async def read_admin_me(
     current_admin: Admin = Depends(get_current_admin),
@@ -50,6 +52,79 @@ async def read_admin_me(
     Get current admin.
     """
     return current_admin
+
+
+@router.put("/me", response_model=AdminRead)
+async def update_admin_me(
+    admin_in: AdminUpdate,
+    current_admin: Admin = Depends(get_current_admin),
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Update current admin's profile (name, password).
+    """
+    service = AdminService(session)
+    admin = await service.update_admin(current_admin.id, admin_in)
+    return admin
+
+
+@router.put("/{admin_id}", response_model=AdminRead)
+async def update_admin(
+    admin_id: UUID,
+    admin_in: AdminUpdate,
+    current_admin: Admin = Depends(require_role("super_admin")),
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Update an admin (Super Admin only).
+    """
+    service = AdminService(session)
+    admin = await service.update_admin(admin_id, admin_in)
+    if not admin:
+        raise HTTPException(
+            status_code=404,
+            detail="Admin not found",
+        )
+    return admin
+
+
+@router.delete("/{admin_id}", response_model=AdminRead)
+async def delete_admin(
+    admin_id: UUID,
+    current_admin: Admin = Depends(require_role("super_admin")),
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Delete an admin (Super Admin only).
+    """
+    service = AdminService(session)
+    admin = await service.delete_admin(admin_id)
+    if not admin:
+        raise HTTPException(
+            status_code=404,
+            detail="Admin not found",
+        )
+    return admin
+
+
+
+
+@router.get("/", response_model=List[AdminRead])
+async def list_admins(
+    skip: int = 0,
+    limit: int = 100,
+    current_admin: Admin = Depends(require_role("super_admin")),
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Retrieve all admins (Super Admin only).
+    """
+    service = AdminService(session)
+    return await service.get_all_admins(skip=skip, limit=limit)
+
+
+
+
 
 
 @router.get("/stats", response_model=dict)
@@ -62,7 +137,7 @@ async def read_stats(
 
 @router.get("/users", response_model=List[UserRead])
 async def read_users(
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("users")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     service = AdminService(session)
@@ -72,16 +147,16 @@ async def read_users(
 
 @router.get("/transactions", response_model=List[TransactionRead])
 async def read_transactions(
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("transactions")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     service = AdminService(session)
     return await service.get_all_transactions()
 
 
-@router.get("/prop-firms", response_model=List[PropFirmRegistrationRead])
+@router.get("/prop-firms", response_model=List[PropFirmRegistrationAdminRead])
 async def read_prop_firms(
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("prop_firms")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     service = AdminService(session)
@@ -92,7 +167,7 @@ async def read_prop_firms(
 async def update_user(
     user_id: UUID,
     user_in: UserUpdate,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("users")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     service = AdminService(session)
@@ -107,7 +182,7 @@ async def update_propfirm_registration(
     registration_id: UUID,
     registration_in: PropFirmRegistrationUpdate,
     background_tasks: BackgroundTasks,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("prop_firms")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     service = PropFirmRegistrationService(session)
@@ -120,7 +195,7 @@ async def update_propfirm_registration(
 async def assign_package_to_user(
     package_in: UserPurchasedPackageCreate,
     background_tasks: BackgroundTasks,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("users")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     package = UserPurchasedPackage.from_orm(package_in)
@@ -151,7 +226,7 @@ async def list_all_withdrawals(
     status: str = None,
     limit: int = 10,
     page: int = 0,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("payouts")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -167,7 +242,7 @@ async def update_withdrawal_status(
     withdrawal_id: UUID,
     status_update: WithdrawalStatusUpdate,
     background_tasks: BackgroundTasks,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("payouts")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -197,7 +272,7 @@ async def update_withdrawal_status(
 @router.post("/withdrawals/{withdrawal_id}/approve", response_model=dict)
 async def approve_withdrawal_payout(
     withdrawal_id: UUID,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("payouts")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -221,7 +296,7 @@ async def approve_withdrawal_payout(
 async def verify_withdrawal_payout(
     batch_id: str,
     verification_code: str,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("payouts")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -241,7 +316,7 @@ async def verify_withdrawal_payout(
 async def list_nowpayments_payouts(
     limit: int = 10,
     page: int = 0,
-    current_admin: Admin = Depends(get_current_admin),
+    current_admin: Admin = Depends(require_role("payouts")),
     session: AsyncSession = Depends(get_session),
 ) -> Any:
     """
@@ -250,3 +325,119 @@ async def list_nowpayments_payouts(
     from app.service.nowpayments_service import NOWPaymentsService
     now_service = NOWPaymentsService()
     return await now_service.get_payouts({"limit": limit, "page": page})
+
+
+@router.post("/send-email", response_model=dict)
+async def send_email_to_users(
+    email_request: AdminEmailRequest,
+    background_tasks: BackgroundTasks,
+    current_admin: Admin = Depends(require_role("email_marketing")),
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Send email to users (Admin with email_marketing role).
+    """
+    service = AdminService(session)
+
+    users_to_send = []
+    if email_request.send_to_all:
+        users_to_send = await service.get_all_users()
+    elif email_request.user_ids:
+        for uid in email_request.user_ids:
+            user = await session.get(User, uid)
+            if user:
+                users_to_send.append(user)
+
+    if not users_to_send:
+         raise HTTPException(status_code=400, detail="No users selected")
+
+    sent_count = 0
+    for user in users_to_send:
+        context = {
+            "name": user.name,
+            "user_name": user.name,
+            "email": user.email,
+        }
+
+        template_name = "admin_custom_message.html"
+
+        if email_request.email_type == "template" and email_request.template_name:
+             template_name = email_request.template_name
+        elif email_request.email_type == "custom":
+             if not email_request.custom_message:
+                 continue
+             context["custom_message"] = email_request.custom_message
+             context["subject"] = email_request.subject
+
+        background_tasks.add_task(
+            send_email,
+            email_to=user.email,
+            subject=email_request.subject,
+            template_name=template_name,
+            context=context
+        )
+        sent_count += 1
+
+    return {"message": f"Emails queued for {sent_count} users"}
+
+
+@router.get("/email-templates", response_model=List[str])
+async def list_email_templates(
+    current_admin: Admin = Depends(require_role("email_marketing")),
+) -> Any:
+    """
+    List all available email templates (Admin with email_marketing role).
+    """
+    import os
+    from pathlib import Path
+
+    # Define templates directory (relative to this file: ../../../templates)
+    # app/api/v1/endpoints/admin.py -> app/templates
+
+    current_dir = Path(__file__).resolve().parent
+    # Go up to app/
+    app_dir = current_dir.parent.parent.parent
+    template_dir = app_dir / "templates"
+
+    if not template_dir.exists():
+        return []
+
+    templates = []
+    for file in os.listdir(template_dir):
+        if file.endswith(".html"):
+             # Exclude base layout and potential non-email pages if necessary
+             if file not in ["base.html", "404.html"]:
+                 templates.append(file)
+
+    return sorted(templates)
+
+
+@router.post("/password-recovery/{email}", response_model=dict)
+async def recover_password(
+    email: str,
+    background_tasks: BackgroundTasks,
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Password Recovery (Forgot Password).
+    Sends an email with a reset link to the admin if the email exists.
+    """
+    service = AdminService(session)
+    await service.recover_password(email, background_tasks)
+    return {"message": "If this email is registered, you will receive a password reset link shortly."}
+
+
+@router.post("/reset-password", response_model=dict)
+async def reset_password(
+    reset_data: AdminPasswordReset,
+    session: AsyncSession = Depends(get_session),
+) -> Any:
+    """
+    Reset Password using a valid token.
+    """
+    service = AdminService(session)
+    try:
+        await service.reset_password(reset_data.token, reset_data.new_password)
+        return {"message": "Password reset successfully"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))

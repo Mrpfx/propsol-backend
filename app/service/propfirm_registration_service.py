@@ -24,18 +24,56 @@ class PropFirmRegistrationService:
     async def get_registration(self, registration_id: UUID) -> PropFirmRegistration | None:
         return await self.repo.get(registration_id)
 
-    async def update_registration(self, registration_id: UUID, update_data: PropFirmRegistrationUpdate, background_tasks: BackgroundTasks) -> PropFirmRegistration | None:
+    async def update_registration(self, registration_id: UUID, update_data: PropFirmRegistrationUpdate, background_tasks: BackgroundTasks | None = None) -> PropFirmRegistration | None:
         registration = await self.repo.get(registration_id)
         if not registration:
             return None
 
         # Check if status is changing
         old_status = registration.account_status
+
+        # Check if details are changing (excluding status)
+        details_changed = False
+        update_dict = update_data.dict(exclude_unset=True)
+        excluded_fields = ["account_status", "payment_status"]
+
+        for field, value in update_dict.items():
+            if field not in excluded_fields:
+                current_val = getattr(registration, field)
+                if current_val != value:
+                    print(f"DEBUG: Field {field} changed from {current_val} to {value}")
+                    details_changed = True
+                    break
+
         updated_registration = await self.repo.update(db_obj=registration, obj_in=update_data.dict(exclude_unset=True))
 
+        from app.service.notification_service import NotificationService
+        from app.models.propfirm_registration import AccountStatus
+
+        notification_service = NotificationService(self.repo.session)
+        user = await self.repo.session.get(User, updated_registration.user_id)
+
+        # Handle detail updates
+        if details_changed and user and background_tasks:
+            await notification_service.send_registration_updated_email(
+                user_id=user.id,
+                user_email=user.email,
+                user_name=user.name,
+                propfirm_name=updated_registration.propfirm_name,
+                order_id=updated_registration.order_id,
+                background_tasks=background_tasks
+            )
+
         if update_data.account_status and update_data.account_status != old_status:
-            from app.service.notification_service import NotificationService
-            notification_service = NotificationService(self.repo.session)
+
+            # Fetch user for email notifications (if not already fetched)
+            if not user:
+                 user = await self.repo.session.get(User, updated_registration.user_id)
+
+            if not user:
+                return updated_registration
+
+            # Create in-app notification for all status changes
             await notification_service.create_status_change_notification(
                 user_id=updated_registration.user_id,
                 status=updated_registration.account_status,
@@ -43,65 +81,58 @@ class PropFirmRegistrationService:
             )
             await self.repo.session.refresh(updated_registration)
 
-            # Notify Admin
-            from app.service.mail import send_email
-            from app.config import settings
-            from app.models.propfirm_registration import AccountStatus
+            # Handle different status transitions with appropriate emails
+            if updated_registration.account_status == AccountStatus.in_progress:
+                # Execution started - send login success and execution started emails
+                await notification_service.send_propfirm_login_success_email(
+                    user_id=user.id,
+                    user_email=user.email,
+                    user_name=user.name,
+                    propfirm_name=updated_registration.propfirm_name,
+                    order_id=updated_registration.order_id,
+                    background_tasks=background_tasks
+                )
 
-            user = None
-            if settings.ADMIN_EMAIL:
-                template = None
-                subject = None
-                if updated_registration.account_status == AccountStatus.passed:
-                    template = "admin_account_passed.html"
-                    subject = "Prop Firm Account Passed"
-                elif updated_registration.account_status == AccountStatus.failed:
-                    template = "admin_account_failed.html"
-                    subject = "Prop Firm Account Failed"
+                await notification_service.send_execution_started_email(
+                    user_id=user.id,
+                    user_email=user.email,
+                    user_name=user.name,
+                    propfirm_name=updated_registration.propfirm_name,
+                    order_id=updated_registration.order_id,
+                    pass_type=updated_registration.pass_type.value,
+                    login_id=updated_registration.login_id,
+                    password=updated_registration.password,
+                    server_name=updated_registration.server_name,
+                    server_type=updated_registration.server_type,
+                    platform=updated_registration.trading_platform,
+                    whatsapp=updated_registration.whatsapp_no,
+                    telegram=updated_registration.telegram_username,
+                    website=updated_registration.propfirm_website_link,
+                    background_tasks=background_tasks
+                )
 
-                if template:
-                    # Fetch user email
-                    user = await self.repo.session.get(User, updated_registration.user_id)
-                    user_email = user.email if user else "Unknown"
+            elif updated_registration.account_status == AccountStatus.passed:
+                # Challenge passed - send congratulations email
+                await notification_service.send_challenge_passed_email(
+                    user_id=user.id,
+                    user_email=user.email,
+                    user_name=user.name,
+                    propfirm_name=updated_registration.propfirm_name,
+                    order_id=updated_registration.order_id,
+                    pass_type=updated_registration.pass_type.value,
+                    background_tasks=background_tasks
+                )
 
-                    background_tasks.add_task(
-                        send_email,
-                        email_to=settings.ADMIN_EMAIL,
-                        subject=subject,
-                        template_name=template,
-                        context={
-                            "user_email": user_email,
-                            "propfirm_name": updated_registration.propfirm_name,
-                            "login_id": updated_registration.login_id
-                        }
-                    )
-
-            # Ensure user is fetched for user notification
-            if not user:
-                user = await self.repo.session.get(User, updated_registration.user_id)
-
-            # Notify User
-            if user:
-                user_template = None
-                user_subject = None
-                if updated_registration.account_status == AccountStatus.passed:
-                    user_template = "user_account_passed.html"
-                    user_subject = "Congratulations! You Passed!"
-                elif updated_registration.account_status == AccountStatus.failed:
-                    user_template = "user_account_failed.html"
-                    user_subject = "Prop Firm Challenge Update"
-
-                if user_template:
-                    background_tasks.add_task(
-                        send_email,
-                        email_to=user.email,
-                        subject=user_subject,
-                        template_name=user_template,
-                        context={
-                            "name": user.name,
-                            "propfirm_name": updated_registration.propfirm_name,
-                            "login_id": updated_registration.login_id
-                        }
-                    )
+            elif updated_registration.account_status == AccountStatus.failed:
+                # Challenge failed - different emails for standard vs guaranteed pass
+                await notification_service.send_challenge_failed_email(
+                    user_id=user.id,
+                    user_email=user.email,
+                    user_name=user.name,
+                    propfirm_name=updated_registration.propfirm_name,
+                    order_id=updated_registration.order_id,
+                    pass_type=updated_registration.pass_type.value,
+                    background_tasks=background_tasks
+                )
 
         return updated_registration

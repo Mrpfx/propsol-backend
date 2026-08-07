@@ -47,9 +47,17 @@ class UserDiscountBase(BaseModel):
 class UserDiscountCreate(UserDiscountBase):
     pass
 
+
 class UserDiscountRead(UserDiscountBase):
     id: UUID
     discount_id: UUID
     user_id: UUID
     created_at: datetime
     updated_at: datetime
+
+class DiscountCodeCheckResponse(BaseModel):
+    code: str
+    exists: bool
+    used: bool
+    percentage: float | None = None
+    discount_id: UUID | None = None

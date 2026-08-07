@@ -8,6 +8,7 @@ from contextlib import asynccontextmanager
 # Setup logging first to capture any startup errors
 try:
     from app.core.logging_config import logger
+    from app.config import settings
 except ImportError as e:
     print(f"Failed to import logging config: {e}")
     sys.exit(1)
@@ -15,7 +16,7 @@ except ImportError as e:
 try:
     from app.db.session import init_db
     import app.models
-    from app.api.v1.endpoints import auth, users, admin, payments, transactions, prop_firm, discounts, notification, support, crypto_payments, wallet, affiliate_admin
+    from app.api.v1.endpoints import auth, users, admin, payments, transactions, prop_firm, discounts, notification, support, crypto_payments, wallet, affiliate_admin, whop, prop_firm_plans, booking_links, banners
     from fastapi.middleware.cors import CORSMiddleware
     from fastapi.middleware.trustedhost import TrustedHostMiddleware
     from fastapi.middleware.gzip import GZipMiddleware
@@ -28,28 +29,59 @@ except Exception as e:
     logger.critical(traceback.format_exc())
     sys.exit(1)
 
+    logger.error(traceback.format_exc())
+    sys.exit(1)
+
 limiter = Limiter(key_func=get_remote_address, default_limits=["100/minute"])
+
+from app.config import settings
 
 async def lifespan(app: FastAPI):
     logger.info("Starting up application...")
     await init_db()
     yield
     logger.info("Shutting down application...")
+    from app.db.session import engine
+    await engine.dispose()
+
+# Conditional Docs
+docs_url = "/docs"
+redoc_url = "/redoc"
+openapi_url = "/openapi.json"
+
+if settings.ENVIRONMENT == "production":
+    docs_url = None
+    redoc_url = None
+    openapi_url = None
 
 app = FastAPI(
     title="PROPSOL",
     lifespan=lifespan,
+    docs_url=docs_url,
+    redoc_url=redoc_url,
+    openapi_url=openapi_url
 )
+
+# Security Headers Middleware
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    if settings.ENVIRONMENT == "production":
+        response.headers["Strict-Transport-Security"] = "max-age=63072000; includeSubDomains"
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+    return response
 
 # Security Middlewares
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=settings.BACKEND_CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(TrustedHostMiddleware, allowed_hosts=["*"]) # In production, replace with specific hosts
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=settings.ALLOWED_HOSTS)
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 # Rate Limiting
@@ -85,6 +117,12 @@ app.include_router(support.router, prefix="/api/v1/support", tags=["support"])
 app.include_router(crypto_payments.router, prefix="/api/v1/crypto-payments", tags=["crypto-payments"])
 app.include_router(wallet.router, prefix="/api/v1/wallet", tags=["wallet"])
 app.include_router(affiliate_admin.router, prefix="/api/v1/admin/affiliates", tags=["admin-affiliates"])
+app.include_router(whop.router, prefix="/api/v1/whop", tags=["whop"])
+app.include_router(prop_firm_plans.router, prefix="/api/v1/plans", tags=["plans"])
+app.include_router(booking_links.router, prefix="/api/v1/booking-links", tags=["booking-links"])
+app.include_router(banners.router, prefix="/api/v1/banners", tags=["banners"])
+from app.api.v1.endpoints import admin_payment
+app.include_router(admin_payment.router, prefix="/api/v1/admin/payments", tags=["admin-payments"])
 
 
 @app.get("/")

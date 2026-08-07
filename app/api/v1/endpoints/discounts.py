@@ -9,9 +9,10 @@ from app.dependencies.auth import get_current_user, get_current_admin
 from app.models.user import User
 from app.models.admin import Admin
 from app.schema.vat_discount import (
-    VatCreate, VatRead,
+    VatCreate, VatRead, VatUpdate,
     DiscountCodesCreate, DiscountCodesRead,
-    UserDiscountCreate, UserDiscountRead
+    UserDiscountCreate, UserDiscountRead,
+    DiscountCodeCheckResponse
 )
 from app.service.vat_discount_service import VatDiscountService
 
@@ -33,6 +34,43 @@ async def read_vats(
 ):
     service = VatDiscountService(session)
     return await service.get_all_vats()
+
+@router.put("/vat/{vat_id}", response_model=VatRead)
+async def update_vat(
+    vat_id: UUID,
+    vat_update: VatUpdate,
+    current_admin: Admin = Depends(get_current_admin),
+    session: AsyncSession = Depends(get_session),
+):
+    service = VatDiscountService(session)
+    updated_vat = await service.update_vat(vat_id, vat_update)
+    if not updated_vat:
+        raise HTTPException(status_code=404, detail="VAT not found")
+    return updated_vat
+
+@router.delete("/vat/{vat_id}", response_model=VatRead)
+async def delete_vat(
+    vat_id: UUID,
+    current_admin: Admin = Depends(get_current_admin),
+    session: AsyncSession = Depends(get_session),
+):
+    service = VatDiscountService(session)
+    deleted_vat = await service.delete_vat(vat_id)
+    if not deleted_vat:
+        raise HTTPException(status_code=404, detail="VAT not found")
+    return deleted_vat
+
+@router.delete("/vat/{vat_id}", response_model=VatRead)
+async def delete_vat(
+    vat_id: UUID,
+    current_admin: Admin = Depends(get_current_admin),
+    session: AsyncSession = Depends(get_session),
+):
+    service = VatDiscountService(session)
+    deleted_vat = await service.delete_vat(vat_id)
+    if not deleted_vat:
+        raise HTTPException(status_code=404, detail="VAT not found")
+    return deleted_vat
 
 # Discount Codes Endpoints (Admin)
 @router.post("/discounts", response_model=DiscountCodesRead)
@@ -79,3 +117,15 @@ async def read_my_discounts(
 ):
     service = VatDiscountService(session)
     return await service.get_user_discounts(current_user.id)
+
+@router.get("/check-usage/{code}", response_model=DiscountCodeCheckResponse)
+async def check_usage(
+    code: str,
+    current_user: User = Depends(get_current_user),
+    session: AsyncSession = Depends(get_session),
+):
+    service = VatDiscountService(session)
+    # We need to import DiscountCodeCheckResponse... wait, it's not imported explicitly in the file yet, but I can add it to the import list or just rely on module
+    # Better to add it to imports in a separate edit or verify it's available.
+    # It will be in app.schema.vat_discount.
+    return await service.check_usage(current_user.id, code)

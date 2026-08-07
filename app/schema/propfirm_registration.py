@@ -10,6 +10,10 @@ class AccountStatus(str, Enum):
     passed = "passed"
     failed = "failed"
 
+class PassType(str, Enum):
+    standard_pass = "standard_pass"
+    guaranteed_pass = "guaranteed_pass"
+
 class PaymentStatus(str, Enum):
     pending = "pending"
     completed = "completed"
@@ -30,6 +34,8 @@ class PropFirmRegistrationBase(BaseModel):
     propfirm_rules: str
     whatsapp_no: str
     telegram_username: str
+    pass_type: PassType = PassType.standard_pass
+    service_scope: int | None = None
     account_status: AccountStatus = AccountStatus.pending
     payment_status: PaymentStatus = PaymentStatus.pending
 
@@ -58,5 +64,11 @@ class PropFirmRegistrationUpdate(BaseModel):
     propfirm_rules: str | None = None
     whatsapp_no: str | None = None
     telegram_username: str | None = None
+    pass_type: PassType | None = None
+    service_scope: int | None = None
     account_status: AccountStatus | None = None
     payment_status: PaymentStatus | None = None
+
+class PropFirmRegistrationAdminRead(PropFirmRegistrationRead):
+    user_name: str
+    user_email: str

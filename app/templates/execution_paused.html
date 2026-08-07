@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Execution Paused{% endblock %}
+
+{% block content %}
+<h2>Execution Paused</h2>
+<p>Dear {{ name }},</p>
+<p>We are writing to inform you that execution on your challenge is currently paused pending required confirmation from
+    your side.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+</table>
+{% if reason %}
+<div style="background-color: #fef3c7; padding: 15px; border-radius: 6px; color: #92400e; margin: 20px 0;">
+    <strong>Reason:</strong> {{ reason }}
+</div>
+{% endif %}
+<p>Once the outstanding item is resolved, execution will resume accordingly.</p>
+<p>If you require clarification or assistance, please contact us directly so we can proceed without further delay.</p>
+<a href="https://propfirmsol.com/support" class="button">Contact Support</a>
+<p style="margin-top: 30px;">Kind regards,<br>PropSol Team</p>
+{% endblock %}

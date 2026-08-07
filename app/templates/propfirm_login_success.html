@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Prop Firm Account Login Successful{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="color: #1e293b; margin-bottom: 10px;">Login Successful!</h2>
+    <p style="font-size: 16px; color: #64748b;">Your account access has been verified.</p>
+</div>
+
+<p>Dear {{ name }},</p>
+<p>We are pleased to confirm that we have successfully logged into your <strong>{{ propfirm_name }}</strong> account.
+    Our automated systems have verified your credentials and platform connectivity.</p>
+
+<table
+    style="width: 100%; border-collapse: collapse; margin: 25px 0; background-color: #f8fafc; border-radius: 8px; overflow: hidden;">
+    <tr>
+        <td style="padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #475569; width: 40%;">
+            Prop Firm:</td>
+        <td style="padding: 12px 16px; border-bottom: 1px solid #e2e8f0; color: #1e293b;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-weight: 600; color: #475569;">Order ID:
+        </td>
+        <td style="padding: 12px 16px; border-bottom: 1px solid #e2e8f0; color: #1e293b;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 12px 16px; font-weight: 600; color: #475569;">Status:</td>
+        <td style="padding: 12px 16px; color: #10b981; font-weight: 600;">Verified & Connected</td>
+    </tr>
+</table>
+
+<div class="info-card success" style="margin-top: 25px; margin-bottom: 25px;">
+    <h3 style="margin-top: 0; color: #065f46;">What happens next?</h3>
+    <ul style="margin-bottom: 0; padding-left: 20px; color: #064e3b;">
+        <li style="margin-bottom: 8px;">Your account has been moved to our <strong>execution queue</strong>.</li>
+        <li style="margin-bottom: 8px;">Trading operations will commence shortly based on your selected pass type.</li>
+        <li>You will receive real-time updates as we hit key profit milestones.</li>
+    </ul>
+</div>
+
+<p>You can monitor your account status, view trade details, and track progress directly from your dashboard:</p>
+
+<div class="text-center" style="margin: 35px 0;">
+    <a href="{{ dashboard_url }}" class="button">Go to Dashboard</a>
+</div>
+
+<p>If you have any questions or need assistance, our support team is always here to help.</p>
+
+<div class="divider"></div>
+
+<p style="margin-bottom: 0;">Best regards,<br><strong>The PropSol Team</strong></p>
+{% endblock %}

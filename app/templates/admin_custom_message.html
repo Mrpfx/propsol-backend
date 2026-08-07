@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subject }}{% endblock %}
+
+{% block content %}
+<h1>{{ subject }}</h1>
+
+<div style="margin-top: 20px; white-space: pre-wrap;">
+    {{ custom_message | safe }}
+</div>
+{% endblock %}

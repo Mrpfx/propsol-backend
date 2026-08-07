@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     # Security
     SECRET_KEY: str = os.getenv("SECRET_KEY")
     ALGORITHM: str = "RS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
 
     # RSA Keys
     PRIVATE_KEY_PATH: str = os.getenv("PRIVATE_KEY_PATH", "private.pem")
@@ -37,15 +37,40 @@ class Settings(BaseSettings):
     PUBLIC_KEY: str = ""
 
     # Mailjet
-    MAILJET_API_KEY: str | None = os.getenv("MAILJET_API_KEY")
-    MAILJET_SECRET_KEY: str | None = os.getenv("MAILJET_SECRET_KEY")
-    MAILJET_SENDER_EMAIL: str | None = os.getenv("MAILJET_SENDER_EMAIL")
-    ADMIN_EMAIL: str | None = os.getenv("ADMIN_EMAIL")
+    # SMTP
+    SMTP_HOST: str = os.getenv("SMTP_HOST", "mail.propfirmsol.com")
+    SMTP_PORT: int = int(os.getenv("SMTP_PORT", 465))
+    SMTP_USER: str = os.getenv("SMTP_USER")
+    SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD")
+    EMAILS_FROM_EMAIL: str = os.getenv("EMAILS_FROM_EMAIL", "hello@propfirmsol.com")
+    EMAILS_FROM_NAME: str = os.getenv("EMAILS_FROM_NAME", "PropFirmSol")
+    ADMIN_EMAIL: str | None = os.getenv("ADMIN_EMAIL", "Hello@propfirmsol.com")
 
     # NOWPayments
     NOWPAYMENTS_API_KEY: str | None = os.getenv("NOWPAYMENTS_API_KEY")
     NOWPAYMENTS_IPN_SECRET: str | None = os.getenv("NOWPAYMENTS_IPN_SECRET")
     NOWPAYMENTS_API_URL: str = os.getenv("NOWPAYMENTS_API_URL", "https://api.nowpayments.io/v1")
+
+    # Mailjet (Optional - for better deliverability)
+    MAILJET_API_KEY: str | None = os.getenv("MAILJET_API_KEY")
+    MAILJET_SECRET_KEY: str | None = os.getenv("MAILJET_SECRET_KEY")
+    USE_MAILJET: bool = os.getenv("USE_MAILJET", "false").lower() == "true"
+
+    # Whop
+    WHOP_API_KEY: str | None = os.getenv("WHOP_API_KEY")
+    WHOP_BIZ_ID: str | None = os.getenv("WHOP_BIZ_ID")
+    WHOP_WEBHOOK_SECRET: str | None = os.getenv("WHOP_WEBHOOK_SECRET")
+
+    # Email settings
+    WEBSITE_URL: str = os.getenv("WEBSITE_URL", "https://propfirmsol.com")
+
+    # Production Hardening
+    ENVIRONMENT: str = os.getenv("ENVIRONMENT", "local")  # local, staging, production
+
+    # CORS & Hosts (comma-separated strings in .env, parsed to lists here)
+    # Default to "*" for local dev convenience, but enforced strict in prod
+    BACKEND_CORS_ORIGINS: list[str] = [x.strip() for x in os.getenv("BACKEND_CORS_ORIGINS", "*").split(",")]
+    ALLOWED_HOSTS: list[str] = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "*").split(",")]
 
     class Config:
         env_file = ".env"

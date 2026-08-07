@@ -5,6 +5,8 @@ from sqlalchemy import Column, DateTime
 from sqlmodel import Field, SQLModel, ForeignKey, Relationship
 from uuid import UUID
 from enum import Enum
+from sqlalchemy import Column, DateTime, JSON
+from typing import List, Optional
 
 class AdminStatus(str, Enum):
     ACTIVE = "active"
@@ -27,5 +29,7 @@ class Admin(SQLModel, table=True):
         sa_column=Column(DateTime(timezone=True), nullable=False),
         default_factory=lambda: datetime.now(timezone.utc)
     )
+
+    roles: List[str] = Field(sa_column=Column(JSON, nullable=False, default=["dashboard"]))
 
     notifications: list["Notification"] = Relationship(back_populates="admin")

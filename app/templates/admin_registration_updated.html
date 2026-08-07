@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <h1>Registration Details Updated</h1>
+</div>
+<div class="content">
+    <p>Hello Admin,</p>
+    <p>A user has updated their prop firm registration details.</p>
+
+    <div class="details-box">
+        <p><strong>User:</strong> {{ user_name }} ({{ user_email }})</p>
+        <p><strong>Prop Firm:</strong> {{ propfirm_name }}</p>
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+        <p><strong>Updated At:</strong> {{ updated_at }}</p>
+    </div>
+
+    <p>Please review the changes in the admin dashboard.</p>
+
+    <a href="https://propfirmsol.com/admin/prop-firms/{{ registration_id }}" class="button">View Registration</a>
+</div>
+{% endblock %}

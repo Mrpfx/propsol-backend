@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Challenge Update - Guaranteed Pass Refund{% endblock %}
+
+{% block content %}
+<h2>Challenge Update & Refund Process</h2>
+<p>Dear {{ name }},</p>
+<p>We regret to inform you that the challenge did not reach completion under the agreed conditions.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Pass Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">Guaranteed Pass</td>
+    </tr>
+</table>
+<div style="background-color: #ecfdf5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h3 style="margin-top: 0; color: #059669;">Refund Initiated</h3>
+    <p>As you are enrolled under the <strong>Guaranteed Pass</strong>, we have initiated the refund process in
+        accordance with our policy.</p>
+    <p>You will receive:</p>
+    <ul style="margin: 10px 0; padding-left: 20px; color: #475569;">
+        <li>A full refund of the PropSol service fee</li>
+        <li>Refund of the amount used to purchase the prop firm account</li>
+        <li>An additional <strong>$100 compensation</strong></li>
+    </ul>
+    <p style="margin-bottom: 0;"><strong>Processing Time:</strong> Refund typically takes 7–14 business days.</p>
+</div>
+<p>If you have any questions regarding the refund, please contact our support team.</p>
+<a href="https://propfirmsol.com/support" class="button">Contact Support</a>
+<p style="margin-top: 30px;">Sincerely,<br>PropSol Team</p>
+{% endblock %}

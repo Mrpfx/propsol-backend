@@ -26,3 +26,9 @@ class CryptoPaymentRepository(BaseRepository[CryptoPayment, CryptoPaymentCreate,
         query = select(self.model).where(self.model.invoice_id == invoice_id)
         result = await self.session.exec(query)
         return result.first()
+
+    async def get_by_order_id(self, order_id: str) -> CryptoPayment | None:
+        """Get crypto payment by order ID"""
+        query = select(self.model).where(self.model.order_id == order_id)
+        result = await self.session.exec(query)
+        return result.first()

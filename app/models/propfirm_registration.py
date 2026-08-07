@@ -9,21 +9,10 @@ from uuid import UUID
 from enum import Enum
 
 
-class PassType(str, Enum):
-    standard_pass = "standard_pass"
-    guaranteed_pass = "guaranteed_pass"
+from app.schema.propfirm_registration import PassType, AccountStatus, PaymentStatus
 
 
-class AccountStatus(str, Enum):
-    pending = "pending"
-    in_progress = "in_progress"
-    passed = "passed"
-    failed = "failed"
 
-class PaymentStatus(str, Enum):
-    pending = "pending"
-    completed = "completed"
-    failed = "failed"
 
 class PropFirmRegistration(SQLModel, table=True):
     __tablename__ = "prop_firm_registration"

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}[Admin] Execution Started{% endblock %}
+
+{% block content %}
+<h2>Execution Started on Account</h2>
+<p>Trading execution has been initiated for a client account.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Client Name:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ user_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Client Email:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ user_email }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Login ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ login_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Password:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ password }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Server Name:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ server_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Server Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ server_type }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Platform:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ platform }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Website:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ website }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">WhatsApp:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ whatsapp }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Telegram:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ telegram }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Pass Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ pass_type }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Started:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ started_at }}</td>
+    </tr>
+</table>
+<p style="background-color: #ecfdf5; padding: 15px; border-radius: 6px; color: #059669;">
+    <strong>Status:</strong> Execution in progress
+</p>
+<a href="https://propfirmsol.com/admin/registrations" class="button">View in Admin Panel</a>
+{% endblock %}

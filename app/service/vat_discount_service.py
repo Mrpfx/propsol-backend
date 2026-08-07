@@ -2,7 +2,7 @@ from uuid import UUID
 from typing import List, Optional
 from sqlmodel.ext.asyncio.session import AsyncSession
 from app.models.vat_discount import Vat, DiscountCodes, UserDiscount
-from app.schema.vat_discount import VatCreate, DiscountCodesCreate, UserDiscountCreate
+from app.schema.vat_discount import VatCreate, VatUpdate, DiscountCodesCreate, UserDiscountCreate
 from app.repository.vat_discount_repo import VatRepository, DiscountCodesRepository, UserDiscountRepository
 
 class VatDiscountService:
@@ -17,6 +17,24 @@ class VatDiscountService:
 
     async def get_all_vats(self) -> List[Vat]:
         return await self.vat_repo.get_all()
+
+    async def get_vat(self, vat_id: UUID) -> Optional[Vat]:
+        return await self.vat_repo.get(vat_id)
+
+    async def update_vat(self, vat_id: UUID, vat_in: VatUpdate) -> Optional[Vat]:
+        db_vat = await self.get_vat(vat_id)
+        if not db_vat:
+            return None
+        return await self.vat_repo.update(db_obj=db_vat, obj_in=vat_in)
+
+    async def delete_vat(self, vat_id: UUID) -> Optional[Vat]:
+        db_vat = await self.get_vat(vat_id)
+        if not db_vat:
+            return None
+        return await self.vat_repo.remove(vat_id)
+
+    async def delete_vat(self, vat_id: UUID) -> Optional[Vat]:
+        return await self.vat_repo.delete(id=vat_id)
 
     # Discounts
     async def create_discount_code(self, discount_in: DiscountCodesCreate) -> DiscountCodes:
@@ -50,3 +68,17 @@ class VatDiscountService:
 
     async def get_user_discounts(self, user_id: UUID) -> List[UserDiscount]:
         return await self.user_discount_repo.get_by_user(user_id)
+
+    async def check_usage(self, user_id: UUID, code: str) -> dict:
+        discount = await self.discount_repo.get_by_code(code)
+        if not discount:
+            return {"code": code, "exists": False, "used": False}
+
+        existing = await self.user_discount_repo.get_by_user_and_code(user_id, code)
+        return {
+            "code": code,
+            "exists": True,
+            "used": bool(existing),
+            "percentage": discount.percentage,
+            "discount_id": discount.id
+        }

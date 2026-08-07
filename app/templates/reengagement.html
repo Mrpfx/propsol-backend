@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Ready to Try Again?{% endblock %}
+
+{% block content %}
+<h2>Ready to Try Again?</h2>
+<p>Dear {{ name }},</p>
+<p>We hope you are doing well.</p>
+<p>If you are considering another attempt at your prop firm challenge, PropSol remains available to assist you under a
+    new service engagement.</p>
+<div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+    <h3 style="margin-top: 0; color: #1e40af;">Our Services</h3>
+    <ul style="margin: 10px 0; padding-left: 20px; color: #475569;">
+        <li><strong>Standard Pass:</strong> Professional challenge execution</li>
+        <li><strong>Guaranteed Pass:</strong> Full refund + $100 if unsuccessful</li>
+    </ul>
+</div>
+<p>Should you wish to explore available options, please log in to your dashboard or contact our team for guidance.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">View Options</a>
+<p style="margin-top: 30px;">Kind regards,<br>PropSol Team</p>
+{% endblock %}

@@ -72,3 +72,17 @@ async def get_current_admin(
     if not admin:
         raise HTTPException(status_code=404, detail="Admin not found")
     return admin
+
+
+def require_role(role: str):
+    def role_checker(current_admin: Admin = Depends(get_current_admin)) -> Admin:
+        if "super_admin" in current_admin.roles:
+            return current_admin
+
+        if role not in current_admin.roles:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail=f"Insufficient permissions. Required role: {role}",
+            )
+        return current_admin
+    return role_checker

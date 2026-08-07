@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Challenge Update - Standard Pass{% endblock %}
+
+{% block content %}
+<h2>Challenge Update</h2>
+<p>Dear {{ name }},</p>
+<p>We are writing to update you on the outcome of your prop firm challenge.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Pass Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">Standard Pass</td>
+    </tr>
+</table>
+<p>Despite structured execution, the challenge did not meet completion criteria within the required parameters.</p>
+<p style="background-color: #fef3c7; padding: 15px; border-radius: 6px; color: #92400e;">
+    As outlined under the Standard Pass, this service does not include refunds or compensation.
+</p>
+<p>We appreciate the opportunity to work with you and wish you success in your future trading endeavors.</p>
+<p>If you would like to try again, you may explore our services on your dashboard.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">View Dashboard</a>
+<p style="margin-top: 30px;">Kind regards,<br>PropSol Team</p>
+{% endblock %}

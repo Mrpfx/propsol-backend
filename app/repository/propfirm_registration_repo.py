@@ -18,3 +18,10 @@ class PropFirmRegistrationRepository(BaseRepository[PropFirmRegistration, PropFi
         query = select(self.model).where(self.model.order_id == order_id)
         result = await self.session.exec(query)
         return result.first()
+
+    async def get_all_with_user(self) -> List[tuple[PropFirmRegistration, "User"]]:
+        """Get all registrations with associated user details"""
+        from app.models.user import User
+        query = select(self.model, User).join(User, self.model.user_id == User.id)
+        result = await self.session.exec(query)
+        return result.all()

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Execution Started{% endblock %}
+
+{% block content %}
+<h2>Execution Has Begun</h2>
+<p>Dear {{ name }},</p>
+<p>We are pleased to inform you that execution on your prop firm challenge has officially begun.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Login ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ login_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Password:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ password }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Server Name:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ server_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Server Type:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ server_type }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Platform:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ platform }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">PropFirm:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ propfirm_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Website:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ website }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Order ID:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ order_id }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">WhatsApp:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ whatsapp }}</td>
+    </tr>
+    <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Telegram:</td>
+        <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{{ telegram }}</td>
+    </tr>
+</table>
+<p>Our team is now working according to your selected service parameters. You may monitor progress during this period.
+</p>
+<p style="background-color: #fef3c7; padding: 15px; border-radius: 6px; color: #92400e;">
+    <strong>Important:</strong> Please allow the process to run uninterrupted for optimal results.
+</p>
+<p>We will provide updates as key milestones are reached.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">View Progress</a>
+<p style="margin-top: 30px;">Sincerely,<br>PropSol Team</p>
+{% endblock %}

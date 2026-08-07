@@ -54,12 +54,37 @@ class SupportTicketService:
         background_tasks: Optional[BackgroundTasks] = None
     ) -> SupportTicketRead:
         """Create a new support ticket"""
+        # Get user for email context
+        from app.models.user import User
+        user = await self.session.get(User, user_id)
+
         ticket = await self.repo.create_ticket(
             user_id=user_id,
             subject=ticket_data.subject,
             priority=ticket_data.priority,
             initial_message=ticket_data.message
         )
+
+        # Send admin notification
+        if background_tasks and user:
+            from app.service.mail import send_email
+            from app.config import settings
+
+            background_tasks.add_task(
+                send_email,
+                email_to=settings.ADMIN_EMAIL,
+                subject=f"[PropSol] New Support Ticket: {ticket_data.subject}",
+                template_name="admin_support_ticket.html",
+                context={
+                    "ticket_id": str(ticket.id),
+                    "user_name": user.name,
+                    "user_email": user.email,
+                    "subject": ticket_data.subject,
+                    "priority": ticket_data.priority.value,
+                    "message": ticket_data.message,
+                    "created_at": ticket.created_at.strftime("%Y-%m-%d %H:%M:%S")
+                }
+            )
 
         # Reload ticket with messages
         ticket = await self.repo.get_ticket_with_user(ticket.id)

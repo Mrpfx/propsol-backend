@@ -28,6 +28,23 @@ class NotificationType(str, Enum):
     REGISTRATION_CREATED = "registration_created"
     REGISTRATION_UPDATED = "registration_updated"
 
+    # Challenge Journey Types
+    CREDENTIALS_RECEIVED = "credentials_received"
+    EXECUTION_STARTED = "execution_started"
+    EXECUTION_PAUSED = "execution_paused"
+    PROGRESS_UPDATE = "progress_update"
+    TIMELINE_DELAY = "timeline_delay"
+    CHALLENGE_PASSED = "challenge_passed"
+    CHALLENGE_FAILED = "challenge_failed"
+    CHALLENGE_QUEUED = "challenge_queued"
+    TRADING_SYSTEM_ACCESS = "trading_system_access"
+    CLIENT_INTERFERENCE = "client_interference"
+    SERVICE_CLOSURE = "service_closure"
+    UPGRADE_OFFER = "upgrade_offer"
+    SUPPORT_CALL = "support_call"
+    TESTIMONIAL_REQUEST = "testimonial_request"
+    REENGAGEMENT = "reengagement"
+
 class Notification(SQLModel, table=True):
     __tablename__ = "notification"
     id: UUID = Field(primary_key=True, default_factory=uuid.uuid4)

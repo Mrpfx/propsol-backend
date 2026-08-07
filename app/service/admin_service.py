@@ -11,6 +11,8 @@ from app.repository.transactions_repo import TransactionRepository
 from app.repository.propfirm_registration_repo import PropFirmRegistrationRepository
 from app.models.transactions import Transaction
 from app.models.propfirm_registration import PropFirmRegistration
+from app.schema.propfirm_registration import PropFirmRegistrationRead, PropFirmRegistrationUpdate, PropFirmRegistrationAdminRead
+from app.service.propfirm_registration_service import PropFirmRegistrationService
 from app.schema.user import UserUpdate
 from app.core.security import get_password_hash
 
@@ -32,14 +34,44 @@ class AdminService:
     async def get_admin(self, admin_id: UUID) -> Optional[Admin]:
         return await self.repo.get(admin_id)
 
+    async def get_all_admins(self, skip: int = 0, limit: int = 100) -> List[Admin]:
+        return await self.repo.get_multi(skip=skip, limit=limit)
+
+    async def update_admin(self, admin_id: UUID, admin_in: AdminUpdate) -> Optional[Admin]:
+        admin = await self.repo.get(admin_id)
+        if not admin:
+            return None
+
+        update_data = admin_in.dict(exclude_unset=True)
+        if "password" in update_data and update_data["password"]:
+            update_data["password"] = get_password_hash(update_data["password"])
+
+        return await self.repo.update(db_obj=admin, obj_in=update_data)
+
+    async def delete_admin(self, admin_id: UUID) -> Optional[Admin]:
+        return await self.repo.delete(id=admin_id)
+
+
+
+
     async def get_all_users(self) -> List[User]:
         return await self.user_repo.get_all()
 
     async def get_all_transactions(self) -> List[Transaction]:
         return await self.transaction_repo.get_all()
 
-    async def get_all_prop_firm_registrations(self) -> List[PropFirmRegistration]:
-        return await self.prop_firm_repo.get_all()
+    async def get_all_prop_firm_registrations(self) -> List[PropFirmRegistrationAdminRead]:
+        results = await self.prop_firm_repo.get_all_with_user()
+        registrations = []
+        for reg, user in results:
+            # Convert SQLModel to dict and add user info
+            reg_dict = reg.dict()
+            reg_dict["user_name"] = user.name if user else "Unknown"
+            reg_dict["user_email"] = user.email if user else "Unknown"
+
+            # Explicitly create the AdminRead object to ensure fields are mapped
+            registrations.append(PropFirmRegistrationAdminRead(**reg_dict))
+        return registrations
 
     async def update_user(self, user_id: UUID, user_in: UserUpdate) -> Optional[User]:
         user = await self.user_repo.get(user_id)
@@ -83,7 +115,9 @@ class AdminService:
         if not admin:
             raise ValueError("Admin not found")
 
-        hashed_password = get_password_hash(new_password)
+        # Use update_admin which handles hashing
+        from app.schema.admin import AdminUpdate
+        await self.update_admin(admin.id, AdminUpdate(password=new_password))
     async def get_stats(self) -> dict:
         from sqlalchemy import func
         from sqlmodel import select

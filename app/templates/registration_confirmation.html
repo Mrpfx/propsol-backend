@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to PropSol{% endblock %}
+
+{% block content %}
+<h2>Welcome to PropSol</h2>
+<p>Dear {{ name }},</p>
+<p>Your account has been successfully created, and you now have access to explore our challenge assistance services.</p>
+<p>At this stage, no action is required unless you are ready to proceed. You may log in at any time to:</p>
+<ul style="margin: 20px 0; padding-left: 20px; color: #475569;">
+    <li>Review available challenge options</li>
+    <li>Understand the difference between Standard Pass and Guaranteed Pass</li>
+    <li>Book a support call if you need guidance</li>
+</ul>
+<p>When ready, simply continue from your dashboard.</p>
+<a href="https://propfirmsol.com/dashboard" class="button">Go to Dashboard</a>
+<p style="margin-top: 30px;">Kind regards,<br>PropSol Team<br>
+    <a href="mailto:Hello@propfirmsol.com">Hello@propfirmsol.com</a><br>
+    <a href="https://www.propfirmsol.com">www.propfirmsol.com</a>
+</p>
+{% endblock %}
