@@ -89,9 +89,13 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "local")  # local, staging, production
 
     # CORS & Hosts (comma-separated strings in .env, parsed to lists here)
-    # Default to "*" for local dev convenience, but enforced strict in prod
-    BACKEND_CORS_ORIGINS: list[str] = [x.strip() for x in os.getenv("BACKEND_CORS_ORIGINS", "*").split(",")]
-    ALLOWED_HOSTS: list[str] = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "*").split(",")]
+    BACKEND_CORS_ORIGINS: list[str] = [
+        x.strip() for x in os.getenv(
+            "BACKEND_CORS_ORIGINS",
+            "https://propsol-frontend-production.up.railway.app,https://propfirmsol.com,https://www.propfirmsol.com,http://localhost:3000,http://localhost:3001,*"
+        ).split(",") if x.strip()
+    ]
+    ALLOWED_HOSTS: list[str] = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "*").split(",") if x.strip()]
 
     class Config:
         env_file = ".env"

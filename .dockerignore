@@ -8,10 +8,10 @@ __pycache__/
 *.pyc
 *.pyo
 *.db
+*.sql
 *.log
 logs/
 tests/
-scripts/
 app_old/
 public/
 *.zip
