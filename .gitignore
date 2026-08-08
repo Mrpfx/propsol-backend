@@ -6,3 +6,5 @@ database.db
 test.db
 logs/
 server.log
+private.pem
+public.pem
