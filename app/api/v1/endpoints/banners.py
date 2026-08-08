@@ -13,7 +13,7 @@ from app.service.banner_service import BannerService
 router = APIRouter()
 
 
-@router.post("/", response_model=BannerRead)
+@router.post("", response_model=BannerRead)
 async def create_banner(
     banner_in: BannerCreate,
     current_admin: Admin = Depends(get_current_admin),
@@ -26,7 +26,7 @@ async def create_banner(
     return await service.create_banner(banner_in)
 
 
-@router.get("/", response_model=List[BannerRead])
+@router.get("", response_model=List[BannerRead])
 async def read_banners(
     session: AsyncSession = Depends(get_session),
 ) -> Any:
