@@ -25,13 +25,16 @@ class Settings(BaseSettings):
         return "sqlite+aiosqlite:///./database.db"
 
     # Security
-    SECRET_KEY: str = os.getenv("SECRET_KEY")
+    SECRET_KEY: str | None = os.getenv("SECRET_KEY")
     ALGORITHM: str = "RS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
 
-    # RSA Keys
+    # RSA Keys / JWT Keys
     PRIVATE_KEY_PATH: str = os.getenv("PRIVATE_KEY_PATH", "private.pem")
     PUBLIC_KEY_PATH: str = os.getenv("PUBLIC_KEY_PATH", "public.pem")
+
+    JWT_PRIVATE_KEY: str | None = os.getenv("JWT_PRIVATE_KEY") or os.getenv("PRIVATE_KEY")
+    JWT_PUBLIC_KEY: str | None = os.getenv("JWT_PUBLIC_KEY") or os.getenv("PUBLIC_KEY")
 
     PRIVATE_KEY: str = ""
     PUBLIC_KEY: str = ""
@@ -40,8 +43,8 @@ class Settings(BaseSettings):
     # SMTP
     SMTP_HOST: str = os.getenv("SMTP_HOST", "mail.propfirmsol.com")
     SMTP_PORT: int = int(os.getenv("SMTP_PORT", 465))
-    SMTP_USER: str = os.getenv("SMTP_USER")
-    SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD")
+    SMTP_USER: str | None = os.getenv("SMTP_USER")
+    SMTP_PASSWORD: str | None = os.getenv("SMTP_PASSWORD")
     EMAILS_FROM_EMAIL: str = os.getenv("EMAILS_FROM_EMAIL", "hello@propfirmsol.com")
     EMAILS_FROM_NAME: str = os.getenv("EMAILS_FROM_NAME", "PropFirmSol")
     ADMIN_EMAIL: str | None = os.getenv("ADMIN_EMAIL", "Hello@propfirmsol.com")
@@ -74,16 +77,48 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        extra = "ignore"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # Load keys
-        try:
-            with open(self.PRIVATE_KEY_PATH, "r") as f:
-                self.PRIVATE_KEY = f.read()
-            with open(self.PUBLIC_KEY_PATH, "r") as f:
-                self.PUBLIC_KEY = f.read()
-        except FileNotFoundError:
-            print("Warning: RSA keys not found. JWT signing will fail.")
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+        # Load Private Key: 1. From env var (JWT_PRIVATE_KEY or PRIVATE_KEY), 2. From file (PRIVATE_KEY_PATH / private.pem)
+        priv_env = os.getenv("JWT_PRIVATE_KEY") or os.getenv("PRIVATE_KEY") or self.JWT_PRIVATE_KEY
+        if priv_env and priv_env.strip():
+            self.PRIVATE_KEY = priv_env.replace("\\n", "\n")
+        else:
+            key_path = self.PRIVATE_KEY_PATH
+            if not os.path.isabs(key_path):
+                alt_path = os.path.join(base_dir, key_path)
+                if os.path.exists(alt_path):
+                    key_path = alt_path
+            try:
+                if os.path.exists(key_path):
+                    with open(key_path, "r") as f:
+                        self.PRIVATE_KEY = f.read()
+                else:
+                    print(f"Warning: Private key file not found at path: {key_path}")
+            except Exception as e:
+                print(f"Warning: Could not read private key file '{key_path}': {e}")
+
+        # Load Public Key: 1. From env var (JWT_PUBLIC_KEY or PUBLIC_KEY), 2. From file (PUBLIC_KEY_PATH / public.pem)
+        pub_env = os.getenv("JWT_PUBLIC_KEY") or os.getenv("PUBLIC_KEY") or self.JWT_PUBLIC_KEY
+        if pub_env and pub_env.strip():
+            self.PUBLIC_KEY = pub_env.replace("\\n", "\n")
+        else:
+            key_path = self.PUBLIC_KEY_PATH
+            if not os.path.isabs(key_path):
+                alt_path = os.path.join(base_dir, key_path)
+                if os.path.exists(alt_path):
+                    key_path = alt_path
+            try:
+                if os.path.exists(key_path):
+                    with open(key_path, "r") as f:
+                        self.PUBLIC_KEY = f.read()
+                else:
+                    print(f"Warning: Public key file not found at path: {key_path}")
+            except Exception as e:
+                print(f"Warning: Could not read public key file '{key_path}': {e}")
 
 settings = Settings()
