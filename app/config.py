@@ -77,6 +77,10 @@ class Settings(BaseSettings):
     MAILJET_SECRET_KEY: str | None = os.getenv("MAILJET_SECRET_KEY")
     USE_MAILJET: bool = os.getenv("USE_MAILJET", "false").lower() == "true"
 
+    # Resend
+    RESEND_API_KEY: str | None = os.getenv("RESEND_API_KEY")
+    USE_RESEND: bool = os.getenv("USE_RESEND", "true").lower() == "true"
+
     # Whop
     WHOP_API_KEY: str | None = os.getenv("WHOP_API_KEY")
     WHOP_BIZ_ID: str | None = os.getenv("WHOP_BIZ_ID")

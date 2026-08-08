@@ -10,6 +10,7 @@ Implements industry-standard anti-spam measures:
 - Domain authentication
 """
 import os
+import asyncio
 import base64
 import hashlib
 import time
@@ -245,6 +246,59 @@ async def send_email_via_smtp(
         return False
 
 
+async def send_email_via_resend(
+    email_to: str,
+    subject: str,
+    html_content: str,
+    text_content: str,
+    recipient_name: str = "User"
+) -> bool:
+    """
+    Send via Resend API - Modern high-deliverability email platform.
+    """
+    try:
+        import resend
+
+        if not settings.RESEND_API_KEY:
+            return False
+
+        resend.api_key = settings.RESEND_API_KEY
+
+        from_addr = f"{settings.EMAILS_FROM_NAME} <{settings.EMAILS_FROM_EMAIL}>"
+        domain = settings.EMAILS_FROM_EMAIL.split('@')[-1] if '@' in settings.EMAILS_FROM_EMAIL else 'propfirmsol.com'
+        unique_id = hashlib.md5(f"{email_to}{time.time()}".encode()).hexdigest()[:12]
+
+        params: resend.Emails.SendParams = {
+            "from": from_addr,
+            "to": [email_to],
+            "subject": subject,
+            "html": html_content,
+            "text": text_content,
+            "headers": {
+                "List-Unsubscribe": f"<mailto:unsubscribe@{domain}?subject=Unsubscribe>",
+                "X-Entity-Ref-ID": f"propsol-{unique_id}"
+            }
+        }
+
+        # Run Resend API call in thread pool to avoid blocking async loop
+        response = await asyncio.to_thread(resend.Emails.send, params)
+
+        if response and (getattr(response, "id", None) or (isinstance(response, dict) and "id" in response)):
+            res_id = getattr(response, "id", response.get("id") if isinstance(response, dict) else "ok")
+            logger.info(f"✓ Resend sent to {email_to} (ID: {res_id})")
+            return True
+        else:
+            logger.error(f"✗ Resend failed for {email_to}: {response}")
+            return False
+
+    except ImportError:
+        logger.debug("resend package not installed")
+        return False
+    except Exception as e:
+        logger.error(f"✗ Resend error for {email_to}: {e}")
+        return False
+
+
 async def send_email(
     email_to: str,
     subject: str,
@@ -254,10 +308,14 @@ async def send_email(
     """
     PROFESSIONAL Email Service
 
-    Priority: Mailjet > SMTP
+    Priority: Resend > Mailjet > SMTP
     Required: Text + HTML parts, proper headers
     """
-    if not settings.SMTP_HOST and not (settings.MAILJET_API_KEY and settings.USE_MAILJET):
+    resend_configured = bool(settings.RESEND_API_KEY and settings.USE_RESEND)
+    mailjet_configured = bool(settings.MAILJET_API_KEY and settings.USE_MAILJET)
+    smtp_configured = bool(settings.SMTP_HOST and settings.SMTP_USER)
+
+    if not (resend_configured or mailjet_configured or smtp_configured):
         logger.warning(f"⚠ No email service configured for {email_to}")
         return
 
@@ -276,17 +334,25 @@ async def send_email(
 
     recipient_name = context.get("name", context.get("user_name", "User"))
 
-    # Try Mailjet first (BEST deliverability)
-    if settings.USE_MAILJET and settings.MAILJET_API_KEY:
+    # Priority 1: Resend (PRIMARY)
+    if resend_configured:
+        if await send_email_via_resend(email_to, subject, html_content, text_content, recipient_name):
+            print(f"Email sent to {email_to} via Resend")
+            return
+        logger.warning("Resend failed, falling back to next provider")
+
+    # Priority 2: Mailjet
+    if mailjet_configured:
         if await send_email_via_mailjet(email_to, subject, html_content, text_content, recipient_name):
-            print(f"Email sent to {email_to}")
+            print(f"Email sent to {email_to} via Mailjet")
             return
         logger.warning("Mailjet failed, falling back to SMTP")
 
-    # Fallback to SMTP
-    if settings.SMTP_HOST and settings.SMTP_USER:
+    # Priority 3: SMTP
+    if smtp_configured:
         if await send_email_via_smtp(email_to, subject, html_content, text_content, recipient_name):
-            print(f"Email sent to {email_to}")
+            print(f"Email sent to {email_to} via SMTP")
             return
 
-    logger.error(f"✗ All methods failed for {email_to}")
+    logger.error(f"✗ All email sending methods failed for {email_to}")
+
