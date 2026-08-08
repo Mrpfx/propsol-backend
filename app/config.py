@@ -12,16 +12,34 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = os.getenv("POSTGRES_DB", "app")
     POSTGRES_PORT: str = os.getenv("POSTGRES_PORT", "5432")
 
+    # Railway injects DATABASE_URL; DB_URI is our own env var
+    DATABASE_URL: str | None = os.getenv("DATABASE_URL")
     DB_URI: str | None = os.getenv("DB_URI")
+
+    # Server port (Railway sets PORT automatically)
+    PORT: int = int(os.getenv("PORT", "8000"))
 
     @property
     def db_uri(self) -> str:
+        # 1. Railway's DATABASE_URL takes priority
+        if self.DATABASE_URL:
+            url = self.DATABASE_URL
+            # Railway gives postgres:// but SQLAlchemy needs postgresql+asyncpg://
+            if url.startswith("postgres://"):
+                url = url.replace("postgres://", "postgresql+asyncpg://", 1)
+            elif url.startswith("postgresql://"):
+                url = url.replace("postgresql://", "postgresql+asyncpg://", 1)
+            return url
+
+        # 2. Explicit DB_URI from .env
         if self.DB_URI:
             return self.DB_URI
 
+        # 3. Construct from individual Postgres parts
         if os.getenv("POSTGRES_SERVER") and os.getenv("POSTGRES_USER"):
              return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_SERVER}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
 
+        # 4. Fallback to SQLite for local dev
         return "sqlite+aiosqlite:///./database.db"
 
     # Security

@@ -1,10 +1,39 @@
+# Virtual environments
 venv/
+.venv/
+
+# Python
 *.pyc
+*.pyo
 __pycache__/
+
+# Environment
 .env
-database.db
-test.db
+
+# Local databases
+*.db
+
+# Logs
 logs/
 server.log
+*.log
+
+# RSA Keys
 private.pem
 public.pem
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+
+# Legacy cPanel files
+passenger_wsgi.py
+install_dependencies.py
+app_old/

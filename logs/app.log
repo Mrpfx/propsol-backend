@@ -20578,3 +20578,265 @@ SyntaxError: expected 'except' or 'finally' block
 2026-01-24 03:05:42,634 - app - INFO - Shutting down application...
 2026-01-24 03:05:42,635 - uvicorn.error - INFO - Application shutdown complete.
 2026-01-24 03:05:42,635 - uvicorn.error - INFO - Finished server process [330727]
+2026-08-08 10:40:25,914 - app - CRITICAL - Failed to start application: No module named 'aiosmtplib'
+2026-08-08 10:40:25,915 - app - CRITICAL - Traceback (most recent call last):
+  File "/home/hp/Projects/propsol-backend/app/main.py", line 19, in <module>
+    from app.api.v1.endpoints import auth, users, admin, payments, transactions, prop_firm, discounts, notification, support, crypto_payments, wallet, affiliate_admin, whop, prop_firm_plans, booking_links, banners
+  File "/home/hp/Projects/propsol-backend/app/api/v1/endpoints/admin.py", line 20, in <module>
+    from app.service.mail import send_email
+  File "/home/hp/Projects/propsol-backend/app/service/mail.py", line 27, in <module>
+    from aiosmtplib import SMTP
+ModuleNotFoundError: No module named 'aiosmtplib'
+
+2026-08-08 10:41:14,713 - uvicorn.error - INFO - Started server process [35992]
+2026-08-08 10:41:14,713 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-08 10:41:14,713 - app - INFO - Starting up application...
+2026-08-08 10:41:14,792 - uvicorn.error - ERROR - Traceback (most recent call last):
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 206, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+               ~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/app/main.py", line 41, in lifespan
+    await init_db()
+  File "/home/hp/Projects/propsol-backend/app/db/session.py", line 31, in init_db
+    async with engine.begin() as conn:
+               ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/ext/asyncio/engine.py", line 1068, in begin
+    async with conn:
+               ^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/ext/asyncio/base.py", line 121, in __aenter__
+    return await self.start(is_ctxmanager=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/ext/asyncio/engine.py", line 275, in start
+    await greenlet_spawn(self.sync_engine.connect)
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3285, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3309, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 711, in checkout
+    rec = pool._do_get()
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 175, in _do_get
+    return self._create_connection()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 388, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 673, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 899, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 661, in connect
+    return dialect.connect(*cargs, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 955, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/asyncpg/connection.py", line 2443, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<22 lines>...
+    )
+    ^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/asyncpg/connect_utils.py", line 1218, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/asyncpg/connect_utils.py", line 1059, in _connect_addr
+    return await __connect_addr(params_retry, False, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/asyncpg/connect_utils.py", line 1102, in __connect_addr
+    await connected
+asyncpg.exceptions.InvalidPasswordError: password authentication failed for user "dgegadget_samdav"
+
+2026-08-08 10:41:14,793 - uvicorn.error - ERROR - Application startup failed. Exiting.
+2026-08-08 10:42:09,597 - app - CRITICAL - Failed to start application: Invalid SQLite URL: sqlite+aiosqlite://new.db
+Valid SQLite URL forms are:
+ sqlite:///:memory: (or, sqlite://)
+ sqlite:///relative/path/to/file.db
+ sqlite:////absolute/path/to/file.db
+2026-08-08 10:42:09,598 - app - CRITICAL - Traceback (most recent call last):
+  File "/home/hp/Projects/propsol-backend/app/main.py", line 17, in <module>
+    from app.db.session import init_db
+  File "/home/hp/Projects/propsol-backend/app/db/session.py", line 10, in <module>
+    engine = create_async_engine(
+        settings.db_uri,
+    ...<4 lines>...
+        connect_args=connect_args,
+    )
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/ext/asyncio/engine.py", line 120, in create_async_engine
+    sync_engine = _create_engine(url, **kw)
+  File "<string>", line 2, in create_engine
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/util/deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 633, in create_engine
+    (cargs_tup, cparams) = dialect.create_connect_args(u)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/hp/Projects/propsol-backend/.venv/lib/python3.14/site-packages/sqlalchemy/dialects/sqlite/pysqlite.py", line 566, in create_connect_args
+    raise exc.ArgumentError(
+    ...<5 lines>...
+    )
+sqlalchemy.exc.ArgumentError: Invalid SQLite URL: sqlite+aiosqlite://new.db
+Valid SQLite URL forms are:
+ sqlite:///:memory: (or, sqlite://)
+ sqlite:///relative/path/to/file.db
+ sqlite:////absolute/path/to/file.db
+
+2026-08-08 10:43:09,849 - uvicorn.error - INFO - Started server process [36145]
+2026-08-08 10:43:09,849 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-08 10:43:09,849 - app - INFO - Starting up application...
+2026-08-08 10:43:10,238 - uvicorn.error - INFO - Application startup complete.
+2026-08-08 10:46:16,997 - uvicorn.error - INFO - Shutting down
+2026-08-08 10:46:17,098 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-08 10:46:17,098 - app - INFO - Shutting down application...
+2026-08-08 10:46:17,099 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-08 10:46:17,099 - uvicorn.error - INFO - Finished server process [36145]
+2026-08-08 10:46:18,299 - uvicorn.error - INFO - Started server process [36252]
+2026-08-08 10:46:18,299 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-08 10:46:18,299 - app - INFO - Starting up application...
+2026-08-08 10:46:18,314 - uvicorn.error - INFO - Application startup complete.
+2026-08-08 10:50:56,491 - uvicorn.error - INFO - Shutting down
+2026-08-08 10:50:56,592 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-08 10:50:56,592 - app - INFO - Shutting down application...
+2026-08-08 10:50:56,593 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-08 10:50:56,593 - uvicorn.error - INFO - Finished server process [36252]
