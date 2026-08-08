@@ -13,7 +13,7 @@ from app.service.booking_link_service import BookingLinkService
 router = APIRouter()
 
 
-@router.post("", response_model=BookingLinkRead)
+@router.post("/", response_model=BookingLinkRead)
 async def create_booking_link(
     link_in: BookingLinkCreate,
     current_admin: Admin = Depends(get_current_admin),
@@ -26,7 +26,7 @@ async def create_booking_link(
     return await service.create_booking_link(link_in)
 
 
-@router.get("", response_model=List[BookingLinkRead])
+@router.get("/", response_model=List[BookingLinkRead])
 async def read_booking_links(
     session: AsyncSession = Depends(get_session),
 ) -> Any:
