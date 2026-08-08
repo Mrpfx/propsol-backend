@@ -23,7 +23,7 @@ from app.models.user import User
 router = APIRouter()
 
 
-@router.post("/", response_model=AdminRead)
+@router.post("", response_model=AdminRead)
 async def create_admin(
     admin_in: AdminCreate,
     current_admin: Admin = Depends(require_role("super_admin")),
@@ -41,6 +41,7 @@ async def create_admin(
         )
     admin = await service.create_admin(admin_in)
     return admin
+
 
 
 
@@ -109,7 +110,7 @@ async def delete_admin(
 
 
 
-@router.get("/", response_model=List[AdminRead])
+@router.get("", response_model=List[AdminRead])
 async def list_admins(
     skip: int = 0,
     limit: int = 100,
