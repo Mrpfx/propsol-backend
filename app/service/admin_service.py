@@ -129,7 +129,7 @@ class AdminService:
         async def get_count(model):
             query = select(func.count(model.id))
             result = await self.repo.session.exec(query)
-            return result.one()
+            return result.one() or 0
 
         total_users = await get_count(User)
         total_payments = await get_count(Payment)
@@ -140,18 +140,51 @@ class AdminService:
         async def get_propfirm_count(status):
             query = select(func.count(PropFirmRegistration.id)).where(PropFirmRegistration.account_status == status)
             result = await self.repo.session.exec(query)
-            return result.one()
+            return result.one() or 0
 
         propfirm_pending = await get_propfirm_count(AccountStatus.pending)
         propfirm_in_progress = await get_propfirm_count(AccountStatus.in_progress)
         propfirm_passed = await get_propfirm_count(AccountStatus.passed)
         propfirm_failed = await get_propfirm_count(AccountStatus.failed)
 
+        # Calculate Total Revenue from successful payments or account costs
+        try:
+            rev_query = select(func.sum(PropFirmRegistration.propfirm_account_cost)).where(
+                PropFirmRegistration.payment_status.in_(["finished", "confirmed", "completed", "successful"])
+            )
+            rev_result = await self.repo.session.exec(rev_query)
+            total_revenue = rev_result.one_or_none() or 0
+        except Exception:
+            total_revenue = 0
+
+        if not total_revenue:
+            try:
+                rev_query2 = select(func.sum(PropFirmRegistration.propfirm_account_cost)).where(
+                    PropFirmRegistration.account_status.in_([AccountStatus.in_progress, AccountStatus.passed])
+                )
+                rev_result2 = await self.repo.session.exec(rev_query2)
+                total_revenue = rev_result2.one_or_none() or 0
+            except Exception:
+                total_revenue = 0
+
+        # Earning / Active Affiliates Count
+        try:
+            from app.models.affiliate import AffiliateProfile
+            aff_query = select(func.count(AffiliateProfile.id)).where(AffiliateProfile.total_earnings > 0)
+            aff_result = await self.repo.session.exec(aff_query)
+            active_affiliates_count = aff_result.one_or_none() or 0
+        except Exception:
+            active_affiliates_count = 0
+
         return {
             "total_users": total_users,
             "total_payments": total_payments,
             "total_transactions": total_transactions,
             "total_registrations": total_registrations,
+            "active_prop_firms": propfirm_in_progress + propfirm_passed,
+            "pending_registrations": propfirm_pending,
+            "total_revenue": float(total_revenue or 0),
+            "active_affiliates_count": active_affiliates_count,
             "propfirm_stats": {
                 "pending": propfirm_pending,
                 "in_progress": propfirm_in_progress,
