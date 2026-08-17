@@ -41,6 +41,8 @@ class User(SQLModel, table=True):
     user_discounts: List['UserDiscount'] = Relationship(back_populates="user")
     transactions: List['Transaction'] = Relationship(back_populates="user")
     prop_firm_registrations: List['PropFirmRegistration'] = Relationship(back_populates="user")
+    partnership_registrations: List['PartnershipRegistration'] = Relationship(back_populates="user")
     purchased_packages: List['UserPurchasedPackage'] = Relationship(back_populates="user")
+
     notifications: list["Notification"] = Relationship(back_populates="user")
     support_tickets: List["SupportTicket"] = Relationship(back_populates="user")

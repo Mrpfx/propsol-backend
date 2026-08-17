@@ -12,7 +12,6 @@ __pycache__/
 
 # Local databases
 *.db
-*.sql
 
 # Logs
 logs/
@@ -38,3 +37,4 @@ Thumbs.db
 passenger_wsgi.py
 install_dependencies.py
 app_old/
+backend_deployment.zip
