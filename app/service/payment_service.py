@@ -43,6 +43,9 @@ class PaymentService:
     async def get_payments_by_user(self, user_id: UUID) -> List[Payment]:
         return await self.repo.get_by_user(user_id)
 
+    async def get_all_payments(self) -> List[Payment]:
+        return await self.repo.get_all()
+
     async def get_payment(self, payment_id: UUID) -> Payment | None:
         return await self.repo.get(payment_id)
 

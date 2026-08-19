@@ -104,15 +104,27 @@ async def get_payment_status(
     service = NOWPaymentsService(session)
 
     # Verify the payment belongs to the user
-    crypto_payment = await service.repo.get_by_payment_id(payment_id)
+    pid = payment_id.strip()
+    crypto_payment = await service.repo.get_by_payment_id(pid)
+    if not crypto_payment:
+        crypto_payment = await service.repo.get_by_invoice_id(pid)
+    if not crypto_payment:
+        crypto_payment = await service.repo.get_by_order_id(pid)
+    if not crypto_payment:
+        try:
+            crypto_payment = await service.repo.get(UUID(pid))
+        except ValueError:
+            pass
+
     if not crypto_payment or crypto_payment.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Payment not found")
 
     # Get status from API
-    api_status_data = await service.get_payment_status(payment_id)
+    target_id = crypto_payment.payment_id or crypto_payment.invoice_id or crypto_payment.order_id or str(crypto_payment.id)
+    api_status_data = await service.get_payment_status(str(target_id))
     payment_status = api_status_data.get("payment_status")
 
-    if payment_status and payment_status != crypto_payment.payment_status:
+    if payment_status and payment_status in ["finished", "confirmed", "completed", "waiting", "failed", "expired"] and payment_status != crypto_payment.payment_status:
         # Update local DB if status changed
         from app.schema.crypto_payment import CryptoPaymentUpdate
         update_data = CryptoPaymentUpdate(payment_status=payment_status)
@@ -184,11 +196,12 @@ async def ipn_callback(
         ipn_payload = NOWPaymentsIPNPayload(**body)
         logger.info(f"NOWPayments IPN Parsed Status: {ipn_payload.payment_status}")
 
-        # Process the callback
+        # Process the callback (pass raw body for HMAC signature verification)
         service = NOWPaymentsService(session)
         updated_payment = await service.process_ipn_callback(
             payload=ipn_payload,
-            signature=x_nowpayments_sig
+            signature=x_nowpayments_sig,
+            raw_body=body
         )
 
         if not updated_payment:
@@ -209,12 +222,12 @@ async def ipn_callback(
 
     except ValueError as e:
         logger.error(f"NOWPayments IPN Value Error: {e}")
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=400, detail="Invalid IPN callback")
     except Exception as e:
         logger.error(f"NOWPayments IPN Internal Error: {e}")
         import traceback
         logger.error(traceback.format_exc())
-        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 async def process_payment_update(payment_id: UUID, payment_status: str, user_id: UUID):
@@ -356,3 +369,19 @@ async def process_payment_update(payment_id: UUID, payment_status: str, user_id:
                             )
 
                     await session.commit()
+                else:
+                    from app.service.partnership_registration_service import PartnershipRegistrationService
+                    from app.schema.partnership_registration import PartnershipRegistrationUpdate
+                    p_service = PartnershipRegistrationService(session)
+                    p_reg = await p_service.repo.get_by_order_id(crypto_payment.order_id)
+                    if p_reg:
+                        if p_reg.account_status == AccountStatus.pending and p_reg.payment_status != PaymentStatus.completed:
+                            new_payment_status = PaymentStatus.completed if payment_status in ["finished", "confirmed"] else PaymentStatus.failed
+                            new_account_status = AccountStatus.pending if payment_status in ["finished", "confirmed"] else None
+                            p_update_data = PartnershipRegistrationUpdate(
+                                payment_status=new_payment_status,
+                                account_status=new_account_status
+                            )
+                            await p_service.update_registration(p_reg.id, p_update_data, background_tasks=None)
+                            await session.commit()
+

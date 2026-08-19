@@ -60,6 +60,17 @@ class PartnershipRegistrationUpdate(BaseModel):
     payment_status: PaymentStatus | None = None
     admin_notes: str | None = None
 
+# SECURITY: Restricted schema for user self-updates on their own partnership registrations.
+# Excludes account_status, payment_status, propfirm_account_cost, and admin_notes.
+class UserPartnershipRegistrationUpdate(BaseModel):
+    login_id: str | None = None
+    password: str | None = None
+    server_name: str | None = None
+    server_type: str | None = None
+    trading_platform: str | None = None
+    whatsapp_no: str | None = None
+    telegram_username: str | None = None
+
 
 class PartnershipRegistrationAdminRead(PartnershipRegistrationRead):
     user_name: str

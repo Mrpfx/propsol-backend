@@ -20840,3 +20840,1888 @@ Valid SQLite URL forms are:
 2026-08-08 10:50:56,592 - app - INFO - Shutting down application...
 2026-08-08 10:50:56,593 - uvicorn.error - INFO - Application shutdown complete.
 2026-08-08 10:50:56,593 - uvicorn.error - INFO - Finished server process [36252]
+2026-08-19 04:21:35,077 - uvicorn.error - INFO - Started server process [32285]
+2026-08-19 04:21:35,079 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:21:35,079 - app - INFO - Starting up application...
+2026-08-19 04:21:35,263 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:24:18,662 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 4.18ms
+2026-08-19 04:24:18,662 - uvicorn.access - INFO - 127.0.0.1:56392 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:24:18,664 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 6.15ms
+2026-08-19 04:24:18,665 - uvicorn.access - INFO - 127.0.0.1:56404 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:24:18,843 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 142.96ms
+2026-08-19 04:24:18,846 - uvicorn.access - INFO - 127.0.0.1:56420 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:24:18,890 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 31.56ms
+2026-08-19 04:24:18,894 - uvicorn.access - INFO - 127.0.0.1:56404 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:24:19,163 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 0.65ms
+2026-08-19 04:24:19,164 - uvicorn.access - INFO - 127.0.0.1:56404 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:24:19,172 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 3.68ms
+2026-08-19 04:24:19,175 - uvicorn.access - INFO - 127.0.0.1:56420 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:24:19,240 - app - INFO - Request: GET /api/v1/users/me - Status: 404 - Duration: 58.95ms
+2026-08-19 04:24:19,243 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/users/me HTTP/1.1" 404
+2026-08-19 04:24:19,294 - app - INFO - Request: OPTIONS /api/v1/prop-firm - Status: 200 - Duration: 14.59ms
+2026-08-19 04:24:19,300 - uvicorn.access - INFO - 127.0.0.1:56420 - "OPTIONS /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:24:19,364 - app - INFO - Request: GET /api/v1/users/me - Status: 404 - Duration: 110.83ms
+2026-08-19 04:24:19,364 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/users/me HTTP/1.1" 404
+2026-08-19 04:24:19,389 - app - INFO - Request: GET /api/v1/prop-firm - Status: 404 - Duration: 70.83ms
+2026-08-19 04:24:19,389 - uvicorn.access - INFO - 127.0.0.1:56404 - "GET /api/v1/prop-firm HTTP/1.1" 404
+2026-08-19 04:24:19,535 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 12.21ms
+2026-08-19 04:24:19,536 - uvicorn.access - INFO - 127.0.0.1:56404 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:24:19,540 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 17.65ms
+2026-08-19 04:24:19,547 - uvicorn.access - INFO - 127.0.0.1:56420 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:24:19,585 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 15.90ms
+2026-08-19 04:24:19,589 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:19,602 - app - INFO - Request: GET /api/v1/prop-firm - Status: 404 - Duration: 107.55ms
+2026-08-19 04:24:19,603 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/prop-firm HTTP/1.1" 404
+2026-08-19 04:24:19,627 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 30.10ms
+2026-08-19 04:24:19,635 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:19,732 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 0.63ms
+2026-08-19 04:24:19,736 - uvicorn.access - INFO - 127.0.0.1:56430 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:19,842 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 82.92ms
+2026-08-19 04:24:19,844 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:19,896 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 30.35ms
+2026-08-19 04:24:19,896 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:21,093 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.16ms
+2026-08-19 04:24:21,093 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:21,109 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.14ms
+2026-08-19 04:24:21,109 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:21,113 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.54ms
+2026-08-19 04:24:21,114 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:21,120 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 4.27ms
+2026-08-19 04:24:21,122 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:24:21,137 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 11.40ms
+2026-08-19 04:24:21,137 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:21,153 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 9.00ms
+2026-08-19 04:24:21,153 - uvicorn.access - INFO - 127.0.0.1:56392 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:21,169 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 10.94ms
+2026-08-19 04:24:21,169 - uvicorn.access - INFO - 127.0.0.1:56430 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:21,186 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 9.08ms
+2026-08-19 04:24:21,186 - uvicorn.access - INFO - 127.0.0.1:56420 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:24:28,249 - app - INFO - Request: OPTIONS /api/v1/auth/login/access-token - Status: 200 - Duration: 0.65ms
+2026-08-19 04:24:28,249 - uvicorn.access - INFO - 127.0.0.1:52990 - "OPTIONS /api/v1/auth/login/access-token HTTP/1.1" 200
+2026-08-19 04:24:28,313 - app - INFO - Request: POST /api/v1/auth/login/access-token - Status: 400 - Duration: 36.42ms
+2026-08-19 04:24:28,315 - uvicorn.access - INFO - 127.0.0.1:52994 - "POST /api/v1/auth/login/access-token HTTP/1.1" 400
+2026-08-19 04:25:27,676 - app - INFO - Request: POST /api/v1/auth/login/access-token - Status: 400 - Duration: 41.51ms
+2026-08-19 04:25:27,676 - uvicorn.access - INFO - 127.0.0.1:34770 - "POST /api/v1/auth/login/access-token HTTP/1.1" 400
+2026-08-19 04:26:08,535 - app - INFO - Request: OPTIONS /api/v1/users - Status: 200 - Duration: 2.81ms
+2026-08-19 04:26:08,538 - uvicorn.access - INFO - 127.0.0.1:39334 - "OPTIONS /api/v1/users HTTP/1.1" 200
+2026-08-19 04:26:09,968 - app - INFO - Request: POST /api/v1/users - Status: 200 - Duration: 1403.94ms
+2026-08-19 04:26:09,986 - uvicorn.access - INFO - 127.0.0.1:39342 - "POST /api/v1/users HTTP/1.1" 200
+2026-08-19 04:26:11,092 - app.service.mail - INFO - ✓ Resend sent to techio.com.ng@gmail.com (ID: aed1437f-6460-4749-971d-b42cbee37ec5)
+2026-08-19 04:26:12,202 - app.service.mail - INFO - ✓ Resend sent to techio.com.ng@gmail.com (ID: 9714d1c0-db38-4165-8f65-7921c2394551)
+2026-08-19 04:26:18,135 - app - INFO - Request: POST /api/v1/auth/login/access-token - Status: 200 - Duration: 562.84ms
+2026-08-19 04:26:18,135 - uvicorn.access - INFO - 127.0.0.1:46324 - "POST /api/v1/auth/login/access-token HTTP/1.1" 200
+2026-08-19 04:26:19,335 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 80.07ms
+2026-08-19 04:26:19,335 - uvicorn.access - INFO - 127.0.0.1:46324 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:26:19,407 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 54.05ms
+2026-08-19 04:26:19,407 - uvicorn.access - INFO - 127.0.0.1:46324 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:26:19,549 - app - INFO - Request: GET /api/v1/prop-firm - Status: 200 - Duration: 40.63ms
+2026-08-19 04:26:19,549 - uvicorn.access - INFO - 127.0.0.1:46324 - "GET /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:26:19,606 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 12.54ms
+2026-08-19 04:26:19,614 - uvicorn.access - INFO - 127.0.0.1:46334 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:26:19,648 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 12.41ms
+2026-08-19 04:26:19,651 - uvicorn.access - INFO - 127.0.0.1:46334 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:26:19,709 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 26.50ms
+2026-08-19 04:26:19,710 - uvicorn.access - INFO - 127.0.0.1:46334 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:26:19,762 - app - INFO - Request: GET /api/v1/prop-firm - Status: 200 - Duration: 208.18ms
+2026-08-19 04:26:19,762 - uvicorn.access - INFO - 127.0.0.1:46324 - "GET /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:26:19,782 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 62.83ms
+2026-08-19 04:26:19,782 - uvicorn.access - INFO - 127.0.0.1:46350 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:26:33,703 - app - INFO - Request: OPTIONS /api/v1/discounts/vat - Status: 200 - Duration: 1.20ms
+2026-08-19 04:26:33,707 - uvicorn.access - INFO - 127.0.0.1:55400 - "OPTIONS /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:26:33,748 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 51.43ms
+2026-08-19 04:26:33,748 - uvicorn.access - INFO - 127.0.0.1:55402 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:26:33,764 - app - INFO - Request: OPTIONS /api/v1/discounts/vat - Status: 200 - Duration: 15.58ms
+2026-08-19 04:26:33,767 - uvicorn.access - INFO - 127.0.0.1:55408 - "OPTIONS /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:26:33,767 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 18.56ms
+2026-08-19 04:26:33,769 - uvicorn.access - INFO - 127.0.0.1:55418 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:26:33,838 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 79.54ms
+2026-08-19 04:26:33,838 - uvicorn.access - INFO - 127.0.0.1:55432 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:26:33,916 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 36.82ms
+2026-08-19 04:26:33,916 - uvicorn.access - INFO - 127.0.0.1:55432 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:26:34,175 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 416.45ms
+2026-08-19 04:26:34,175 - uvicorn.access - INFO - 127.0.0.1:55400 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:26:34,226 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 46.61ms
+2026-08-19 04:26:34,226 - uvicorn.access - INFO - 127.0.0.1:55432 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:27:33,028 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 42.31ms
+2026-08-19 04:27:33,028 - uvicorn.access - INFO - 127.0.0.1:48504 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:27:33,050 - app - INFO - Request: OPTIONS /api/v1/prop-firm - Status: 200 - Duration: 5.08ms
+2026-08-19 04:27:33,053 - uvicorn.access - INFO - 127.0.0.1:48504 - "OPTIONS /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:27:33,114 - app - INFO - Request: POST /api/v1/prop-firm - Status: 200 - Duration: 40.97ms
+2026-08-19 04:27:33,115 - uvicorn.access - INFO - 127.0.0.1:48518 - "POST /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:27:33,127 - app - INFO - Request: OPTIONS /api/v1/crypto-payments/invoice - Status: 200 - Duration: 0.71ms
+2026-08-19 04:27:33,129 - uvicorn.access - INFO - 127.0.0.1:48518 - "OPTIONS /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 04:27:34,352 - app - INFO - Request: POST /api/v1/crypto-payments/invoice - Status: 200 - Duration: 1211.59ms
+2026-08-19 04:27:34,352 - uvicorn.access - INFO - 127.0.0.1:48504 - "POST /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 04:27:44,227 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 7.61ms
+2026-08-19 04:27:44,227 - uvicorn.access - INFO - 127.0.0.1:56246 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:27:44,249 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 18.48ms
+2026-08-19 04:27:44,251 - uvicorn.access - INFO - 127.0.0.1:56246 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:27:44,307 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 35.20ms
+2026-08-19 04:27:44,307 - uvicorn.access - INFO - 127.0.0.1:56260 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:27:44,333 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 61.38ms
+2026-08-19 04:27:44,334 - uvicorn.access - INFO - 127.0.0.1:56262 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:27:44,349 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 30.65ms
+2026-08-19 04:27:44,350 - uvicorn.access - INFO - 127.0.0.1:56260 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:27:44,360 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 20.23ms
+2026-08-19 04:27:44,360 - uvicorn.access - INFO - 127.0.0.1:56246 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:03,872 - app - INFO - Request: OPTIONS /api/v1/plans/ - Status: 200 - Duration: 12.46ms
+2026-08-19 04:28:03,873 - uvicorn.access - INFO - 127.0.0.1:46342 - "OPTIONS /api/v1/plans/ HTTP/1.1" 200
+2026-08-19 04:28:03,879 - app - INFO - Request: OPTIONS /api/v1/plans/ - Status: 200 - Duration: 12.57ms
+2026-08-19 04:28:03,881 - uvicorn.access - INFO - 127.0.0.1:46346 - "OPTIONS /api/v1/plans/ HTTP/1.1" 200
+2026-08-19 04:28:03,883 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 22.24ms
+2026-08-19 04:28:03,883 - uvicorn.access - INFO - 127.0.0.1:46330 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:03,913 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 13.48ms
+2026-08-19 04:28:03,913 - uvicorn.access - INFO - 127.0.0.1:46342 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:03,914 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 14.24ms
+2026-08-19 04:28:03,914 - uvicorn.access - INFO - 127.0.0.1:46346 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:03,942 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 35.17ms
+2026-08-19 04:28:03,946 - uvicorn.access - INFO - 127.0.0.1:46330 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:03,950 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 30.92ms
+2026-08-19 04:28:03,953 - uvicorn.access - INFO - 127.0.0.1:46342 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:03,958 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 36.91ms
+2026-08-19 04:28:03,962 - uvicorn.access - INFO - 127.0.0.1:46346 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:04,024 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 40.87ms
+2026-08-19 04:28:04,026 - uvicorn.access - INFO - 127.0.0.1:46346 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:04,040 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 63.62ms
+2026-08-19 04:28:04,040 - uvicorn.access - INFO - 127.0.0.1:46342 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:04,066 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 141.84ms
+2026-08-19 04:28:04,067 - uvicorn.access - INFO - 127.0.0.1:46358 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:04,108 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 55.95ms
+2026-08-19 04:28:04,109 - uvicorn.access - INFO - 127.0.0.1:46346 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:04,147 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 28.75ms
+2026-08-19 04:28:04,148 - uvicorn.access - INFO - 127.0.0.1:46342 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:04,150 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 69.70ms
+2026-08-19 04:28:04,153 - uvicorn.access - INFO - 127.0.0.1:46330 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:24,936 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 16.59ms
+2026-08-19 04:28:24,936 - uvicorn.access - INFO - 127.0.0.1:46370 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:25,000 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 46.87ms
+2026-08-19 04:28:25,003 - uvicorn.access - INFO - 127.0.0.1:60192 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:25,024 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 98.28ms
+2026-08-19 04:28:25,024 - uvicorn.access - INFO - 127.0.0.1:60176 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:25,059 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 26.15ms
+2026-08-19 04:28:25,059 - uvicorn.access - INFO - 127.0.0.1:60192 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:31,505 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 4.14ms
+2026-08-19 04:28:31,507 - uvicorn.access - INFO - 127.0.0.1:60196 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:31,509 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 8.40ms
+2026-08-19 04:28:31,510 - uvicorn.access - INFO - 127.0.0.1:60212 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:31,551 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 27.90ms
+2026-08-19 04:28:31,554 - uvicorn.access - INFO - 127.0.0.1:60196 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:31,561 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 29.55ms
+2026-08-19 04:28:31,562 - uvicorn.access - INFO - 127.0.0.1:60212 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:31,645 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 66.36ms
+2026-08-19 04:28:31,649 - uvicorn.access - INFO - 127.0.0.1:60196 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:31,694 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 97.45ms
+2026-08-19 04:28:31,698 - uvicorn.access - INFO - 127.0.0.1:60220 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:31,702 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 27.01ms
+2026-08-19 04:28:31,706 - uvicorn.access - INFO - 127.0.0.1:60196 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:31,722 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 126.72ms
+2026-08-19 04:28:31,723 - uvicorn.access - INFO - 127.0.0.1:60230 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:31,742 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 32.65ms
+2026-08-19 04:28:31,742 - uvicorn.access - INFO - 127.0.0.1:60212 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:31,762 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 13.28ms
+2026-08-19 04:28:31,762 - uvicorn.access - INFO - 127.0.0.1:60230 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:31,801 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 65.68ms
+2026-08-19 04:28:31,804 - uvicorn.access - INFO - 127.0.0.1:60220 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:31,805 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 35.17ms
+2026-08-19 04:28:31,807 - uvicorn.access - INFO - 127.0.0.1:60212 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:41,653 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 12.52ms
+2026-08-19 04:28:41,657 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:41,680 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 15.81ms
+2026-08-19 04:28:41,681 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:41,693 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 47.08ms
+2026-08-19 04:28:41,693 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:41,749 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 45.58ms
+2026-08-19 04:28:41,749 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:42,777 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 7.14ms
+2026-08-19 04:28:42,782 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:42,783 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 13.08ms
+2026-08-19 04:28:42,785 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:42,803 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.91ms
+2026-08-19 04:28:42,813 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:42,813 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 11.78ms
+2026-08-19 04:28:42,813 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:28:42,834 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 3.01ms
+2026-08-19 04:28:42,842 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:42,901 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 7.07ms
+2026-08-19 04:28:42,914 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:42,931 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 81.25ms
+2026-08-19 04:28:42,933 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:42,974 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 25.46ms
+2026-08-19 04:28:42,974 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:43,004 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 154.49ms
+2026-08-19 04:28:43,005 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:43,024 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 35.18ms
+2026-08-19 04:28:43,026 - uvicorn.access - INFO - 127.0.0.1:50546 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:43,076 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 26.56ms
+2026-08-19 04:28:43,076 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:43,111 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 79.02ms
+2026-08-19 04:28:43,113 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:43,311 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 26.54ms
+2026-08-19 04:28:43,312 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:43,328 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 9.90ms
+2026-08-19 04:28:43,328 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:28:43,338 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 33.88ms
+2026-08-19 04:28:43,338 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:43,359 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 14.24ms
+2026-08-19 04:28:43,360 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:28:44,622 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 94.82ms
+2026-08-19 04:28:44,625 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:28:44,689 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 49.95ms
+2026-08-19 04:28:44,689 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:28:44,758 - app - INFO - Request: GET /api/v1/prop-firm - Status: 200 - Duration: 36.39ms
+2026-08-19 04:28:44,758 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:28:44,850 - app - INFO - Request: GET /api/v1/prop-firm - Status: 200 - Duration: 79.80ms
+2026-08-19 04:28:44,851 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/prop-firm HTTP/1.1" 200
+2026-08-19 04:28:44,883 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 9.07ms
+2026-08-19 04:28:44,886 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:44,922 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 26.84ms
+2026-08-19 04:28:44,927 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:44,940 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 33.44ms
+2026-08-19 04:28:44,941 - uvicorn.access - INFO - 127.0.0.1:50550 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:44,966 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 8.87ms
+2026-08-19 04:28:44,967 - uvicorn.access - INFO - 127.0.0.1:50544 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:54,913 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 5.45ms
+2026-08-19 04:28:54,914 - uvicorn.access - INFO - 127.0.0.1:59884 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:54,923 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 21.45ms
+2026-08-19 04:28:54,925 - uvicorn.access - INFO - 127.0.0.1:59870 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:28:54,927 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 9.07ms
+2026-08-19 04:28:54,928 - uvicorn.access - INFO - 127.0.0.1:59884 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:54,952 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.52ms
+2026-08-19 04:28:54,953 - uvicorn.access - INFO - 127.0.0.1:59902 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:54,959 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 4.11ms
+2026-08-19 04:28:54,959 - uvicorn.access - INFO - 127.0.0.1:59902 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:28:54,963 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 37.01ms
+2026-08-19 04:28:54,964 - uvicorn.access - INFO - 127.0.0.1:59888 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:54,975 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 33.82ms
+2026-08-19 04:28:54,975 - uvicorn.access - INFO - 127.0.0.1:59884 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:28:54,980 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 11.56ms
+2026-08-19 04:28:54,980 - uvicorn.access - INFO - 127.0.0.1:59902 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:55,038 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 13.19ms
+2026-08-19 04:28:55,038 - uvicorn.access - INFO - 127.0.0.1:59902 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:28:55,052 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 2.99ms
+2026-08-19 04:28:55,052 - uvicorn.access - INFO - 127.0.0.1:59884 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:10,191 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.90ms
+2026-08-19 04:31:10,191 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:10,201 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 19.78ms
+2026-08-19 04:31:10,203 - uvicorn.access - INFO - 127.0.0.1:41320 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:31:10,235 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 31.42ms
+2026-08-19 04:31:10,235 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:10,245 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 5.85ms
+2026-08-19 04:31:10,249 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:10,272 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 63.32ms
+2026-08-19 04:31:10,272 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:31:10,278 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 20.70ms
+2026-08-19 04:31:10,285 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:10,605 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 30.79ms
+2026-08-19 04:31:10,605 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:10,631 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 17.29ms
+2026-08-19 04:31:10,632 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:10,659 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 16.06ms
+2026-08-19 04:31:10,662 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:10,701 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 21.41ms
+2026-08-19 04:31:10,701 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:14,252 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 2.57ms
+2026-08-19 04:31:14,255 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:14,263 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 2.57ms
+2026-08-19 04:31:14,266 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:31:14,662 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 17.76ms
+2026-08-19 04:31:14,662 - uvicorn.access - INFO - 127.0.0.1:41334 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:14,697 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 25.56ms
+2026-08-19 04:31:14,698 - uvicorn.access - INFO - 127.0.0.1:41330 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:31:32,521 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 28.34ms
+2026-08-19 04:31:32,522 - uvicorn.access - INFO - 127.0.0.1:55570 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:31:32,604 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 53.12ms
+2026-08-19 04:31:32,606 - uvicorn.access - INFO - 127.0.0.1:55586 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:31:32,613 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 104.78ms
+2026-08-19 04:31:32,614 - uvicorn.access - INFO - 127.0.0.1:55574 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:31:32,653 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 29.26ms
+2026-08-19 04:31:32,654 - uvicorn.access - INFO - 127.0.0.1:55570 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:36:47,500 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:36:47,603 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:36:47,604 - app - INFO - Shutting down application...
+2026-08-19 04:36:47,610 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:36:47,611 - uvicorn.error - INFO - Finished server process [32285]
+2026-08-19 04:36:49,291 - uvicorn.error - INFO - Started server process [40891]
+2026-08-19 04:36:49,291 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:36:49,292 - app - INFO - Starting up application...
+2026-08-19 04:36:49,349 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:37:13,929 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:37:14,030 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:37:14,030 - app - INFO - Shutting down application...
+2026-08-19 04:37:14,033 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:37:14,033 - uvicorn.error - INFO - Finished server process [40891]
+2026-08-19 04:37:15,452 - uvicorn.error - INFO - Started server process [40995]
+2026-08-19 04:37:15,452 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:37:15,452 - app - INFO - Starting up application...
+2026-08-19 04:37:15,471 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:37:21,186 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:37:21,288 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:37:21,288 - app - INFO - Shutting down application...
+2026-08-19 04:37:21,291 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:37:21,291 - uvicorn.error - INFO - Finished server process [40995]
+2026-08-19 04:37:22,773 - uvicorn.error - INFO - Started server process [41049]
+2026-08-19 04:37:22,777 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:37:22,777 - app - INFO - Starting up application...
+2026-08-19 04:37:22,811 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:37:26,724 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:37:26,824 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:37:26,825 - app - INFO - Shutting down application...
+2026-08-19 04:37:26,828 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:37:26,829 - uvicorn.error - INFO - Finished server process [41049]
+2026-08-19 04:37:28,135 - uvicorn.error - INFO - Started server process [41084]
+2026-08-19 04:37:28,135 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:37:28,136 - app - INFO - Starting up application...
+2026-08-19 04:37:28,153 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:37:34,772 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:37:34,873 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:37:34,874 - app - INFO - Shutting down application...
+2026-08-19 04:37:34,876 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:37:34,876 - uvicorn.error - INFO - Finished server process [41084]
+2026-08-19 04:37:36,132 - uvicorn.error - INFO - Started server process [41116]
+2026-08-19 04:37:36,132 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:37:36,132 - app - INFO - Starting up application...
+2026-08-19 04:37:36,154 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:41:43,042 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 4.65ms
+2026-08-19 04:41:43,042 - uvicorn.access - INFO - 127.0.0.1:55550 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:41:43,044 - app - INFO - Request: OPTIONS /api/v1/plans/ - Status: 200 - Duration: 5.50ms
+2026-08-19 04:41:43,044 - uvicorn.access - INFO - 127.0.0.1:55566 - "OPTIONS /api/v1/plans/ HTTP/1.1" 200
+2026-08-19 04:41:43,044 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 6.33ms
+2026-08-19 04:41:43,045 - uvicorn.access - INFO - 127.0.0.1:55568 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:41:43,045 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 6.60ms
+2026-08-19 04:41:43,045 - uvicorn.access - INFO - 127.0.0.1:55576 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:41:43,046 - app - INFO - Request: OPTIONS /api/v1/plans/ - Status: 200 - Duration: 6.77ms
+2026-08-19 04:41:43,049 - uvicorn.access - INFO - 127.0.0.1:55590 - "OPTIONS /api/v1/plans/ HTTP/1.1" 200
+2026-08-19 04:41:43,053 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 9.64ms
+2026-08-19 04:41:43,055 - uvicorn.access - INFO - 127.0.0.1:55606 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 04:41:43,085 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 3.34ms
+2026-08-19 04:41:43,085 - uvicorn.access - INFO - 127.0.0.1:55566 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:41:43,088 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 4.42ms
+2026-08-19 04:41:43,088 - uvicorn.access - INFO - 127.0.0.1:55550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:43,093 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 4.90ms
+2026-08-19 04:41:43,093 - uvicorn.access - INFO - 127.0.0.1:55566 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:41:43,094 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 2.80ms
+2026-08-19 04:41:43,094 - uvicorn.access - INFO - 127.0.0.1:55550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:43,097 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.36ms
+2026-08-19 04:41:43,098 - uvicorn.access - INFO - 127.0.0.1:55550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:43,106 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 4.08ms
+2026-08-19 04:41:43,109 - uvicorn.access - INFO - 127.0.0.1:55550 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:43,202 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 9.00ms
+2026-08-19 04:41:43,202 - uvicorn.access - INFO - 127.0.0.1:55550 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:41:43,202 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 6.26ms
+2026-08-19 04:41:43,202 - uvicorn.access - INFO - 127.0.0.1:55566 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,203 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 6.62ms
+2026-08-19 04:41:43,203 - uvicorn.access - INFO - 127.0.0.1:55606 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:41:43,203 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 6.91ms
+2026-08-19 04:41:43,203 - uvicorn.access - INFO - 127.0.0.1:55590 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,203 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 6.42ms
+2026-08-19 04:41:43,204 - uvicorn.access - INFO - 127.0.0.1:55576 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,204 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 6.66ms
+2026-08-19 04:41:43,204 - uvicorn.access - INFO - 127.0.0.1:55568 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,233 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 15.14ms
+2026-08-19 04:41:43,234 - uvicorn.access - INFO - 127.0.0.1:55550 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:43,387 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 165.81ms
+2026-08-19 04:41:43,387 - uvicorn.access - INFO - 127.0.0.1:55566 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:43,432 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 203.85ms
+2026-08-19 04:41:43,434 - uvicorn.access - INFO - 127.0.0.1:55590 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,448 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 219.83ms
+2026-08-19 04:41:43,450 - uvicorn.access - INFO - 127.0.0.1:55606 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:41:43,471 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 29.45ms
+2026-08-19 04:41:43,472 - uvicorn.access - INFO - 127.0.0.1:55566 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,499 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 41.68ms
+2026-08-19 04:41:43,502 - uvicorn.access - INFO - 127.0.0.1:55550 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:41:43,513 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 30.89ms
+2026-08-19 04:41:43,515 - uvicorn.access - INFO - 127.0.0.1:55576 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,553 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 14.36ms
+2026-08-19 04:41:43,554 - uvicorn.access - INFO - 127.0.0.1:55576 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:43,587 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 198.84ms
+2026-08-19 04:41:43,587 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:43,621 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 29.05ms
+2026-08-19 04:41:43,621 - uvicorn.access - INFO - 127.0.0.1:55566 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:48,505 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 5.25ms
+2026-08-19 04:41:48,505 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:48,509 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.71ms
+2026-08-19 04:41:48,509 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:41:48,527 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 27.73ms
+2026-08-19 04:41:48,527 - uvicorn.access - INFO - 127.0.0.1:55566 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:48,563 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 26.55ms
+2026-08-19 04:41:48,564 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:48,887 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 5.03ms
+2026-08-19 04:41:48,887 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:48,901 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 8.31ms
+2026-08-19 04:41:48,901 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:41:52,742 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 9.48ms
+2026-08-19 04:41:52,742 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:41:54,709 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 14.01ms
+2026-08-19 04:41:54,710 - uvicorn.access - INFO - 127.0.0.1:55568 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:42:04,784 - app - INFO - Request: OPTIONS /api/v1/discounts/vat - Status: 200 - Duration: 5.28ms
+2026-08-19 04:42:04,785 - uvicorn.access - INFO - 127.0.0.1:37566 - "OPTIONS /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:04,788 - app - INFO - Request: OPTIONS /api/v1/discounts/vat - Status: 200 - Duration: 5.06ms
+2026-08-19 04:42:04,788 - uvicorn.access - INFO - 127.0.0.1:37580 - "OPTIONS /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:04,825 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 33.25ms
+2026-08-19 04:42:04,826 - uvicorn.access - INFO - 127.0.0.1:37586 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:04,849 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 68.77ms
+2026-08-19 04:42:04,850 - uvicorn.access - INFO - 127.0.0.1:37578 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:42:04,856 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 22.52ms
+2026-08-19 04:42:04,857 - uvicorn.access - INFO - 127.0.0.1:37580 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:04,886 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 28.65ms
+2026-08-19 04:42:04,887 - uvicorn.access - INFO - 127.0.0.1:37586 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:42:51,861 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 8.94ms
+2026-08-19 04:42:51,861 - uvicorn.access - INFO - 127.0.0.1:39856 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:42:51,870 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 14.25ms
+2026-08-19 04:42:51,872 - uvicorn.access - INFO - 127.0.0.1:39864 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:42:51,909 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 26.31ms
+2026-08-19 04:42:51,910 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:42:51,920 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 6.44ms
+2026-08-19 04:42:51,920 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:42:52,084 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 10.06ms
+2026-08-19 04:42:52,085 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:52,113 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 38.88ms
+2026-08-19 04:42:52,113 - uvicorn.access - INFO - 127.0.0.1:39864 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:42:52,132 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 31.82ms
+2026-08-19 04:42:52,133 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:42:52,141 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 19.33ms
+2026-08-19 04:42:52,141 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:42:54,362 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 7.29ms
+2026-08-19 04:42:54,367 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:42:54,403 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 30.52ms
+2026-08-19 04:42:54,406 - uvicorn.access - INFO - 127.0.0.1:39870 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:42:54,423 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 40.31ms
+2026-08-19 04:42:54,425 - uvicorn.access - INFO - 127.0.0.1:39864 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:42:54,457 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 23.91ms
+2026-08-19 04:42:54,457 - uvicorn.access - INFO - 127.0.0.1:39864 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:42:54,459 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 75.82ms
+2026-08-19 04:42:54,459 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:42:54,495 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 29.90ms
+2026-08-19 04:42:54,495 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:42:56,991 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 25.26ms
+2026-08-19 04:42:56,992 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:42:59,004 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 14.19ms
+2026-08-19 04:42:59,005 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:42:59,722 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 8.74ms
+2026-08-19 04:42:59,722 - uvicorn.access - INFO - 127.0.0.1:39856 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:43:07,007 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 20.74ms
+2026-08-19 04:43:07,007 - uvicorn.access - INFO - 127.0.0.1:37466 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:43:07,034 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 45.89ms
+2026-08-19 04:43:07,034 - uvicorn.access - INFO - 127.0.0.1:37478 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:43:07,060 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 39.16ms
+2026-08-19 04:43:07,060 - uvicorn.access - INFO - 127.0.0.1:37466 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:43:07,087 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 46.66ms
+2026-08-19 04:43:07,088 - uvicorn.access - INFO - 127.0.0.1:37490 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:45:24,552 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 17.32ms
+2026-08-19 04:45:24,553 - uvicorn.access - INFO - 127.0.0.1:56646 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:45:24,584 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 10.79ms
+2026-08-19 04:45:24,584 - uvicorn.access - INFO - 127.0.0.1:56646 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:47:32,630 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 14.96ms
+2026-08-19 04:47:32,632 - uvicorn.access - INFO - 127.0.0.1:44216 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:47:32,648 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 7.28ms
+2026-08-19 04:47:32,649 - uvicorn.access - INFO - 127.0.0.1:44216 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:47:32,790 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 13.94ms
+2026-08-19 04:47:32,790 - uvicorn.access - INFO - 127.0.0.1:44216 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:47:32,810 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 29.78ms
+2026-08-19 04:47:32,812 - uvicorn.access - INFO - 127.0.0.1:44224 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:47:32,816 - app - INFO - Request: GET /api/v1/discounts/vat - Status: 200 - Duration: 19.64ms
+2026-08-19 04:47:32,816 - uvicorn.access - INFO - 127.0.0.1:44216 - "GET /api/v1/discounts/vat HTTP/1.1" 200
+2026-08-19 04:47:32,848 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 28.39ms
+2026-08-19 04:47:32,850 - uvicorn.access - INFO - 127.0.0.1:44240 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:48:17,181 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.17ms
+2026-08-19 04:48:17,182 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:17,184 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 1.19ms
+2026-08-19 04:48:17,184 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:48:17,217 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 10.94ms
+2026-08-19 04:48:17,218 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:17,226 - app - INFO - Request: GET /api/v1/plans/ - Status: 307 - Duration: 3.54ms
+2026-08-19 04:48:17,226 - uvicorn.access - INFO - 127.0.0.1:40584 - "GET /api/v1/plans/ HTTP/1.1" 307
+2026-08-19 04:48:17,232 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 17.63ms
+2026-08-19 04:48:17,232 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:17,233 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 3.79ms
+2026-08-19 04:48:17,234 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:17,247 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 5.63ms
+2026-08-19 04:48:17,247 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:17,254 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 31.77ms
+2026-08-19 04:48:17,254 - uvicorn.access - INFO - 127.0.0.1:40576 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:48:17,292 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 17.36ms
+2026-08-19 04:48:17,293 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:17,340 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 78.55ms
+2026-08-19 04:48:17,340 - uvicorn.access - INFO - 127.0.0.1:40576 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 04:48:17,353 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 39.13ms
+2026-08-19 04:48:17,355 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:17,384 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 18.19ms
+2026-08-19 04:48:17,384 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:17,494 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 25.18ms
+2026-08-19 04:48:17,495 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:48:17,525 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 23.39ms
+2026-08-19 04:48:17,525 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:48:21,199 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.16ms
+2026-08-19 04:48:21,199 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:21,219 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 9.91ms
+2026-08-19 04:48:21,219 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:48:21,228 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 27.19ms
+2026-08-19 04:48:21,229 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:48:21,250 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 18.06ms
+2026-08-19 04:48:21,251 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:48:21,484 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 12.75ms
+2026-08-19 04:48:21,484 - uvicorn.access - INFO - 127.0.0.1:40554 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:21,494 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 6.94ms
+2026-08-19 04:48:21,494 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:48:24,395 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 15.34ms
+2026-08-19 04:48:24,396 - uvicorn.access - INFO - 127.0.0.1:40562 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:48:57,116 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 0.63ms
+2026-08-19 04:48:57,116 - uvicorn.access - INFO - 127.0.0.1:37860 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:48:57,175 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 52.14ms
+2026-08-19 04:48:57,176 - uvicorn.access - INFO - 127.0.0.1:37874 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:48:57,184 - app - INFO - Request: OPTIONS /api/v1/partnership/register - Status: 200 - Duration: 0.60ms
+2026-08-19 04:48:57,184 - uvicorn.access - INFO - 127.0.0.1:37874 - "OPTIONS /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 04:48:57,233 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 45.39ms
+2026-08-19 04:48:57,234 - uvicorn.access - INFO - 127.0.0.1:37860 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 04:48:57,249 - app - INFO - Request: OPTIONS /api/v1/whop/checkout-link - Status: 200 - Duration: 1.82ms
+2026-08-19 04:48:57,251 - uvicorn.access - INFO - 127.0.0.1:37860 - "OPTIONS /api/v1/whop/checkout-link HTTP/1.1" 200
+2026-08-19 04:48:57,309 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 04:48:57,310 - app - INFO - Creating payment link for 0052e865-9623-45c9-a15b-4cbf5240e0bb - 303.05 usd
+2026-08-19 04:48:57,429 - app - INFO - Fetching products for company: None
+2026-08-19 04:48:58,228 - app - ERROR - Error fetching products: 401 - {"error":{"type":"unauthorized","message":"Authentication failed"}}
+2026-08-19 04:48:58,229 - app - ERROR - Error creating Whop payment link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 04:48:58,230 - app - INFO - Request: POST /api/v1/whop/checkout-link - Status: 500 - Duration: 973.31ms
+2026-08-19 04:48:58,230 - uvicorn.access - INFO - 127.0.0.1:37874 - "POST /api/v1/whop/checkout-link HTTP/1.1" 500
+2026-08-19 04:49:37,467 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 20.57ms
+2026-08-19 04:49:37,467 - uvicorn.access - INFO - 127.0.0.1:37908 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:49:37,513 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 37.11ms
+2026-08-19 04:49:37,514 - uvicorn.access - INFO - 127.0.0.1:37908 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 04:49:37,561 - app - INFO - Request: OPTIONS /api/v1/crypto-payments/invoice - Status: 200 - Duration: 0.50ms
+2026-08-19 04:49:37,561 - uvicorn.access - INFO - 127.0.0.1:37908 - "OPTIONS /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 04:49:38,353 - app - INFO - Request: POST /api/v1/crypto-payments/invoice - Status: 200 - Duration: 784.95ms
+2026-08-19 04:49:38,353 - uvicorn.access - INFO - 127.0.0.1:37916 - "POST /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 04:49:48,209 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 11.40ms
+2026-08-19 04:49:48,209 - uvicorn.access - INFO - 127.0.0.1:43966 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:49:48,236 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 16.41ms
+2026-08-19 04:49:48,237 - uvicorn.access - INFO - 127.0.0.1:43966 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:50:08,036 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 6.24ms
+2026-08-19 04:50:08,037 - uvicorn.access - INFO - 127.0.0.1:47676 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:50:08,041 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.25ms
+2026-08-19 04:50:08,044 - uvicorn.access - INFO - 127.0.0.1:47676 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 04:50:08,086 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 29.69ms
+2026-08-19 04:50:08,088 - uvicorn.access - INFO - 127.0.0.1:47676 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:50:08,123 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 6.07ms
+2026-08-19 04:50:08,123 - uvicorn.access - INFO - 127.0.0.1:47704 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 04:50:08,149 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 48.14ms
+2026-08-19 04:50:08,151 - uvicorn.access - INFO - 127.0.0.1:47692 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:50:08,191 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 29.77ms
+2026-08-19 04:50:08,191 - uvicorn.access - INFO - 127.0.0.1:47676 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:54:24,306 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 1.38ms
+2026-08-19 04:54:24,306 - uvicorn.access - INFO - 127.0.0.1:57362 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:54:24,338 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 25.82ms
+2026-08-19 04:54:24,341 - uvicorn.access - INFO - 127.0.0.1:57372 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:54:26,221 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 8.76ms
+2026-08-19 04:54:26,222 - uvicorn.access - INFO - 127.0.0.1:57372 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:54:44,330 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 15.31ms
+2026-08-19 04:54:44,330 - uvicorn.access - INFO - 127.0.0.1:60068 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:54:44,357 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 21.50ms
+2026-08-19 04:54:44,357 - uvicorn.access - INFO - 127.0.0.1:60078 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:55:01,583 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 13.70ms
+2026-08-19 04:55:01,583 - uvicorn.access - INFO - 127.0.0.1:52246 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:55:01,621 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 30.43ms
+2026-08-19 04:55:01,621 - uvicorn.access - INFO - 127.0.0.1:52246 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 04:55:02,377 - app - INFO - Request: POST /api/v1/crypto-payments/invoice - Status: 200 - Duration: 710.81ms
+2026-08-19 04:55:02,377 - uvicorn.access - INFO - 127.0.0.1:52246 - "POST /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 04:55:11,410 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 0.71ms
+2026-08-19 04:55:11,410 - uvicorn.access - INFO - 127.0.0.1:52930 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:11,448 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 8.33ms
+2026-08-19 04:55:11,448 - uvicorn.access - INFO - 127.0.0.1:52942 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:11,459 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 19.20ms
+2026-08-19 04:55:11,462 - uvicorn.access - INFO - 127.0.0.1:52954 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:11,482 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 10.82ms
+2026-08-19 04:55:11,482 - uvicorn.access - INFO - 127.0.0.1:52942 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:24,303 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 31.02ms
+2026-08-19 04:55:24,305 - uvicorn.access - INFO - 127.0.0.1:56970 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:24,334 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 17.31ms
+2026-08-19 04:55:24,336 - uvicorn.access - INFO - 127.0.0.1:56970 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:55:24,442 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 69.96ms
+2026-08-19 04:55:24,442 - uvicorn.access - INFO - 127.0.0.1:56978 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:55:24,495 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 24.81ms
+2026-08-19 04:55:24,496 - uvicorn.access - INFO - 127.0.0.1:56978 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:58:27,019 - uvicorn.error - INFO - Shutting down
+2026-08-19 04:58:27,120 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 04:58:27,120 - app - INFO - Shutting down application...
+2026-08-19 04:58:27,123 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 04:58:27,123 - uvicorn.error - INFO - Finished server process [41116]
+2026-08-19 04:58:28,452 - uvicorn.error - INFO - Started server process [45476]
+2026-08-19 04:58:28,452 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 04:58:28,453 - app - INFO - Starting up application...
+2026-08-19 04:58:28,472 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 04:58:38,310 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 315.80ms
+2026-08-19 04:58:38,310 - uvicorn.access - INFO - 127.0.0.1:36440 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:58:38,338 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 15.49ms
+2026-08-19 04:58:38,338 - uvicorn.access - INFO - 127.0.0.1:36440 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:58:38,691 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 299.68ms
+2026-08-19 04:58:38,692 - uvicorn.access - INFO - 127.0.0.1:36440 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:58:38,737 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 32.04ms
+2026-08-19 04:58:38,738 - uvicorn.access - INFO - 127.0.0.1:36446 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:34,239 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 21.40ms
+2026-08-19 04:59:34,241 - uvicorn.access - INFO - 127.0.0.1:59786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:34,269 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 15.63ms
+2026-08-19 04:59:34,270 - uvicorn.access - INFO - 127.0.0.1:59786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:34,419 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 42.10ms
+2026-08-19 04:59:34,421 - uvicorn.access - INFO - 127.0.0.1:59786 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:59:34,509 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 52.36ms
+2026-08-19 04:59:34,509 - uvicorn.access - INFO - 127.0.0.1:59786 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:59:34,517 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 1.88ms
+2026-08-19 04:59:34,519 - uvicorn.access - INFO - 127.0.0.1:59798 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:34,552 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 20.92ms
+2026-08-19 04:59:34,553 - uvicorn.access - INFO - 127.0.0.1:59810 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:34,582 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 20.69ms
+2026-08-19 04:59:34,582 - uvicorn.access - INFO - 127.0.0.1:59786 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:46,677 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 44.57ms
+2026-08-19 04:59:46,679 - uvicorn.access - INFO - 127.0.0.1:53640 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:46,707 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 13.46ms
+2026-08-19 04:59:46,709 - uvicorn.access - INFO - 127.0.0.1:53644 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:46,939 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 56.50ms
+2026-08-19 04:59:46,940 - uvicorn.access - INFO - 127.0.0.1:53644 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:59:47,065 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 94.72ms
+2026-08-19 04:59:47,065 - uvicorn.access - INFO - 127.0.0.1:53644 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:49,346 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 22.05ms
+2026-08-19 04:59:49,348 - uvicorn.access - INFO - 127.0.0.1:53644 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:49,410 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 36.62ms
+2026-08-19 04:59:49,415 - uvicorn.access - INFO - 127.0.0.1:53640 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 04:59:49,549 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 52.60ms
+2026-08-19 04:59:49,553 - uvicorn.access - INFO - 127.0.0.1:53640 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:59:49,586 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 20.79ms
+2026-08-19 04:59:49,586 - uvicorn.access - INFO - 127.0.0.1:53640 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 04:59:49,690 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 33.45ms
+2026-08-19 04:59:49,692 - uvicorn.access - INFO - 127.0.0.1:53640 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 04:59:49,811 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 109.84ms
+2026-08-19 04:59:49,812 - uvicorn.access - INFO - 127.0.0.1:53644 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:02:38,754 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:02:38,855 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:02:38,855 - app - INFO - Shutting down application...
+2026-08-19 05:02:38,857 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:02:38,857 - uvicorn.error - INFO - Finished server process [45476]
+2026-08-19 05:02:40,055 - uvicorn.error - INFO - Started server process [46212]
+2026-08-19 05:02:40,056 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:02:40,056 - app - INFO - Starting up application...
+2026-08-19 05:02:40,088 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:03:12,558 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 381.89ms
+2026-08-19 05:03:12,558 - uvicorn.access - INFO - 127.0.0.1:35504 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:03:41,429 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 18.95ms
+2026-08-19 05:03:41,431 - uvicorn.access - INFO - 127.0.0.1:48782 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:03:41,456 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 9.58ms
+2026-08-19 05:03:41,459 - uvicorn.access - INFO - 127.0.0.1:48790 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:03:43,900 - app - INFO - Request: OPTIONS /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 0.70ms
+2026-08-19 05:03:43,905 - uvicorn.access - INFO - 127.0.0.1:48790 - "OPTIONS /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:03:43,935 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 400 - Duration: 18.12ms
+2026-08-19 05:03:43,935 - uvicorn.access - INFO - 127.0.0.1:48782 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 400
+2026-08-19 05:04:22,667 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 385.95ms
+2026-08-19 05:04:22,667 - uvicorn.access - INFO - 127.0.0.1:54744 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:04:22,679 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 1.09ms
+2026-08-19 05:04:22,679 - uvicorn.access - INFO - 127.0.0.1:54744 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:04:22,730 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 41.58ms
+2026-08-19 05:04:22,730 - uvicorn.access - INFO - 127.0.0.1:54760 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:04:24,291 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 15.34ms
+2026-08-19 05:04:24,291 - uvicorn.access - INFO - 127.0.0.1:54744 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:04:24,304 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 26.89ms
+2026-08-19 05:04:24,304 - uvicorn.access - INFO - 127.0.0.1:54766 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:04:24,307 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 29.71ms
+2026-08-19 05:04:24,310 - uvicorn.access - INFO - 127.0.0.1:54780 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:04:24,337 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 33.91ms
+2026-08-19 05:04:24,339 - uvicorn.access - INFO - 127.0.0.1:54792 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:04:24,362 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 39.47ms
+2026-08-19 05:04:24,363 - uvicorn.access - INFO - 127.0.0.1:54794 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:04:24,364 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 41.31ms
+2026-08-19 05:04:24,364 - uvicorn.access - INFO - 127.0.0.1:54744 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:04:24,381 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 28.33ms
+2026-08-19 05:04:24,382 - uvicorn.access - INFO - 127.0.0.1:54766 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:04:24,391 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 35.89ms
+2026-08-19 05:04:24,391 - uvicorn.access - INFO - 127.0.0.1:54780 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:04:24,395 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 137.83ms
+2026-08-19 05:04:24,396 - uvicorn.access - INFO - 127.0.0.1:54760 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:04:24,708 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 229.16ms
+2026-08-19 05:04:24,709 - uvicorn.access - INFO - 127.0.0.1:54766 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:04:24,723 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 266.58ms
+2026-08-19 05:04:24,723 - uvicorn.access - INFO - 127.0.0.1:54744 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:04:24,731 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 259.36ms
+2026-08-19 05:04:24,731 - uvicorn.access - INFO - 127.0.0.1:54780 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:04:24,737 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 319.13ms
+2026-08-19 05:04:24,737 - uvicorn.access - INFO - 127.0.0.1:54794 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:04:24,754 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 347.65ms
+2026-08-19 05:04:24,754 - uvicorn.access - INFO - 127.0.0.1:54792 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:04:25,118 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 315.61ms
+2026-08-19 05:04:25,118 - uvicorn.access - INFO - 127.0.0.1:54760 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:04:25,174 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 342.11ms
+2026-08-19 05:04:25,178 - uvicorn.access - INFO - 127.0.0.1:54766 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:04:25,204 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 427.52ms
+2026-08-19 05:04:25,207 - uvicorn.access - INFO - 127.0.0.1:54780 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:04:25,287 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 485.57ms
+2026-08-19 05:04:25,290 - uvicorn.access - INFO - 127.0.0.1:54744 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:04:33,628 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 27.26ms
+2026-08-19 05:04:33,635 - uvicorn.access - INFO - 127.0.0.1:33296 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:04:33,636 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 32.45ms
+2026-08-19 05:04:33,638 - uvicorn.access - INFO - 127.0.0.1:33302 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:04:33,640 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 36.18ms
+2026-08-19 05:04:33,645 - uvicorn.access - INFO - 127.0.0.1:33318 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:04:33,652 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 48.12ms
+2026-08-19 05:04:33,660 - uvicorn.access - INFO - 127.0.0.1:33328 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:04:33,776 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 71.08ms
+2026-08-19 05:04:33,776 - uvicorn.access - INFO - 127.0.0.1:33302 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:04:33,780 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 75.00ms
+2026-08-19 05:04:33,780 - uvicorn.access - INFO - 127.0.0.1:33296 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:04:33,926 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 136.37ms
+2026-08-19 05:04:33,926 - uvicorn.access - INFO - 127.0.0.1:33318 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:04:33,927 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 137.31ms
+2026-08-19 05:04:33,927 - uvicorn.access - INFO - 127.0.0.1:33328 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:04:57,944 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 2.66ms
+2026-08-19 05:04:57,948 - uvicorn.access - INFO - 127.0.0.1:33342 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:04:57,956 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 3.49ms
+2026-08-19 05:04:57,957 - uvicorn.access - INFO - 127.0.0.1:34122 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:04:58,014 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 48.48ms
+2026-08-19 05:04:58,015 - uvicorn.access - INFO - 127.0.0.1:34136 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:04:58,049 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 22.07ms
+2026-08-19 05:04:58,049 - uvicorn.access - INFO - 127.0.0.1:34136 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:05:09,360 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 - Status: 200 - Duration: 0.60ms
+2026-08-19 05:05:09,361 - uvicorn.access - INFO - 127.0.0.1:60596 - "OPTIONS /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 HTTP/1.1" 200
+2026-08-19 05:05:09,400 - app - INFO - Request: PUT /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 - Status: 200 - Duration: 35.07ms
+2026-08-19 05:05:09,400 - uvicorn.access - INFO - 127.0.0.1:60602 - "PUT /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 HTTP/1.1" 200
+2026-08-19 05:06:03,916 - app - INFO - Request: PUT /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 - Status: 200 - Duration: 26.79ms
+2026-08-19 05:06:03,916 - uvicorn.access - INFO - 127.0.0.1:48416 - "PUT /api/v1/partnership/admin/a4e59304-8cd5-438d-b0ba-7730c8b38401 HTTP/1.1" 200
+2026-08-19 05:06:11,093 - app - INFO - Request: OPTIONS /api/v1/payments - Status: 200 - Duration: 12.36ms
+2026-08-19 05:06:11,094 - uvicorn.access - INFO - 127.0.0.1:48420 - "OPTIONS /api/v1/payments HTTP/1.1" 200
+2026-08-19 05:06:11,096 - app - INFO - Request: OPTIONS /api/v1/payments - Status: 200 - Duration: 16.50ms
+2026-08-19 05:06:11,097 - uvicorn.access - INFO - 127.0.0.1:48422 - "OPTIONS /api/v1/payments HTTP/1.1" 200
+2026-08-19 05:06:11,139 - app - INFO - Request: GET /api/v1/payments - Status: 404 - Duration: 23.28ms
+2026-08-19 05:06:11,139 - uvicorn.access - INFO - 127.0.0.1:48420 - "GET /api/v1/payments HTTP/1.1" 404
+2026-08-19 05:06:11,162 - app - INFO - Request: GET /api/v1/payments - Status: 404 - Duration: 15.53ms
+2026-08-19 05:06:11,163 - uvicorn.access - INFO - 127.0.0.1:48422 - "GET /api/v1/payments HTTP/1.1" 404
+2026-08-19 05:06:59,967 - app - INFO - Request: OPTIONS /api/v1/admin/transactions - Status: 200 - Duration: 3.53ms
+2026-08-19 05:06:59,968 - uvicorn.access - INFO - 127.0.0.1:48424 - "OPTIONS /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:06:59,969 - app - INFO - Request: OPTIONS /api/v1/admin/transactions - Status: 200 - Duration: 3.69ms
+2026-08-19 05:06:59,969 - uvicorn.access - INFO - 127.0.0.1:35330 - "OPTIONS /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:07:00,010 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 33.96ms
+2026-08-19 05:07:00,010 - uvicorn.access - INFO - 127.0.0.1:35340 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:07:00,030 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 15.76ms
+2026-08-19 05:07:00,030 - uvicorn.access - INFO - 127.0.0.1:35330 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:07:19,822 - app - INFO - Request: GET /api/v1/payments - Status: 404 - Duration: 19.97ms
+2026-08-19 05:07:19,825 - uvicorn.access - INFO - 127.0.0.1:46492 - "GET /api/v1/payments HTTP/1.1" 404
+2026-08-19 05:07:19,846 - app - INFO - Request: GET /api/v1/payments - Status: 404 - Duration: 8.47ms
+2026-08-19 05:07:19,846 - uvicorn.access - INFO - 127.0.0.1:46492 - "GET /api/v1/payments HTTP/1.1" 404
+2026-08-19 05:08:33,482 - app - INFO - Request: GET /api/v1/payments - Status: 401 - Duration: 1.39ms
+2026-08-19 05:08:33,482 - uvicorn.access - INFO - 127.0.0.1:54294 - "GET /api/v1/payments HTTP/1.1" 401
+2026-08-19 05:08:44,677 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 342.59ms
+2026-08-19 05:08:44,678 - uvicorn.access - INFO - 127.0.0.1:43586 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:08:44,694 - app - INFO - Request: GET /api/v1/payments - Status: 404 - Duration: 5.93ms
+2026-08-19 05:08:44,694 - uvicorn.access - INFO - 127.0.0.1:43590 - "GET /api/v1/payments HTTP/1.1" 404
+2026-08-19 05:09:17,170 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:09:17,270 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:09:17,272 - app - INFO - Shutting down application...
+2026-08-19 05:09:17,277 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:09:17,279 - uvicorn.error - INFO - Finished server process [46212]
+2026-08-19 05:09:19,007 - uvicorn.error - INFO - Started server process [47606]
+2026-08-19 05:09:19,007 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:09:19,007 - app - INFO - Starting up application...
+2026-08-19 05:09:19,029 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:09:22,544 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:09:22,644 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:09:22,645 - app - INFO - Shutting down application...
+2026-08-19 05:09:22,645 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:09:22,645 - uvicorn.error - INFO - Finished server process [47606]
+2026-08-19 05:09:24,181 - uvicorn.error - INFO - Started server process [47648]
+2026-08-19 05:09:24,181 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:09:24,181 - app - INFO - Starting up application...
+2026-08-19 05:09:24,200 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:13:17,631 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 408.71ms
+2026-08-19 05:13:17,631 - uvicorn.access - INFO - 127.0.0.1:53456 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:13:17,654 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 8.76ms
+2026-08-19 05:13:17,654 - uvicorn.access - INFO - 127.0.0.1:53462 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:13:56,962 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 2.25ms
+2026-08-19 05:13:56,962 - uvicorn.access - INFO - 127.0.0.1:43234 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:13:57,003 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 30.05ms
+2026-08-19 05:13:57,003 - uvicorn.access - INFO - 127.0.0.1:43246 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:13:57,184 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 20.30ms
+2026-08-19 05:13:57,185 - uvicorn.access - INFO - 127.0.0.1:43246 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:13:57,446 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 130.09ms
+2026-08-19 05:13:57,448 - uvicorn.access - INFO - 127.0.0.1:43234 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:13:57,452 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 135.68ms
+2026-08-19 05:13:57,455 - uvicorn.access - INFO - 127.0.0.1:43252 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:13:57,520 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 214.95ms
+2026-08-19 05:13:57,521 - uvicorn.access - INFO - 127.0.0.1:43246 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:13:57,567 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 34.22ms
+2026-08-19 05:13:57,567 - uvicorn.access - INFO - 127.0.0.1:43246 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:13:57,579 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 70.05ms
+2026-08-19 05:13:57,580 - uvicorn.access - INFO - 127.0.0.1:43266 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:13:57,621 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 25.71ms
+2026-08-19 05:13:57,622 - uvicorn.access - INFO - 127.0.0.1:43266 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:14:10,358 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 19.82ms
+2026-08-19 05:14:10,359 - uvicorn.access - INFO - 127.0.0.1:42566 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:10,389 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 6.77ms
+2026-08-19 05:14:10,389 - uvicorn.access - INFO - 127.0.0.1:42566 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:10,458 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 29.84ms
+2026-08-19 05:14:10,461 - uvicorn.access - INFO - 127.0.0.1:42576 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:10,474 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 40.39ms
+2026-08-19 05:14:10,481 - uvicorn.access - INFO - 127.0.0.1:42584 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:14:10,574 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 89.16ms
+2026-08-19 05:14:10,575 - uvicorn.access - INFO - 127.0.0.1:42576 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:10,603 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 80.18ms
+2026-08-19 05:14:10,605 - uvicorn.access - INFO - 127.0.0.1:42566 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:14:23,488 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 25.02ms
+2026-08-19 05:14:23,490 - uvicorn.access - INFO - 127.0.0.1:43864 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:14:23,538 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 38.29ms
+2026-08-19 05:14:23,540 - uvicorn.access - INFO - 127.0.0.1:43864 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:14:32,899 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 7.31ms
+2026-08-19 05:14:32,899 - uvicorn.access - INFO - 127.0.0.1:56326 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:32,929 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 11.09ms
+2026-08-19 05:14:32,930 - uvicorn.access - INFO - 127.0.0.1:56326 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:40,966 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 28.48ms
+2026-08-19 05:14:40,972 - uvicorn.access - INFO - 127.0.0.1:56336 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:41,048 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 37.39ms
+2026-08-19 05:14:41,050 - uvicorn.access - INFO - 127.0.0.1:56336 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:14:48,006 - app - INFO - Request: OPTIONS /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 1.20ms
+2026-08-19 05:14:48,010 - uvicorn.access - INFO - 127.0.0.1:56342 - "OPTIONS /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:14:48,407 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 388.10ms
+2026-08-19 05:14:48,407 - uvicorn.access - INFO - 127.0.0.1:57900 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:14:48,414 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 0.68ms
+2026-08-19 05:14:48,414 - uvicorn.access - INFO - 127.0.0.1:57900 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:48,431 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 11.82ms
+2026-08-19 05:14:48,434 - uvicorn.access - INFO - 127.0.0.1:56342 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:49,622 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 5.21ms
+2026-08-19 05:14:49,623 - uvicorn.access - INFO - 127.0.0.1:56342 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:14:49,625 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 3.84ms
+2026-08-19 05:14:49,627 - uvicorn.access - INFO - 127.0.0.1:57906 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:14:49,635 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 24.71ms
+2026-08-19 05:14:49,635 - uvicorn.access - INFO - 127.0.0.1:57900 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:49,669 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 15.28ms
+2026-08-19 05:14:49,669 - uvicorn.access - INFO - 127.0.0.1:57910 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:14:49,678 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 12.91ms
+2026-08-19 05:14:49,678 - uvicorn.access - INFO - 127.0.0.1:57924 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:14:49,680 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 8.84ms
+2026-08-19 05:14:49,680 - uvicorn.access - INFO - 127.0.0.1:57940 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:14:49,681 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 9.48ms
+2026-08-19 05:14:49,681 - uvicorn.access - INFO - 127.0.0.1:56342 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:14:49,681 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 7.05ms
+2026-08-19 05:14:49,681 - uvicorn.access - INFO - 127.0.0.1:57906 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:14:49,682 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 6.37ms
+2026-08-19 05:14:49,682 - uvicorn.access - INFO - 127.0.0.1:57900 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:14:49,777 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 58.86ms
+2026-08-19 05:14:49,779 - uvicorn.access - INFO - 127.0.0.1:57940 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:14:49,816 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 96.98ms
+2026-08-19 05:14:49,816 - uvicorn.access - INFO - 127.0.0.1:56342 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:14:49,868 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 118.09ms
+2026-08-19 05:14:49,869 - uvicorn.access - INFO - 127.0.0.1:57900 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:14:49,893 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 179.87ms
+2026-08-19 05:14:49,893 - uvicorn.access - INFO - 127.0.0.1:57924 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:14:49,927 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 101.52ms
+2026-08-19 05:14:49,927 - uvicorn.access - INFO - 127.0.0.1:57906 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:14:49,949 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 268.87ms
+2026-08-19 05:14:49,949 - uvicorn.access - INFO - 127.0.0.1:57910 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:14:49,962 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 85.65ms
+2026-08-19 05:14:49,964 - uvicorn.access - INFO - 127.0.0.1:56342 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:14:49,986 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 77.76ms
+2026-08-19 05:14:49,988 - uvicorn.access - INFO - 127.0.0.1:57940 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:14:50,056 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 87.88ms
+2026-08-19 05:14:50,056 - uvicorn.access - INFO - 127.0.0.1:57906 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:14:55,559 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 7.34ms
+2026-08-19 05:14:55,559 - uvicorn.access - INFO - 127.0.0.1:58294 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:14:55,593 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 21.89ms
+2026-08-19 05:14:55,594 - uvicorn.access - INFO - 127.0.0.1:58294 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:15:07,225 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 3.20ms
+2026-08-19 05:15:07,225 - uvicorn.access - INFO - 127.0.0.1:40398 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:15:07,227 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 5.42ms
+2026-08-19 05:15:07,228 - uvicorn.access - INFO - 127.0.0.1:40402 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:15:07,314 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 66.93ms
+2026-08-19 05:15:07,315 - uvicorn.access - INFO - 127.0.0.1:40408 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:15:07,347 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 19.14ms
+2026-08-19 05:15:07,348 - uvicorn.access - INFO - 127.0.0.1:40402 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:15:21,876 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 60.51ms
+2026-08-19 05:15:21,876 - uvicorn.access - INFO - 127.0.0.1:36252 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:15:21,959 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 63.50ms
+2026-08-19 05:15:21,960 - uvicorn.access - INFO - 127.0.0.1:36256 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:15:31,767 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firm/db00ff7b-961a-4ef3-9e0f-ea16920cac8f - Status: 200 - Duration: 0.67ms
+2026-08-19 05:15:31,767 - uvicorn.access - INFO - 127.0.0.1:39898 - "OPTIONS /api/v1/admin/prop-firm/db00ff7b-961a-4ef3-9e0f-ea16920cac8f HTTP/1.1" 200
+2026-08-19 05:15:31,962 - app - INFO - Request: PUT /api/v1/admin/prop-firm/db00ff7b-961a-4ef3-9e0f-ea16920cac8f - Status: 200 - Duration: 188.26ms
+2026-08-19 05:15:31,963 - uvicorn.access - INFO - 127.0.0.1:39908 - "PUT /api/v1/admin/prop-firm/db00ff7b-961a-4ef3-9e0f-ea16920cac8f HTTP/1.1" 200
+2026-08-19 05:15:38,033 - app.service.mail - INFO - ✓ Resend sent to techio.com.ng@gmail.com (ID: d24d8e2e-756c-4fe6-8d1b-daa6c6d3ac8e)
+2026-08-19 05:15:38,963 - app.service.mail - INFO - ✓ Resend sent to techio.com.ng@gmail.com (ID: 99c403b1-aede-4be4-8268-6bb3b04b26b6)
+2026-08-19 05:15:41,372 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 29.75ms
+2026-08-19 05:15:41,373 - uvicorn.access - INFO - 127.0.0.1:39916 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:15:41,407 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 21.07ms
+2026-08-19 05:15:41,407 - uvicorn.access - INFO - 127.0.0.1:39924 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:15:43,611 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 0.99ms
+2026-08-19 05:15:43,614 - uvicorn.access - INFO - 127.0.0.1:39924 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:15:43,636 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 0.66ms
+2026-08-19 05:15:43,637 - uvicorn.access - INFO - 127.0.0.1:39916 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:15:43,665 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 21.87ms
+2026-08-19 05:15:43,665 - uvicorn.access - INFO - 127.0.0.1:39924 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:15:43,667 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 24.38ms
+2026-08-19 05:15:43,668 - uvicorn.access - INFO - 127.0.0.1:51938 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:15:43,744 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 82.02ms
+2026-08-19 05:15:43,744 - uvicorn.access - INFO - 127.0.0.1:51950 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:15:43,745 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 102.01ms
+2026-08-19 05:15:43,745 - uvicorn.access - INFO - 127.0.0.1:51944 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:15:43,784 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 29.15ms
+2026-08-19 05:15:43,784 - uvicorn.access - INFO - 127.0.0.1:51950 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:15:43,792 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 40.31ms
+2026-08-19 05:15:43,792 - uvicorn.access - INFO - 127.0.0.1:51944 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:15:48,722 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 26.31ms
+2026-08-19 05:15:48,723 - uvicorn.access - INFO - 127.0.0.1:51944 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:15:48,755 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 27.23ms
+2026-08-19 05:15:48,755 - uvicorn.access - INFO - 127.0.0.1:51950 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:15:51,595 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 45.64ms
+2026-08-19 05:15:51,596 - uvicorn.access - INFO - 127.0.0.1:51950 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:15:51,618 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 12.07ms
+2026-08-19 05:15:51,618 - uvicorn.access - INFO - 127.0.0.1:51950 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:15:57,041 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 17.91ms
+2026-08-19 05:15:57,042 - uvicorn.access - INFO - 127.0.0.1:50584 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:15:57,068 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 14.19ms
+2026-08-19 05:15:57,069 - uvicorn.access - INFO - 127.0.0.1:50600 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:22:26,182 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:22:26,283 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:22:26,283 - app - INFO - Shutting down application...
+2026-08-19 05:22:26,288 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:22:26,288 - uvicorn.error - INFO - Finished server process [47648]
+2026-08-19 05:22:27,688 - uvicorn.error - INFO - Started server process [49582]
+2026-08-19 05:22:27,688 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:22:27,688 - app - INFO - Starting up application...
+2026-08-19 05:22:27,718 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:22:29,927 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:22:30,028 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:22:30,028 - app - INFO - Shutting down application...
+2026-08-19 05:22:30,031 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:22:30,031 - uvicorn.error - INFO - Finished server process [49582]
+2026-08-19 05:22:31,448 - uvicorn.error - INFO - Started server process [49612]
+2026-08-19 05:22:31,449 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:22:31,449 - app - INFO - Starting up application...
+2026-08-19 05:22:31,471 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:22:34,985 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:22:35,086 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:22:35,086 - app - INFO - Shutting down application...
+2026-08-19 05:22:35,088 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:22:35,088 - uvicorn.error - INFO - Finished server process [49612]
+2026-08-19 05:22:36,832 - uvicorn.error - INFO - Started server process [49656]
+2026-08-19 05:22:36,833 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:22:36,833 - app - INFO - Starting up application...
+2026-08-19 05:22:36,854 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:22:42,872 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:22:42,974 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:22:42,974 - app - INFO - Shutting down application...
+2026-08-19 05:22:42,980 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:22:42,980 - uvicorn.error - INFO - Finished server process [49656]
+2026-08-19 05:22:44,594 - uvicorn.error - INFO - Started server process [49709]
+2026-08-19 05:22:44,594 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:22:44,595 - app - INFO - Starting up application...
+2026-08-19 05:22:44,618 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:24:05,707 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 389.24ms
+2026-08-19 05:24:05,707 - uvicorn.access - INFO - 127.0.0.1:58120 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:24:05,758 - app - INFO - Request: POST /api/v1/admin - Status: 400 - Duration: 39.90ms
+2026-08-19 05:24:05,758 - uvicorn.access - INFO - 127.0.0.1:58126 - "POST /api/v1/admin HTTP/1.1" 400
+2026-08-19 05:24:06,152 - app - INFO - Request: POST /api/v1/admin - Status: 200 - Duration: 387.14ms
+2026-08-19 05:24:06,155 - uvicorn.access - INFO - 127.0.0.1:58128 - "POST /api/v1/admin HTTP/1.1" 200
+2026-08-19 05:27:29,750 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 0.79ms
+2026-08-19 05:27:29,751 - uvicorn.access - INFO - 127.0.0.1:58538 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:27:29,770 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 5.48ms
+2026-08-19 05:27:29,770 - uvicorn.access - INFO - 127.0.0.1:58552 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:27:29,790 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 24.63ms
+2026-08-19 05:27:29,791 - uvicorn.access - INFO - 127.0.0.1:58556 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:27:29,837 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 36.94ms
+2026-08-19 05:27:29,837 - uvicorn.access - INFO - 127.0.0.1:58552 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:27:40,059 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 4.53ms
+2026-08-19 05:27:40,059 - uvicorn.access - INFO - 127.0.0.1:58578 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:27:40,060 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 3.05ms
+2026-08-19 05:27:40,060 - uvicorn.access - INFO - 127.0.0.1:58584 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:27:40,080 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 13.79ms
+2026-08-19 05:27:40,080 - uvicorn.access - INFO - 127.0.0.1:58592 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:27:40,118 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 31.71ms
+2026-08-19 05:27:40,118 - uvicorn.access - INFO - 127.0.0.1:58592 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 05:27:46,433 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 17.02ms
+2026-08-19 05:27:46,434 - uvicorn.access - INFO - 127.0.0.1:57154 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:27:46,455 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 11.94ms
+2026-08-19 05:27:46,455 - uvicorn.access - INFO - 127.0.0.1:57170 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:29:47,598 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 0.72ms
+2026-08-19 05:29:47,601 - uvicorn.access - INFO - 127.0.0.1:37590 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:29:47,609 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 1.06ms
+2026-08-19 05:29:47,614 - uvicorn.access - INFO - 127.0.0.1:37596 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:29:47,668 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 46.33ms
+2026-08-19 05:29:47,669 - uvicorn.access - INFO - 127.0.0.1:37590 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:29:47,676 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 3.57ms
+2026-08-19 05:29:47,676 - uvicorn.access - INFO - 127.0.0.1:37596 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:29:47,706 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 4.04ms
+2026-08-19 05:29:47,707 - uvicorn.access - INFO - 127.0.0.1:37612 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:29:47,748 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 53.12ms
+2026-08-19 05:29:47,748 - uvicorn.access - INFO - 127.0.0.1:37600 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:29:47,786 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 82.71ms
+2026-08-19 05:29:47,786 - uvicorn.access - INFO - 127.0.0.1:37616 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:29:47,800 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 90.53ms
+2026-08-19 05:29:47,800 - uvicorn.access - INFO - 127.0.0.1:37620 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:29:47,844 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 33.79ms
+2026-08-19 05:29:47,850 - uvicorn.access - INFO - 127.0.0.1:37616 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:29:47,860 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 89.88ms
+2026-08-19 05:29:47,863 - uvicorn.access - INFO - 127.0.0.1:37612 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:30:04,041 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 3.70ms
+2026-08-19 05:30:04,041 - uvicorn.access - INFO - 127.0.0.1:44630 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:30:04,043 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 6.08ms
+2026-08-19 05:30:04,044 - uvicorn.access - INFO - 127.0.0.1:44642 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:30:04,082 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 27.25ms
+2026-08-19 05:30:04,083 - uvicorn.access - INFO - 127.0.0.1:44630 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:30:04,108 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 18.23ms
+2026-08-19 05:30:04,108 - uvicorn.access - INFO - 127.0.0.1:44642 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:36:29,162 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:36:29,263 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:36:29,263 - app - INFO - Shutting down application...
+2026-08-19 05:36:29,264 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:36:29,265 - uvicorn.error - INFO - Finished server process [49709]
+2026-08-19 05:36:30,739 - uvicorn.error - INFO - Started server process [51465]
+2026-08-19 05:36:30,739 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:36:30,740 - app - INFO - Starting up application...
+2026-08-19 05:36:30,758 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:36:39,480 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:36:39,580 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:36:39,581 - app - INFO - Shutting down application...
+2026-08-19 05:36:39,582 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:36:39,582 - uvicorn.error - INFO - Finished server process [51465]
+2026-08-19 05:36:40,983 - uvicorn.error - INFO - Started server process [51519]
+2026-08-19 05:36:40,983 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:36:40,984 - app - INFO - Starting up application...
+2026-08-19 05:36:41,003 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:36:49,224 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:36:49,324 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:36:49,325 - app - INFO - Shutting down application...
+2026-08-19 05:36:49,326 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:36:49,327 - uvicorn.error - INFO - Finished server process [51519]
+2026-08-19 05:36:50,491 - uvicorn.error - INFO - Started server process [51576]
+2026-08-19 05:36:50,492 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:36:50,492 - app - INFO - Starting up application...
+2026-08-19 05:36:50,511 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:37:06,353 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:37:06,454 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:37:06,454 - app - INFO - Shutting down application...
+2026-08-19 05:37:06,455 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:37:06,455 - uvicorn.error - INFO - Finished server process [51576]
+2026-08-19 05:37:08,002 - uvicorn.error - INFO - Started server process [51629]
+2026-08-19 05:37:08,002 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:37:08,002 - app - INFO - Starting up application...
+2026-08-19 05:37:08,090 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:37:24,033 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:37:24,134 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:37:24,135 - app - INFO - Shutting down application...
+2026-08-19 05:37:24,137 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:37:24,137 - uvicorn.error - INFO - Finished server process [51629]
+2026-08-19 05:37:25,449 - uvicorn.error - INFO - Started server process [51692]
+2026-08-19 05:37:25,449 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:37:25,450 - app - INFO - Starting up application...
+2026-08-19 05:37:25,469 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:37:40,707 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:37:40,809 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:37:40,809 - app - INFO - Shutting down application...
+2026-08-19 05:37:40,811 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:37:40,811 - uvicorn.error - INFO - Finished server process [51692]
+2026-08-19 05:37:42,321 - uvicorn.error - INFO - Started server process [51748]
+2026-08-19 05:37:42,321 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:37:42,321 - app - INFO - Starting up application...
+2026-08-19 05:37:42,342 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:38:05,692 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:38:05,793 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:38:05,793 - app - INFO - Shutting down application...
+2026-08-19 05:38:05,796 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:38:05,797 - uvicorn.error - INFO - Finished server process [51748]
+2026-08-19 05:38:07,359 - uvicorn.error - INFO - Started server process [51807]
+2026-08-19 05:38:07,359 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:38:07,360 - app - INFO - Starting up application...
+2026-08-19 05:38:07,380 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:38:22,116 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:38:22,217 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:38:22,217 - app - INFO - Shutting down application...
+2026-08-19 05:38:22,218 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:38:22,218 - uvicorn.error - INFO - Finished server process [51807]
+2026-08-19 05:38:23,893 - uvicorn.error - INFO - Started server process [51889]
+2026-08-19 05:38:23,894 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:38:23,894 - app - INFO - Starting up application...
+2026-08-19 05:38:23,928 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:38:39,566 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:38:39,667 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:38:39,668 - app - INFO - Shutting down application...
+2026-08-19 05:38:39,670 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:38:39,670 - uvicorn.error - INFO - Finished server process [51889]
+2026-08-19 05:38:41,586 - uvicorn.error - INFO - Started server process [51953]
+2026-08-19 05:38:41,587 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:38:41,587 - app - INFO - Starting up application...
+2026-08-19 05:38:41,611 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:38:58,452 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:38:58,552 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:38:58,553 - app - INFO - Shutting down application...
+2026-08-19 05:38:58,553 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:38:58,554 - uvicorn.error - INFO - Finished server process [51953]
+2026-08-19 05:38:59,945 - uvicorn.error - INFO - Started server process [52016]
+2026-08-19 05:38:59,946 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:38:59,947 - app - INFO - Starting up application...
+2026-08-19 05:38:59,974 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:39:13,806 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:39:13,907 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:39:13,907 - app - INFO - Shutting down application...
+2026-08-19 05:39:13,912 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:39:13,912 - uvicorn.error - INFO - Finished server process [52016]
+2026-08-19 05:39:15,109 - uvicorn.error - INFO - Started server process [52072]
+2026-08-19 05:39:15,109 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:39:15,110 - app - INFO - Starting up application...
+2026-08-19 05:39:15,129 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:39:23,249 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:39:23,350 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:39:23,350 - app - INFO - Shutting down application...
+2026-08-19 05:39:23,352 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:39:23,352 - uvicorn.error - INFO - Finished server process [52072]
+2026-08-19 05:39:25,093 - uvicorn.error - INFO - Started server process [52124]
+2026-08-19 05:39:25,094 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:39:25,094 - app - INFO - Starting up application...
+2026-08-19 05:39:25,113 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:39:42,056 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:39:42,157 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:39:42,158 - app - INFO - Shutting down application...
+2026-08-19 05:39:42,162 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:39:42,163 - uvicorn.error - INFO - Finished server process [52124]
+2026-08-19 05:39:43,662 - uvicorn.error - INFO - Started server process [52179]
+2026-08-19 05:39:43,664 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:39:43,665 - app - INFO - Starting up application...
+2026-08-19 05:39:43,764 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:39:54,689 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:39:54,790 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:39:54,790 - app - INFO - Shutting down application...
+2026-08-19 05:39:54,794 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:39:54,797 - uvicorn.error - INFO - Finished server process [52179]
+2026-08-19 05:39:56,362 - uvicorn.error - INFO - Started server process [52229]
+2026-08-19 05:39:56,362 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:39:56,362 - app - INFO - Starting up application...
+2026-08-19 05:39:56,388 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:40:06,318 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:40:06,418 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:40:06,418 - app - INFO - Shutting down application...
+2026-08-19 05:40:06,419 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:40:06,419 - uvicorn.error - INFO - Finished server process [52229]
+2026-08-19 05:40:07,748 - uvicorn.error - INFO - Started server process [52295]
+2026-08-19 05:40:07,748 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:40:07,748 - app - INFO - Starting up application...
+2026-08-19 05:40:07,768 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:40:18,506 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:40:18,606 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:40:18,607 - app - INFO - Shutting down application...
+2026-08-19 05:40:18,607 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:40:18,607 - uvicorn.error - INFO - Finished server process [52295]
+2026-08-19 05:40:20,028 - uvicorn.error - INFO - Started server process [52357]
+2026-08-19 05:40:20,029 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:40:20,029 - app - INFO - Starting up application...
+2026-08-19 05:40:20,052 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:40:32,280 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:40:32,384 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:40:32,385 - app - INFO - Shutting down application...
+2026-08-19 05:40:32,387 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:40:32,387 - uvicorn.error - INFO - Finished server process [52357]
+2026-08-19 05:40:33,793 - uvicorn.error - INFO - Started server process [52414]
+2026-08-19 05:40:33,793 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:40:33,794 - app - INFO - Starting up application...
+2026-08-19 05:40:33,820 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:41:11,027 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:41:11,128 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:41:11,128 - app - INFO - Shutting down application...
+2026-08-19 05:41:11,129 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:41:11,129 - uvicorn.error - INFO - Finished server process [52414]
+2026-08-19 05:41:12,666 - uvicorn.error - INFO - Started server process [52509]
+2026-08-19 05:41:12,666 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:41:12,666 - app - INFO - Starting up application...
+2026-08-19 05:41:12,690 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:41:29,638 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:41:29,739 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:41:29,739 - app - INFO - Shutting down application...
+2026-08-19 05:41:29,740 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:41:29,740 - uvicorn.error - INFO - Finished server process [52509]
+2026-08-19 05:41:31,308 - uvicorn.error - INFO - Started server process [52567]
+2026-08-19 05:41:31,309 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:41:31,309 - app - INFO - Starting up application...
+2026-08-19 05:41:31,336 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:42:08,020 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:42:08,121 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:42:08,121 - app - INFO - Shutting down application...
+2026-08-19 05:42:08,122 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:42:08,122 - uvicorn.error - INFO - Finished server process [52567]
+2026-08-19 05:42:09,806 - uvicorn.error - INFO - Started server process [52643]
+2026-08-19 05:42:09,807 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:42:09,807 - app - INFO - Starting up application...
+2026-08-19 05:42:09,834 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:42:17,552 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:42:17,653 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:42:17,653 - app - INFO - Shutting down application...
+2026-08-19 05:42:17,655 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:42:17,655 - uvicorn.error - INFO - Finished server process [52643]
+2026-08-19 05:42:18,747 - uvicorn.error - INFO - Started server process [52698]
+2026-08-19 05:42:18,747 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:42:18,747 - app - INFO - Starting up application...
+2026-08-19 05:42:18,765 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:42:45,534 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:42:45,636 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:42:45,636 - app - INFO - Shutting down application...
+2026-08-19 05:42:45,638 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:42:45,638 - uvicorn.error - INFO - Finished server process [52698]
+2026-08-19 05:42:47,348 - uvicorn.error - INFO - Started server process [52763]
+2026-08-19 05:42:47,348 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:42:47,349 - app - INFO - Starting up application...
+2026-08-19 05:42:47,368 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:42:56,690 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:42:56,791 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:42:56,792 - app - INFO - Shutting down application...
+2026-08-19 05:42:56,797 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:42:56,799 - uvicorn.error - INFO - Finished server process [52763]
+2026-08-19 05:42:58,356 - uvicorn.error - INFO - Started server process [52816]
+2026-08-19 05:42:58,356 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:42:58,357 - app - INFO - Starting up application...
+2026-08-19 05:42:58,374 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:43:15,217 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:43:15,318 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:43:15,319 - app - INFO - Shutting down application...
+2026-08-19 05:43:15,320 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:43:15,320 - uvicorn.error - INFO - Finished server process [52816]
+2026-08-19 05:43:16,980 - uvicorn.error - INFO - Started server process [52902]
+2026-08-19 05:43:16,981 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:43:16,981 - app - INFO - Starting up application...
+2026-08-19 05:43:17,009 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:43:40,063 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:43:40,163 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:43:40,164 - app - INFO - Shutting down application...
+2026-08-19 05:43:40,164 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:43:40,164 - uvicorn.error - INFO - Finished server process [52902]
+2026-08-19 05:43:41,959 - uvicorn.error - INFO - Started server process [52971]
+2026-08-19 05:43:41,960 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:43:41,960 - app - INFO - Starting up application...
+2026-08-19 05:43:41,992 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:43:50,314 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:43:50,415 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:43:50,415 - app - INFO - Shutting down application...
+2026-08-19 05:43:50,416 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:43:50,416 - uvicorn.error - INFO - Finished server process [52971]
+2026-08-19 05:43:51,839 - uvicorn.error - INFO - Started server process [53026]
+2026-08-19 05:43:51,840 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:43:51,840 - app - INFO - Starting up application...
+2026-08-19 05:43:51,873 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:44:27,268 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:44:27,368 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:44:27,369 - app - INFO - Shutting down application...
+2026-08-19 05:44:27,369 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:44:27,369 - uvicorn.error - INFO - Finished server process [53026]
+2026-08-19 05:44:28,536 - uvicorn.error - INFO - Started server process [53106]
+2026-08-19 05:44:28,536 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:44:28,536 - app - INFO - Starting up application...
+2026-08-19 05:44:28,558 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:46:04,883 - app - CRITICAL - Failed to start application: No module named 'aiosmtplib'
+2026-08-19 05:46:04,884 - app - CRITICAL - Traceback (most recent call last):
+  File "/home/hp/Projects/propsol-backend/app/main.py", line 19, in <module>
+    from app.api.v1.endpoints import auth, users, admin, payments, transactions, prop_firm, discounts, notification, support, crypto_payments, wallet, affiliate_admin, whop, prop_firm_plans, booking_links, banners, partnership
+  File "/home/hp/Projects/propsol-backend/app/api/v1/endpoints/admin.py", line 20, in <module>
+    from app.service.mail import send_email
+  File "/home/hp/Projects/propsol-backend/app/service/mail.py", line 28, in <module>
+    from aiosmtplib import SMTP
+ModuleNotFoundError: No module named 'aiosmtplib'
+
+2026-08-19 05:49:45,408 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 3.14ms
+2026-08-19 05:49:45,408 - uvicorn.access - INFO - 127.0.0.1:60746 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:45,409 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 2.71ms
+2026-08-19 05:49:45,409 - uvicorn.access - INFO - 127.0.0.1:60756 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:45,555 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 9.57ms
+2026-08-19 05:49:45,555 - uvicorn.access - INFO - 127.0.0.1:60756 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:49:45,556 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 10.06ms
+2026-08-19 05:49:45,556 - uvicorn.access - INFO - 127.0.0.1:60746 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:49:45,558 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 4.97ms
+2026-08-19 05:49:45,558 - uvicorn.access - INFO - 127.0.0.1:60778 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:49:45,558 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 5.64ms
+2026-08-19 05:49:45,559 - uvicorn.access - INFO - 127.0.0.1:60786 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:49:45,562 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 145.32ms
+2026-08-19 05:49:45,562 - uvicorn.access - INFO - 127.0.0.1:60762 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:45,649 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 65.19ms
+2026-08-19 05:49:45,649 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:45,675 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 88.11ms
+2026-08-19 05:49:45,675 - uvicorn.access - INFO - 127.0.0.1:60794 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:49:45,690 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 103.32ms
+2026-08-19 05:49:45,690 - uvicorn.access - INFO - 127.0.0.1:60746 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:49:45,693 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 11.40ms
+2026-08-19 05:49:45,693 - uvicorn.access - INFO - 127.0.0.1:60794 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:49:45,707 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 10.56ms
+2026-08-19 05:49:45,707 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:49:50,488 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 4.78ms
+2026-08-19 05:49:50,488 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:50,526 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 22.99ms
+2026-08-19 05:49:50,526 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:55,471 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 15.19ms
+2026-08-19 05:49:55,472 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:49:55,484 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 7.34ms
+2026-08-19 05:49:55,484 - uvicorn.access - INFO - 127.0.0.1:60786 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:50:01,407 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 2.29ms
+2026-08-19 05:50:01,407 - uvicorn.access - INFO - 127.0.0.1:44466 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 05:50:01,408 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 2.81ms
+2026-08-19 05:50:01,408 - uvicorn.access - INFO - 127.0.0.1:44476 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 05:50:01,408 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 3.17ms
+2026-08-19 05:50:01,408 - uvicorn.access - INFO - 127.0.0.1:44484 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 05:50:01,409 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 2.85ms
+2026-08-19 05:50:01,409 - uvicorn.access - INFO - 127.0.0.1:44498 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 05:50:01,412 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 10.25ms
+2026-08-19 05:50:01,412 - uvicorn.access - INFO - 127.0.0.1:44458 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:50:01,471 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 13.40ms
+2026-08-19 05:50:01,472 - uvicorn.access - INFO - 127.0.0.1:44466 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:01,472 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 14.11ms
+2026-08-19 05:50:01,472 - uvicorn.access - INFO - 127.0.0.1:44476 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:01,485 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 26.51ms
+2026-08-19 05:50:01,488 - uvicorn.access - INFO - 127.0.0.1:44512 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:01,521 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 63.09ms
+2026-08-19 05:50:01,524 - uvicorn.access - INFO - 127.0.0.1:44498 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:50:01,541 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 35.69ms
+2026-08-19 05:50:01,542 - uvicorn.access - INFO - 127.0.0.1:44512 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:01,544 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 38.41ms
+2026-08-19 05:50:01,552 - uvicorn.access - INFO - 127.0.0.1:44476 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:01,601 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 32.16ms
+2026-08-19 05:50:01,601 - uvicorn.access - INFO - 127.0.0.1:44476 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:01,630 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 73.15ms
+2026-08-19 05:50:01,630 - uvicorn.access - INFO - 127.0.0.1:44498 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:01,635 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 22.37ms
+2026-08-19 05:50:01,636 - uvicorn.access - INFO - 127.0.0.1:44476 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:01,652 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 145.72ms
+2026-08-19 05:50:01,654 - uvicorn.access - INFO - 127.0.0.1:44458 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:01,658 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 18.53ms
+2026-08-19 05:50:01,658 - uvicorn.access - INFO - 127.0.0.1:44512 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:01,677 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 4.79ms
+2026-08-19 05:50:01,677 - uvicorn.access - INFO - 127.0.0.1:44512 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:01,685 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 20.98ms
+2026-08-19 05:50:01,685 - uvicorn.access - INFO - 127.0.0.1:44458 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:01,694 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 10.45ms
+2026-08-19 05:50:01,694 - uvicorn.access - INFO - 127.0.0.1:44498 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:06,939 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 1.17ms
+2026-08-19 05:50:06,939 - uvicorn.access - INFO - 127.0.0.1:38706 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:06,954 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 7.71ms
+2026-08-19 05:50:06,956 - uvicorn.access - INFO - 127.0.0.1:38706 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 05:50:06,973 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 26.84ms
+2026-08-19 05:50:06,973 - uvicorn.access - INFO - 127.0.0.1:38714 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:06,991 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 15.59ms
+2026-08-19 05:50:06,991 - uvicorn.access - INFO - 127.0.0.1:38706 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:07,027 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 41.72ms
+2026-08-19 05:50:07,027 - uvicorn.access - INFO - 127.0.0.1:38720 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:07,254 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 3.89ms
+2026-08-19 05:50:07,254 - uvicorn.access - INFO - 127.0.0.1:38720 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 05:50:09,243 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 28.76ms
+2026-08-19 05:50:09,245 - uvicorn.access - INFO - 127.0.0.1:38720 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:11,236 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 7.86ms
+2026-08-19 05:50:11,236 - uvicorn.access - INFO - 127.0.0.1:38720 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:12,652 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 8.99ms
+2026-08-19 05:50:12,653 - uvicorn.access - INFO - 127.0.0.1:38720 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:20,823 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 41.00ms
+2026-08-19 05:50:20,824 - uvicorn.access - INFO - 127.0.0.1:51222 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:20,855 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 4.89ms
+2026-08-19 05:50:20,856 - uvicorn.access - INFO - 127.0.0.1:51234 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:50:20,999 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 161.27ms
+2026-08-19 05:50:21,000 - uvicorn.access - INFO - 127.0.0.1:51222 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:50:21,010 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 118.19ms
+2026-08-19 05:50:21,010 - uvicorn.access - INFO - 127.0.0.1:51246 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:50:21,100 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 42.29ms
+2026-08-19 05:50:21,101 - uvicorn.access - INFO - 127.0.0.1:51222 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:50:39,208 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 15.49ms
+2026-08-19 05:50:39,208 - uvicorn.access - INFO - 127.0.0.1:49602 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:50:39,222 - app - INFO - Request: OPTIONS /api/v1/partnership/register - Status: 200 - Duration: 0.68ms
+2026-08-19 05:50:39,222 - uvicorn.access - INFO - 127.0.0.1:49602 - "OPTIONS /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 05:50:39,265 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 39.85ms
+2026-08-19 05:50:39,265 - uvicorn.access - INFO - 127.0.0.1:49612 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 05:50:39,273 - app - INFO - Request: OPTIONS /api/v1/whop/checkout-link - Status: 200 - Duration: 0.67ms
+2026-08-19 05:50:39,274 - uvicorn.access - INFO - 127.0.0.1:49612 - "OPTIONS /api/v1/whop/checkout-link HTTP/1.1" 200
+2026-08-19 05:50:39,333 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:50:39,336 - app - INFO - Creating payment link for 53dd4ced-efce-4f0f-9e28-b3642e821ee7 - 493.05 usd
+2026-08-19 05:50:39,429 - app - INFO - Fetching products for company: None
+2026-08-19 05:50:40,334 - app - ERROR - Error fetching products: 401 - {"error":{"type":"unauthorized","message":"Authentication failed"}}
+2026-08-19 05:50:40,335 - app - ERROR - Error creating Whop payment link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:50:40,335 - app - ERROR - Error creating Whop checkout link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:50:40,338 - app - INFO - Request: POST /api/v1/whop/checkout-link - Status: 500 - Duration: 1060.15ms
+2026-08-19 05:50:40,338 - uvicorn.access - INFO - 127.0.0.1:49602 - "POST /api/v1/whop/checkout-link HTTP/1.1" 500
+2026-08-19 05:51:00,005 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 20.35ms
+2026-08-19 05:51:00,006 - uvicorn.access - INFO - 127.0.0.1:33242 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:51:00,120 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 84.49ms
+2026-08-19 05:51:00,120 - uvicorn.access - INFO - 127.0.0.1:33242 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 05:51:00,202 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:51:00,202 - app - INFO - Creating payment link for 94a58b7d-e563-46d0-ae9a-737c890cc673 - 493.05 usd
+2026-08-19 05:51:00,238 - app - INFO - Fetching products for company: None
+2026-08-19 05:51:00,919 - app - ERROR - Error fetching products: 401 - {"error":{"type":"unauthorized","message":"Authentication failed"}}
+2026-08-19 05:51:00,920 - app - ERROR - Error creating Whop payment link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:51:00,920 - app - ERROR - Error creating Whop checkout link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:51:00,930 - app - INFO - Request: POST /api/v1/whop/checkout-link - Status: 500 - Duration: 761.32ms
+2026-08-19 05:51:00,936 - uvicorn.access - INFO - 127.0.0.1:33242 - "POST /api/v1/whop/checkout-link HTTP/1.1" 500
+2026-08-19 05:51:15,645 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 17.35ms
+2026-08-19 05:51:15,645 - uvicorn.access - INFO - 127.0.0.1:36140 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 05:51:15,716 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 58.66ms
+2026-08-19 05:51:15,716 - uvicorn.access - INFO - 127.0.0.1:36140 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 05:51:15,784 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:51:15,784 - app - INFO - Creating payment link for 3c7ba04b-c01b-423a-bc27-25f00815e607 - 493.05 usd
+2026-08-19 05:51:15,805 - app - INFO - Fetching products for company: None
+2026-08-19 05:51:16,583 - app - ERROR - Error fetching products: 401 - {"error":{"type":"unauthorized","message":"Authentication failed"}}
+2026-08-19 05:51:16,584 - app - ERROR - Error creating Whop payment link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:51:16,584 - app - ERROR - Error creating Whop checkout link: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/products?company_id=None'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 05:51:16,585 - app - INFO - Request: POST /api/v1/whop/checkout-link - Status: 500 - Duration: 821.88ms
+2026-08-19 05:51:16,585 - uvicorn.access - INFO - 127.0.0.1:36140 - "POST /api/v1/whop/checkout-link HTTP/1.1" 500
+2026-08-19 05:52:58,595 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 17.27ms
+2026-08-19 05:52:58,595 - uvicorn.access - INFO - 127.0.0.1:53134 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:52:58,613 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 3.79ms
+2026-08-19 05:52:58,613 - uvicorn.access - INFO - 127.0.0.1:53134 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:52:59,882 - app - INFO - Request: OPTIONS /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 3.96ms
+2026-08-19 05:52:59,883 - uvicorn.access - INFO - 127.0.0.1:53134 - "OPTIONS /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:53:00,344 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 455.84ms
+2026-08-19 05:53:00,345 - uvicorn.access - INFO - 127.0.0.1:53136 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 05:53:00,355 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 4.89ms
+2026-08-19 05:53:00,355 - uvicorn.access - INFO - 127.0.0.1:53136 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:53:01,964 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 1.07ms
+2026-08-19 05:53:01,964 - uvicorn.access - INFO - 127.0.0.1:53134 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:53:01,966 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 0.72ms
+2026-08-19 05:53:01,966 - uvicorn.access - INFO - 127.0.0.1:56248 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:53:01,971 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 14.10ms
+2026-08-19 05:53:01,971 - uvicorn.access - INFO - 127.0.0.1:53136 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:53:01,996 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 3.45ms
+2026-08-19 05:53:01,996 - uvicorn.access - INFO - 127.0.0.1:53134 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:53:02,031 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 8.87ms
+2026-08-19 05:53:02,032 - uvicorn.access - INFO - 127.0.0.1:53136 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:53:02,034 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 11.41ms
+2026-08-19 05:53:02,037 - uvicorn.access - INFO - 127.0.0.1:56262 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:53:02,106 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 105.53ms
+2026-08-19 05:53:02,108 - uvicorn.access - INFO - 127.0.0.1:56248 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:53:02,114 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 35.57ms
+2026-08-19 05:53:02,115 - uvicorn.access - INFO - 127.0.0.1:53134 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:53:02,180 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 157.24ms
+2026-08-19 05:53:02,181 - uvicorn.access - INFO - 127.0.0.1:56274 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:53:02,213 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 123.19ms
+2026-08-19 05:53:02,213 - uvicorn.access - INFO - 127.0.0.1:53136 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:53:02,224 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 145.99ms
+2026-08-19 05:53:02,224 - uvicorn.access - INFO - 127.0.0.1:56262 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:53:02,244 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 14.69ms
+2026-08-19 05:53:02,245 - uvicorn.access - INFO - 127.0.0.1:56248 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:53:02,256 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 54.28ms
+2026-08-19 05:53:02,256 - uvicorn.access - INFO - 127.0.0.1:53134 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:53:02,261 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 43.05ms
+2026-08-19 05:53:02,261 - uvicorn.access - INFO - 127.0.0.1:56274 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:53:02,281 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 280.07ms
+2026-08-19 05:53:02,281 - uvicorn.access - INFO - 127.0.0.1:56260 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:53:02,372 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 73.38ms
+2026-08-19 05:53:02,372 - uvicorn.access - INFO - 127.0.0.1:56248 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:53:11,167 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 30.51ms
+2026-08-19 05:53:11,173 - uvicorn.access - INFO - 127.0.0.1:56286 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:11,194 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 14.49ms
+2026-08-19 05:53:11,197 - uvicorn.access - INFO - 127.0.0.1:56286 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:16,393 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 16.35ms
+2026-08-19 05:53:16,394 - uvicorn.access - INFO - 127.0.0.1:47140 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:53:16,396 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 18.86ms
+2026-08-19 05:53:16,398 - uvicorn.access - INFO - 127.0.0.1:47158 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:53:16,427 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 50.07ms
+2026-08-19 05:53:16,428 - uvicorn.access - INFO - 127.0.0.1:47156 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:53:16,481 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 66.38ms
+2026-08-19 05:53:16,481 - uvicorn.access - INFO - 127.0.0.1:47140 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:53:16,525 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 60.34ms
+2026-08-19 05:53:16,526 - uvicorn.access - INFO - 127.0.0.1:47156 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 05:53:16,556 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 72.22ms
+2026-08-19 05:53:16,556 - uvicorn.access - INFO - 127.0.0.1:47158 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 05:53:19,081 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 10.47ms
+2026-08-19 05:53:19,082 - uvicorn.access - INFO - 127.0.0.1:47156 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:19,125 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 31.30ms
+2026-08-19 05:53:19,128 - uvicorn.access - INFO - 127.0.0.1:47156 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:28,183 - app - INFO - Request: OPTIONS /api/v1/admin/transactions - Status: 200 - Duration: 3.07ms
+2026-08-19 05:53:28,183 - uvicorn.access - INFO - 127.0.0.1:47164 - "OPTIONS /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:53:28,204 - app - INFO - Request: OPTIONS /api/v1/admin/transactions - Status: 200 - Duration: 5.48ms
+2026-08-19 05:53:28,204 - uvicorn.access - INFO - 127.0.0.1:55022 - "OPTIONS /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:53:28,225 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 22.85ms
+2026-08-19 05:53:28,225 - uvicorn.access - INFO - 127.0.0.1:55028 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:53:28,260 - app - INFO - Request: GET /api/v1/admin/transactions - Status: 200 - Duration: 28.01ms
+2026-08-19 05:53:28,262 - uvicorn.access - INFO - 127.0.0.1:55028 - "GET /api/v1/admin/transactions HTTP/1.1" 200
+2026-08-19 05:53:32,573 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:53:32,675 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:53:32,675 - app - INFO - Shutting down application...
+2026-08-19 05:53:32,685 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:53:32,685 - uvicorn.error - INFO - Finished server process [53106]
+2026-08-19 05:53:35,142 - uvicorn.error - INFO - Started server process [54960]
+2026-08-19 05:53:35,142 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:53:35,143 - app - INFO - Starting up application...
+2026-08-19 05:53:35,163 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:53:36,163 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 104.26ms
+2026-08-19 05:53:36,168 - uvicorn.access - INFO - 127.0.0.1:55982 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:36,197 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 20.67ms
+2026-08-19 05:53:36,197 - uvicorn.access - INFO - 127.0.0.1:55982 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:53:38,957 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:53:39,058 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:53:39,058 - app - INFO - Shutting down application...
+2026-08-19 05:53:39,061 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:53:39,061 - uvicorn.error - INFO - Finished server process [54960]
+2026-08-19 05:53:40,907 - uvicorn.error - INFO - Started server process [55036]
+2026-08-19 05:53:40,907 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:53:40,907 - app - INFO - Starting up application...
+2026-08-19 05:53:40,936 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:57:29,578 - uvicorn.error - INFO - Shutting down
+2026-08-19 05:57:29,678 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 05:57:29,678 - app - INFO - Shutting down application...
+2026-08-19 05:57:29,679 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 05:57:29,679 - uvicorn.error - INFO - Finished server process [55036]
+2026-08-19 05:57:31,654 - uvicorn.error - INFO - Started server process [55325]
+2026-08-19 05:57:31,656 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 05:57:31,658 - app - INFO - Starting up application...
+2026-08-19 05:57:31,680 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 05:57:31,868 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 180.07ms
+2026-08-19 05:57:31,868 - uvicorn.access - INFO - 127.0.0.1:50036 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:57:31,878 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 189.43ms
+2026-08-19 05:57:31,878 - uvicorn.access - INFO - 127.0.0.1:50050 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:57:31,895 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 207.26ms
+2026-08-19 05:57:31,896 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:57:31,916 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 34.87ms
+2026-08-19 05:57:31,916 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:57:31,922 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 40.68ms
+2026-08-19 05:57:31,927 - uvicorn.access - INFO - 127.0.0.1:50036 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:57:31,954 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 266.58ms
+2026-08-19 05:57:31,955 - uvicorn.access - INFO - 127.0.0.1:50022 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:57:31,962 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 58.91ms
+2026-08-19 05:57:31,964 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:57:32,031 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 63.09ms
+2026-08-19 05:57:32,032 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:57:35,696 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 35.26ms
+2026-08-19 05:57:35,699 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:57:35,734 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 18.27ms
+2026-08-19 05:57:35,735 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:57:36,239 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 161.44ms
+2026-08-19 05:57:36,244 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:57:36,363 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 224.80ms
+2026-08-19 05:57:36,365 - uvicorn.access - INFO - 127.0.0.1:50022 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:57:36,426 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 136.84ms
+2026-08-19 05:57:36,429 - uvicorn.access - INFO - 127.0.0.1:60780 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:57:36,477 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 338.30ms
+2026-08-19 05:57:36,478 - uvicorn.access - INFO - 127.0.0.1:50050 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:57:36,491 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 352.43ms
+2026-08-19 05:57:36,492 - uvicorn.access - INFO - 127.0.0.1:50036 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:57:36,578 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 195.19ms
+2026-08-19 05:57:36,579 - uvicorn.access - INFO - 127.0.0.1:60778 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 05:57:36,654 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 156.59ms
+2026-08-19 05:57:36,654 - uvicorn.access - INFO - 127.0.0.1:60780 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 05:57:36,705 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 175.22ms
+2026-08-19 05:57:36,706 - uvicorn.access - INFO - 127.0.0.1:50022 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 05:57:36,743 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 605.08ms
+2026-08-19 05:57:36,743 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:57:36,826 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 64.05ms
+2026-08-19 05:57:36,826 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 05:57:39,856 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 120.57ms
+2026-08-19 05:57:39,859 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:57:39,895 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 26.42ms
+2026-08-19 05:57:39,896 - uvicorn.access - INFO - 127.0.0.1:50032 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:57:45,428 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 21.34ms
+2026-08-19 05:57:45,428 - uvicorn.access - INFO - 127.0.0.1:58274 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:57:45,459 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 18.17ms
+2026-08-19 05:57:45,459 - uvicorn.access - INFO - 127.0.0.1:58274 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 05:57:45,603 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 40.75ms
+2026-08-19 05:57:45,603 - uvicorn.access - INFO - 127.0.0.1:58274 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:57:45,644 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 31.74ms
+2026-08-19 05:57:45,644 - uvicorn.access - INFO - 127.0.0.1:58274 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 05:57:45,684 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 118.89ms
+2026-08-19 05:57:45,691 - uvicorn.access - INFO - 127.0.0.1:58290 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:57:45,897 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 183.81ms
+2026-08-19 05:57:45,897 - uvicorn.access - INFO - 127.0.0.1:58274 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:58:02,607 - app - INFO - Request: OPTIONS /api/v1/admin/payments/diagnose - Status: 200 - Duration: 0.67ms
+2026-08-19 05:58:02,607 - uvicorn.access - INFO - 127.0.0.1:38490 - "OPTIONS /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 05:58:02,622 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:58:02,626 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 11.13ms
+2026-08-19 05:58:02,627 - uvicorn.access - INFO - 127.0.0.1:38492 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 05:58:02,677 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 36.18ms
+2026-08-19 05:58:02,677 - uvicorn.access - INFO - 127.0.0.1:38492 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:58:04,030 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:58:04,033 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 9.24ms
+2026-08-19 05:58:04,033 - uvicorn.access - INFO - 127.0.0.1:38492 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 05:58:04,073 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 29.74ms
+2026-08-19 05:58:04,074 - uvicorn.access - INFO - 127.0.0.1:38492 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 05:58:07,747 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 05:58:07,753 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 11.82ms
+2026-08-19 05:58:07,753 - uvicorn.access - INFO - 127.0.0.1:38492 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 05:58:07,790 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 29.92ms
+2026-08-19 05:58:07,790 - uvicorn.access - INFO - 127.0.0.1:38492 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:00:41,102 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:00:41,203 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:00:41,203 - app - INFO - Shutting down application...
+2026-08-19 06:00:41,205 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:00:41,205 - uvicorn.error - INFO - Finished server process [55325]
+2026-08-19 06:00:42,893 - uvicorn.error - INFO - Started server process [56103]
+2026-08-19 06:00:42,893 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:00:42,893 - app - INFO - Starting up application...
+2026-08-19 06:00:42,914 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:00:52,185 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 3.57ms
+2026-08-19 06:00:52,191 - uvicorn.access - INFO - 127.0.0.1:58838 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:00:52,195 - app - INFO - Request: OPTIONS /api/v1/admin/payments - Status: 200 - Duration: 11.60ms
+2026-08-19 06:00:52,195 - uvicorn.access - INFO - 127.0.0.1:58846 - "OPTIONS /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:00:52,454 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 248.93ms
+2026-08-19 06:00:52,454 - uvicorn.access - INFO - 127.0.0.1:58850 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:00:52,494 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 35.37ms
+2026-08-19 06:00:52,494 - uvicorn.access - INFO - 127.0.0.1:58850 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:02:22,735 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 06:02:23,586 - app - ERROR - Error finding Whop payment: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/payments?page=1&per_page=50&company_id='
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 06:02:24,254 - app - ERROR - Error finding Whop payment by email: Client error '401 Unauthorized' for url 'https://api.whop.com/api/v1/payments?page=1&per_page=50&company_id='
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2026-08-19 06:02:24,255 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 1527.49ms
+2026-08-19 06:02:24,255 - uvicorn.access - INFO - 127.0.0.1:55206 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:02:24,280 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 15.36ms
+2026-08-19 06:02:24,280 - uvicorn.access - INFO - 127.0.0.1:55206 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:02:42,992 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 801.59ms
+2026-08-19 06:02:42,992 - uvicorn.access - INFO - 127.0.0.1:46872 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:02:43,017 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 17.55ms
+2026-08-19 06:02:43,018 - uvicorn.access - INFO - 127.0.0.1:46872 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:03:02,310 - app - INFO - Request: OPTIONS /api/v1/notifications/admin/notifications - Status: 200 - Duration: 4.94ms
+2026-08-19 06:03:02,313 - uvicorn.access - INFO - 127.0.0.1:35892 - "OPTIONS /api/v1/notifications/admin/notifications HTTP/1.1" 200
+2026-08-19 06:03:02,317 - app - INFO - Request: OPTIONS /api/v1/notifications/admin/notifications - Status: 200 - Duration: 8.22ms
+2026-08-19 06:03:02,323 - uvicorn.access - INFO - 127.0.0.1:35906 - "OPTIONS /api/v1/notifications/admin/notifications HTTP/1.1" 200
+2026-08-19 06:03:02,409 - app - INFO - Request: GET /api/v1/notifications/admin/notifications - Status: 200 - Duration: 57.78ms
+2026-08-19 06:03:02,409 - uvicorn.access - INFO - 127.0.0.1:35910 - "GET /api/v1/notifications/admin/notifications HTTP/1.1" 200
+2026-08-19 06:03:02,470 - app - INFO - Request: GET /api/v1/notifications/admin/notifications - Status: 200 - Duration: 46.61ms
+2026-08-19 06:03:02,472 - uvicorn.access - INFO - 127.0.0.1:35910 - "GET /api/v1/notifications/admin/notifications HTTP/1.1" 200
+2026-08-19 06:04:01,845 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 1.56ms
+2026-08-19 06:04:01,846 - uvicorn.access - INFO - 127.0.0.1:43610 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 06:04:01,855 - app - INFO - Request: OPTIONS /api/v1/partnership/admin/all - Status: 200 - Duration: 9.73ms
+2026-08-19 06:04:01,855 - uvicorn.access - INFO - 127.0.0.1:43624 - "OPTIONS /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 06:04:01,904 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 46.17ms
+2026-08-19 06:04:01,908 - uvicorn.access - INFO - 127.0.0.1:43626 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 06:04:01,949 - app - INFO - Request: GET /api/v1/partnership/admin/all - Status: 200 - Duration: 32.57ms
+2026-08-19 06:04:01,949 - uvicorn.access - INFO - 127.0.0.1:43624 - "GET /api/v1/partnership/admin/all HTTP/1.1" 200
+2026-08-19 06:04:09,728 - app - INFO - Request: OPTIONS /api/v1/banners/active - Status: 200 - Duration: 0.88ms
+2026-08-19 06:04:09,729 - uvicorn.access - INFO - 127.0.0.1:43632 - "OPTIONS /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:04:09,763 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 19.00ms
+2026-08-19 06:04:09,765 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:04:09,782 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 11.30ms
+2026-08-19 06:04:09,783 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:04:09,875 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 1.06ms
+2026-08-19 06:04:09,875 - uvicorn.access - INFO - 127.0.0.1:43636 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:04:09,876 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 1.55ms
+2026-08-19 06:04:09,876 - uvicorn.access - INFO - 127.0.0.1:43632 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 06:04:09,900 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 4.32ms
+2026-08-19 06:04:09,900 - uvicorn.access - INFO - 127.0.0.1:43646 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:09,904 - app - INFO - Request: OPTIONS /api/v1/admin/me - Status: 200 - Duration: 8.00ms
+2026-08-19 06:04:09,905 - uvicorn.access - INFO - 127.0.0.1:43648 - "OPTIONS /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:04:09,909 - app - INFO - Request: OPTIONS /api/v1/plans - Status: 200 - Duration: 12.63ms
+2026-08-19 06:04:09,911 - uvicorn.access - INFO - 127.0.0.1:43654 - "OPTIONS /api/v1/plans HTTP/1.1" 200
+2026-08-19 06:04:09,933 - app - INFO - Request: OPTIONS /api/v1/partnership-plans - Status: 200 - Duration: 30.18ms
+2026-08-19 06:04:09,934 - uvicorn.access - INFO - 127.0.0.1:43658 - "OPTIONS /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:09,952 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 50.05ms
+2026-08-19 06:04:09,953 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:04:09,975 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 14.42ms
+2026-08-19 06:04:09,975 - uvicorn.access - INFO - 127.0.0.1:43658 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:04:09,979 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 76.84ms
+2026-08-19 06:04:09,979 - uvicorn.access - INFO - 127.0.0.1:43632 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 06:04:09,999 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 61.75ms
+2026-08-19 06:04:10,001 - uvicorn.access - INFO - 127.0.0.1:43646 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:10,053 - app - INFO - Request: GET /api/v1/plans - Status: 200 - Duration: 65.08ms
+2026-08-19 06:04:10,053 - uvicorn.access - INFO - 127.0.0.1:43654 - "GET /api/v1/plans HTTP/1.1" 200
+2026-08-19 06:04:10,085 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 76.23ms
+2026-08-19 06:04:10,090 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:14,614 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 0.64ms
+2026-08-19 06:04:14,614 - uvicorn.access - INFO - 127.0.0.1:43636 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:04:14,617 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 0.67ms
+2026-08-19 06:04:14,617 - uvicorn.access - INFO - 127.0.0.1:43654 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:04:14,628 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 0.62ms
+2026-08-19 06:04:14,631 - uvicorn.access - INFO - 127.0.0.1:43646 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:04:14,689 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 21.29ms
+2026-08-19 06:04:14,698 - uvicorn.access - INFO - 127.0.0.1:43632 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:04:14,698 - app - INFO - Request: OPTIONS /api/v1/admin/stats - Status: 200 - Duration: 30.22ms
+2026-08-19 06:04:14,698 - uvicorn.access - INFO - 127.0.0.1:43658 - "OPTIONS /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:04:14,714 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 36.99ms
+2026-08-19 06:04:14,717 - uvicorn.access - INFO - 127.0.0.1:43648 - "OPTIONS /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:04:14,722 - app - INFO - Request: OPTIONS /api/v1/admin/affiliates/top - Status: 200 - Duration: 15.76ms
+2026-08-19 06:04:14,722 - uvicorn.access - INFO - 127.0.0.1:43636 - "OPTIONS /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:04:14,722 - app - INFO - Request: OPTIONS /api/v1/admin/prop-firms - Status: 200 - Duration: 16.55ms
+2026-08-19 06:04:14,723 - uvicorn.access - INFO - 127.0.0.1:43654 - "OPTIONS /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:04:14,749 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 27.83ms
+2026-08-19 06:04:14,749 - uvicorn.access - INFO - 127.0.0.1:43632 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:04:14,757 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 35.64ms
+2026-08-19 06:04:14,757 - uvicorn.access - INFO - 127.0.0.1:43658 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:04:14,774 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 68.01ms
+2026-08-19 06:04:14,774 - uvicorn.access - INFO - 127.0.0.1:43646 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:04:14,826 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 41.74ms
+2026-08-19 06:04:14,827 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:04:14,836 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 60.72ms
+2026-08-19 06:04:14,837 - uvicorn.access - INFO - 127.0.0.1:43648 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:04:14,860 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 84.60ms
+2026-08-19 06:04:14,860 - uvicorn.access - INFO - 127.0.0.1:43654 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:04:14,885 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 41.63ms
+2026-08-19 06:04:14,886 - uvicorn.access - INFO - 127.0.0.1:43636 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:04:14,897 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 112.14ms
+2026-08-19 06:04:14,897 - uvicorn.access - INFO - 127.0.0.1:43646 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:04:23,971 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 13.47ms
+2026-08-19 06:04:23,971 - uvicorn.access - INFO - 127.0.0.1:41146 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:04:23,997 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 18.67ms
+2026-08-19 06:04:23,997 - uvicorn.access - INFO - 127.0.0.1:41146 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:04:38,183 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 62.78ms
+2026-08-19 06:04:38,185 - uvicorn.access - INFO - 127.0.0.1:43764 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 06:04:38,195 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 74.38ms
+2026-08-19 06:04:38,195 - uvicorn.access - INFO - 127.0.0.1:43778 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 06:04:38,200 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 79.29ms
+2026-08-19 06:04:38,204 - uvicorn.access - INFO - 127.0.0.1:43792 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 06:04:38,209 - app - INFO - Request: OPTIONS /api/v1/booking-links/ - Status: 200 - Duration: 85.07ms
+2026-08-19 06:04:38,213 - uvicorn.access - INFO - 127.0.0.1:43808 - "OPTIONS /api/v1/booking-links/ HTTP/1.1" 200
+2026-08-19 06:04:38,297 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 177.04ms
+2026-08-19 06:04:38,300 - uvicorn.access - INFO - 127.0.0.1:43750 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:04:38,312 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 45.57ms
+2026-08-19 06:04:38,312 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:38,352 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 17.58ms
+2026-08-19 06:04:38,352 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:38,365 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 145.82ms
+2026-08-19 06:04:38,366 - uvicorn.access - INFO - 127.0.0.1:43820 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:38,368 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 42.06ms
+2026-08-19 06:04:38,368 - uvicorn.access - INFO - 127.0.0.1:43808 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:04:38,406 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 24.35ms
+2026-08-19 06:04:38,406 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:38,424 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 10.05ms
+2026-08-19 06:04:38,424 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:38,437 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 44.48ms
+2026-08-19 06:04:38,437 - uvicorn.access - INFO - 127.0.0.1:43808 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:38,974 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 8.15ms
+2026-08-19 06:04:38,975 - uvicorn.access - INFO - 127.0.0.1:43808 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:38,976 - app - INFO - Request: OPTIONS /api/v1/booking-links - Status: 200 - Duration: 4.75ms
+2026-08-19 06:04:38,977 - uvicorn.access - INFO - 127.0.0.1:43764 - "OPTIONS /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:39,032 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 34.66ms
+2026-08-19 06:04:39,033 - uvicorn.access - INFO - 127.0.0.1:43820 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:39,094 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 47.50ms
+2026-08-19 06:04:39,095 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:39,126 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 16.10ms
+2026-08-19 06:04:39,126 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:39,143 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 8.42ms
+2026-08-19 06:04:39,143 - uvicorn.access - INFO - 127.0.0.1:43820 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:42,647 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 16.64ms
+2026-08-19 06:04:42,650 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:42,682 - app - INFO - Request: GET /api/v1/booking-links/ - Status: 307 - Duration: 21.17ms
+2026-08-19 06:04:42,685 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links/ HTTP/1.1" 307
+2026-08-19 06:04:42,760 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 58.26ms
+2026-08-19 06:04:42,762 - uvicorn.access - INFO - 127.0.0.1:43808 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:42,768 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 134.09ms
+2026-08-19 06:04:42,773 - uvicorn.access - INFO - 127.0.0.1:43820 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:42,860 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 63.11ms
+2026-08-19 06:04:42,865 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:43,000 - app - INFO - Request: GET /api/v1/booking-links - Status: 200 - Duration: 10.04ms
+2026-08-19 06:04:43,000 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/booking-links HTTP/1.1" 200
+2026-08-19 06:04:45,299 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 62.86ms
+2026-08-19 06:04:45,302 - uvicorn.access - INFO - 127.0.0.1:43764 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:57,564 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 55.71ms
+2026-08-19 06:04:57,569 - uvicorn.access - INFO - 127.0.0.1:39208 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:57,615 - app - INFO - Request: GET /api/v1/partnership-plans - Status: 200 - Duration: 32.28ms
+2026-08-19 06:04:57,617 - uvicorn.access - INFO - 127.0.0.1:39210 - "GET /api/v1/partnership-plans HTTP/1.1" 200
+2026-08-19 06:04:57,639 - app - INFO - Request: OPTIONS /api/v1/users/me - Status: 200 - Duration: 3.38ms
+2026-08-19 06:04:57,643 - uvicorn.access - INFO - 127.0.0.1:39210 - "OPTIONS /api/v1/users/me HTTP/1.1" 200
+2026-08-19 06:04:57,781 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 115.40ms
+2026-08-19 06:04:57,781 - uvicorn.access - INFO - 127.0.0.1:39208 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 06:04:57,834 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 33.14ms
+2026-08-19 06:04:57,834 - uvicorn.access - INFO - 127.0.0.1:39208 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 06:05:07,682 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 24.54ms
+2026-08-19 06:05:07,682 - uvicorn.access - INFO - 127.0.0.1:51728 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 06:05:07,711 - app - INFO - Request: OPTIONS /api/v1/partnership/register - Status: 200 - Duration: 7.40ms
+2026-08-19 06:05:07,713 - uvicorn.access - INFO - 127.0.0.1:51728 - "OPTIONS /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 06:05:07,844 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 114.66ms
+2026-08-19 06:05:07,845 - uvicorn.access - INFO - 127.0.0.1:51736 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 06:05:07,866 - app - INFO - Request: OPTIONS /api/v1/whop/checkout-link - Status: 200 - Duration: 0.68ms
+2026-08-19 06:05:07,866 - uvicorn.access - INFO - 127.0.0.1:51736 - "OPTIONS /api/v1/whop/checkout-link HTTP/1.1" 200
+2026-08-19 06:05:07,915 - app - INFO - Initializing WhopService with API Key: None and Biz ID: None
+2026-08-19 06:05:07,915 - app - INFO - Creating payment link for 8abdd7bb-9846-423e-b0bc-d1ffab8881d2 - 303.05 usd
+2026-08-19 06:05:07,916 - app - ERROR - Whop configuration/validation error: Whop integration is not configured. Please set WHOP_API_KEY and WHOP_BIZ_ID in the backend .env file.
+2026-08-19 06:05:07,917 - app - INFO - Request: POST /api/v1/whop/checkout-link - Status: 400 - Duration: 41.02ms
+2026-08-19 06:05:07,917 - uvicorn.access - INFO - 127.0.0.1:51728 - "POST /api/v1/whop/checkout-link HTTP/1.1" 400
+2026-08-19 06:05:16,672 - app - INFO - Request: GET /api/v1/users/me - Status: 200 - Duration: 61.03ms
+2026-08-19 06:05:16,673 - uvicorn.access - INFO - 127.0.0.1:55330 - "GET /api/v1/users/me HTTP/1.1" 200
+2026-08-19 06:05:16,771 - app - INFO - Request: POST /api/v1/partnership/register - Status: 200 - Duration: 87.34ms
+2026-08-19 06:05:16,771 - uvicorn.access - INFO - 127.0.0.1:55330 - "POST /api/v1/partnership/register HTTP/1.1" 200
+2026-08-19 06:05:16,823 - app - INFO - Request: OPTIONS /api/v1/crypto-payments/invoice - Status: 200 - Duration: 0.66ms
+2026-08-19 06:05:16,824 - uvicorn.access - INFO - 127.0.0.1:55330 - "OPTIONS /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 06:05:17,510 - app - INFO - Request: POST /api/v1/crypto-payments/invoice - Status: 200 - Duration: 680.50ms
+2026-08-19 06:05:17,511 - uvicorn.access - INFO - 127.0.0.1:55334 - "POST /api/v1/crypto-payments/invoice HTTP/1.1" 200
+2026-08-19 06:05:50,469 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 18.33ms
+2026-08-19 06:05:50,470 - uvicorn.access - INFO - 127.0.0.1:37372 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:05:50,486 - app - INFO - Request: GET /api/v1/banners/active - Status: 200 - Duration: 9.05ms
+2026-08-19 06:05:50,487 - uvicorn.access - INFO - 127.0.0.1:37372 - "GET /api/v1/banners/active HTTP/1.1" 200
+2026-08-19 06:05:51,783 - app - INFO - Request: OPTIONS /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 5.20ms
+2026-08-19 06:05:51,784 - uvicorn.access - INFO - 127.0.0.1:37372 - "OPTIONS /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 06:05:52,283 - app - INFO - Request: POST /api/v1/auth/login/admin/access-token - Status: 200 - Duration: 484.97ms
+2026-08-19 06:05:52,283 - uvicorn.access - INFO - 127.0.0.1:37388 - "POST /api/v1/auth/login/admin/access-token HTTP/1.1" 200
+2026-08-19 06:05:52,297 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 6.10ms
+2026-08-19 06:05:52,297 - uvicorn.access - INFO - 127.0.0.1:37388 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:05:53,531 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 46.41ms
+2026-08-19 06:05:53,531 - uvicorn.access - INFO - 127.0.0.1:37388 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:05:53,546 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 51.52ms
+2026-08-19 06:05:53,546 - uvicorn.access - INFO - 127.0.0.1:49122 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:05:53,574 - app - INFO - Request: GET /api/v1/admin/me - Status: 200 - Duration: 36.39ms
+2026-08-19 06:05:53,574 - uvicorn.access - INFO - 127.0.0.1:49150 - "GET /api/v1/admin/me HTTP/1.1" 200
+2026-08-19 06:05:53,583 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 88.30ms
+2026-08-19 06:05:53,584 - uvicorn.access - INFO - 127.0.0.1:49134 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:05:53,616 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 121.47ms
+2026-08-19 06:05:53,619 - uvicorn.access - INFO - 127.0.0.1:49106 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:05:53,655 - app - INFO - Request: GET /api/v1/admin/affiliates/top - Status: 200 - Duration: 102.55ms
+2026-08-19 06:05:53,656 - uvicorn.access - INFO - 127.0.0.1:37388 - "GET /api/v1/admin/affiliates/top?limit=5 HTTP/1.1" 200
+2026-08-19 06:05:53,664 - app - INFO - Request: GET /api/v1/admin/prop-firms - Status: 200 - Duration: 73.41ms
+2026-08-19 06:05:53,665 - uvicorn.access - INFO - 127.0.0.1:49150 - "GET /api/v1/admin/prop-firms HTTP/1.1" 200
+2026-08-19 06:05:53,672 - app - INFO - Request: GET /api/v1/admin/affiliates/dashboard - Status: 200 - Duration: 39.49ms
+2026-08-19 06:05:53,672 - uvicorn.access - INFO - 127.0.0.1:49134 - "GET /api/v1/admin/affiliates/dashboard HTTP/1.1" 200
+2026-08-19 06:05:53,675 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 180.42ms
+2026-08-19 06:05:53,675 - uvicorn.access - INFO - 127.0.0.1:37372 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:05:53,721 - app - INFO - Request: GET /api/v1/admin/stats - Status: 200 - Duration: 41.36ms
+2026-08-19 06:05:53,722 - uvicorn.access - INFO - 127.0.0.1:37372 - "GET /api/v1/admin/stats HTTP/1.1" 200
+2026-08-19 06:06:00,406 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 20.21ms
+2026-08-19 06:06:00,406 - uvicorn.access - INFO - 127.0.0.1:49158 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:06:00,422 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 11.61ms
+2026-08-19 06:06:00,422 - uvicorn.access - INFO - 127.0.0.1:49170 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:06:04,750 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 643.25ms
+2026-08-19 06:06:04,750 - uvicorn.access - INFO - 127.0.0.1:49170 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:06:04,810 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 38.90ms
+2026-08-19 06:06:04,810 - uvicorn.access - INFO - 127.0.0.1:49170 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:06:10,343 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 642.81ms
+2026-08-19 06:06:10,343 - uvicorn.access - INFO - 127.0.0.1:49170 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:06:10,364 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 16.55ms
+2026-08-19 06:06:10,365 - uvicorn.access - INFO - 127.0.0.1:49170 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:06:20,686 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 592.84ms
+2026-08-19 06:06:20,686 - uvicorn.access - INFO - 127.0.0.1:44930 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:06:20,721 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 25.74ms
+2026-08-19 06:06:20,721 - uvicorn.access - INFO - 127.0.0.1:44930 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:07:15,107 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:07:15,208 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:07:15,208 - app - INFO - Shutting down application...
+2026-08-19 06:07:15,211 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:07:15,211 - uvicorn.error - INFO - Finished server process [56103]
+2026-08-19 06:07:17,053 - uvicorn.error - INFO - Started server process [57753]
+2026-08-19 06:07:17,053 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:07:17,053 - app - INFO - Starting up application...
+2026-08-19 06:07:17,082 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:07:18,589 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:07:18,690 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:07:18,690 - app - INFO - Shutting down application...
+2026-08-19 06:07:18,692 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:07:18,692 - uvicorn.error - INFO - Finished server process [57753]
+2026-08-19 06:07:20,264 - uvicorn.error - INFO - Started server process [57789]
+2026-08-19 06:07:20,264 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:07:20,264 - app - INFO - Starting up application...
+2026-08-19 06:07:20,280 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:07:26,599 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:07:26,699 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:07:26,700 - app - INFO - Shutting down application...
+2026-08-19 06:07:26,700 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:07:26,701 - uvicorn.error - INFO - Finished server process [57789]
+2026-08-19 06:07:28,771 - uvicorn.error - INFO - Started server process [57836]
+2026-08-19 06:07:28,771 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:07:28,772 - app - INFO - Starting up application...
+2026-08-19 06:07:28,788 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:09:53,318 - app - INFO - Request: OPTIONS /api/v1/admin/payments/diagnose - Status: 200 - Duration: 2.63ms
+2026-08-19 06:09:53,318 - uvicorn.access - INFO - 127.0.0.1:54484 - "OPTIONS /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:09:56,135 - app - INFO - Request: POST /api/v1/admin/payments/diagnose - Status: 200 - Duration: 2811.99ms
+2026-08-19 06:09:56,135 - uvicorn.access - INFO - 127.0.0.1:54494 - "POST /api/v1/admin/payments/diagnose HTTP/1.1" 200
+2026-08-19 06:09:56,191 - app - INFO - Request: GET /api/v1/admin/payments - Status: 200 - Duration: 49.84ms
+2026-08-19 06:09:56,191 - uvicorn.access - INFO - 127.0.0.1:54494 - "GET /api/v1/admin/payments HTTP/1.1" 200
+2026-08-19 06:11:18,882 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:11:18,983 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:11:18,983 - app - INFO - Shutting down application...
+2026-08-19 06:11:18,987 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:11:18,988 - uvicorn.error - INFO - Finished server process [57836]
+2026-08-19 06:11:20,605 - uvicorn.error - INFO - Started server process [58114]
+2026-08-19 06:11:20,605 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:11:20,606 - app - INFO - Starting up application...
+2026-08-19 06:11:20,630 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:11:26,345 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:11:26,446 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:11:26,446 - app - INFO - Shutting down application...
+2026-08-19 06:11:26,447 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:11:26,447 - uvicorn.error - INFO - Finished server process [58114]
+2026-08-19 06:11:27,828 - uvicorn.error - INFO - Started server process [58167]
+2026-08-19 06:11:27,829 - uvicorn.error - INFO - Waiting for application startup.
+2026-08-19 06:11:27,829 - app - INFO - Starting up application...
+2026-08-19 06:11:27,851 - uvicorn.error - INFO - Application startup complete.
+2026-08-19 06:14:56,696 - uvicorn.error - INFO - Shutting down
+2026-08-19 06:14:56,796 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-19 06:14:56,797 - app - INFO - Shutting down application...
+2026-08-19 06:14:56,797 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-19 06:14:56,797 - uvicorn.error - INFO - Finished server process [58167]

@@ -89,14 +89,18 @@ class Settings(BaseSettings):
     # Email settings
     WEBSITE_URL: str = os.getenv("WEBSITE_URL", "https://propfirmsol.com")
 
+    # Admin Security Code (10 digits & letters)
+    ADMIN_SECURITY_CODE: str = os.getenv("ADMIN_SECURITY_CODE", "P7x9K3m2Q1")
+
     # Production Hardening
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "local")  # local, staging, production
 
     # CORS & Hosts (comma-separated strings in .env, parsed to lists here)
+    # SECURITY: Do NOT include '*' — it negates all CORS restrictions.
     BACKEND_CORS_ORIGINS: list[str] = [
         x.strip() for x in os.getenv(
             "BACKEND_CORS_ORIGINS",
-            "https://propsol-frontend-production.up.railway.app,https://propfirmsol.com,https://www.propfirmsol.com,http://localhost:3000,http://localhost:3001,*"
+            "https://propsol-frontend-production.up.railway.app,https://propfirmsol.com,https://www.propfirmsol.com,http://localhost:3000,http://localhost:3001"
         ).split(",") if x.strip()
     ]
     ALLOWED_HOSTS: list[str] = [x.strip() for x in os.getenv("ALLOWED_HOSTS", "*").split(",") if x.strip()]

@@ -13,16 +13,52 @@ from app.schema.partnership_registration import (
 )
 from app.repository.partnership_registration_repo import PartnershipRegistrationRepository
 from app.utils.order_id import generate_order_id
+from app.core.logging_config import logger
 
+
+from sqlmodel import select
+from app.models.partnership_plan import PartnershipPlan, PartnershipPlanPrice
 
 class PartnershipRegistrationService:
     def __init__(self, session: AsyncSession):
+        self.session = session
         self.repo = PartnershipRegistrationRepository(PartnershipRegistration, session)
 
     async def create_registration(self, registration_in: PartnershipRegistrationCreate, user_id: UUID) -> PartnershipRegistration:
         registration_data = registration_in.dict()
         registration_data["user_id"] = user_id
         registration_data["order_id"] = generate_order_id()
+
+        # SECURITY: Re-calculate and validate canonical plan cost from database to prevent URL/payload price tampering
+        rules_text = (registration_in.propfirm_rules or "").lower()
+        is_instant = registration_in.account_phases == 0 or registration_in.challenges_step == 0 or "instant" in rules_text
+        account_type = "instant" if is_instant else "challenge"
+        account_size = registration_in.account_size
+
+        try:
+            statement = (
+                select(PartnershipPlanPrice)
+                .join(PartnershipPlan)
+                .where(PartnershipPlan.account_type == account_type)
+                .where(PartnershipPlanPrice.account_size == account_size)
+            )
+            result = await self.session.exec(statement)
+            price_record = result.first()
+
+            if price_record and price_record.price > 0:
+                registration_data["propfirm_account_cost"] = float(price_record.price)
+            else:
+                # Fallback to standard canonical price mapping if db record not present yet
+                fallback_matrix = {
+                    "challenge": {50000: 319.0, 90000: 519.0, 100000: 569.0, 200000: 699.0, 500000: 1999.0},
+                    "instant": {50000: 499.0, 90000: 799.0, 100000: 899.0, 200000: 1299.0, 500000: 2999.0}
+                }
+                canonical_price = fallback_matrix.get(account_type, {}).get(account_size)
+                if canonical_price:
+                    registration_data["propfirm_account_cost"] = canonical_price
+        except Exception as e:
+            logger.error(f"Error fetching canonical plan price for registration: {e}")
+
         return await self.repo.create(registration_data)
 
     async def get_registrations_by_user(self, user_id: UUID, status: str | None = None) -> List[PartnershipRegistration]:

@@ -1,8 +1,12 @@
+import hmac
+import hashlib
+import json
 import httpx
 from typing import Optional, List, Dict, Any
 from datetime import datetime, timezone
 from uuid import UUID
 from sqlmodel.ext.asyncio.session import AsyncSession
+from app.core.logging_config import logger
 
 from app.config import settings
 from app.repository.crypto_payment_repo import CryptoPaymentRepository
@@ -190,9 +194,44 @@ class NOWPaymentsService:
 
         return await self.repo.create(db_data)
 
-    async def get_payment_status(self, payment_id: str) -> Dict[str, Any]:
-        """Get payment status from API"""
-        return await self._get(f"payment/{payment_id}")
+    async def get_payment_status(self, payment_id_or_invoice_id: str) -> Dict[str, Any]:
+        """
+        Get payment status from NOWPayments API.
+        Tries direct payment endpoint first. If 404 / Payment not found,
+        queries payments list by invoice_id or order_id.
+        If no deposit has been made yet for the invoice, returns status 'waiting'.
+        """
+        pid = str(payment_id_or_invoice_id).strip()
+        try:
+            return await self._get(f"payment/{pid}")
+        except Exception as e:
+            err_msg = str(e).lower()
+            if "not found" in err_msg or "404" in err_msg:
+                # Try search payments list by invoice_id
+                try:
+                    res = await self._get("payment", params={"invoice_id": pid, "limit": 10})
+                    data = res.get("data", [])
+                    if data and isinstance(data, list) and len(data) > 0:
+                        return data[0]
+                except Exception:
+                    pass
+
+                # Try search payments list by order_id
+                try:
+                    res = await self._get("payment", params={"order_id": pid, "limit": 10})
+                    data = res.get("data", [])
+                    if data and isinstance(data, list) and len(data) > 0:
+                        return data[0]
+                except Exception:
+                    pass
+
+                # Invoice initialized, awaiting customer crypto deposit
+                return {
+                    "payment_status": "waiting",
+                    "info": "Invoice active, awaiting customer deposit"
+                }
+
+            raise e
 
     async def get_user_payments(self, user_id: UUID) -> List[Any]:
         """Get all payments for a user"""
@@ -202,7 +241,27 @@ class NOWPaymentsService:
         """Get payment by DB ID"""
         return await self.repo.get(payment_id)
 
-    async def process_ipn_callback(self, payload: NOWPaymentsIPNPayload, signature: str) -> Any:
+    def verify_ipn_signature(self, body: dict, signature: str) -> bool:
+        """Verify NOWPayments IPN callback signature using HMAC-SHA512."""
+        secret = settings.NOWPAYMENTS_IPN_SECRET
+        if not secret:
+            logger.error("NOWPAYMENTS_IPN_SECRET not configured. Rejecting IPN callback.")
+            return False
+
+        # NOWPayments signs the JSON body sorted by keys
+        sorted_body = json.dumps(body, sort_keys=True, separators=(',', ':'))
+        computed = hmac.new(secret.encode(), sorted_body.encode(), hashlib.sha512).hexdigest()
+        return hmac.compare_digest(computed, signature)
+
+    async def process_ipn_callback(self, payload: NOWPaymentsIPNPayload, signature: str, raw_body: dict | None = None) -> Any:
+        # SECURITY: Verify IPN signature before processing
+        if raw_body is not None:
+            if not self.verify_ipn_signature(raw_body, signature):
+                logger.error("NOWPayments IPN: Invalid signature — rejecting callback")
+                raise ValueError("Invalid IPN signature")
+        else:
+            logger.warning("NOWPayments IPN: No raw body provided for signature verification")
+
         # Check if payment exists
         payment = await self.repo.get_by_payment_id(str(payload.payment_id))
         if not payment and payload.invoice_id:

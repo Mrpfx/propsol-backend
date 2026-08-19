@@ -6,6 +6,7 @@ from app.models.propfirm_registration import PropFirmRegistration
 from app.models.user import User
 from app.schema.propfirm_registration import PropFirmRegistrationCreate, PropFirmRegistrationUpdate
 from app.repository.propfirm_registration_repo import PropFirmRegistrationRepository
+from app.core.logging_config import logger
 from app.utils.order_id import generate_order_id
 
 class PropFirmRegistrationService:
@@ -16,6 +17,41 @@ class PropFirmRegistrationService:
         registration_data = registration_in.dict()
         registration_data["user_id"] = user_id
         registration_data["order_id"] = generate_order_id()
+
+        # SECURITY: Re-calculate and validate canonical plan cost from database
+        # to prevent client-side price tampering (e.g. setting propfirm_account_cost to $0)
+        pass_type = registration_in.pass_type.value if registration_in.pass_type else "standard_pass"
+        account_size = registration_in.account_size
+
+        try:
+            from sqlmodel import select
+            from app.models.prop_firm_plan import PropFirmPlan, PropFirmPlanPrice
+
+            # Look up the plan price matching the pass type slug and account size
+            statement = (
+                select(PropFirmPlanPrice)
+                .join(PropFirmPlan)
+                .where(PropFirmPlanPrice.account_size == int(account_size))
+            )
+            result = await self.repo.session.exec(statement)
+            price_records = result.all()
+
+            if price_records:
+                # Use the first matching price (or match by slug if multiple plans exist)
+                registration_data["propfirm_account_cost"] = float(price_records[0].price)
+            else:
+                # Fallback to canonical price mapping if DB records not yet seeded
+                fallback_matrix = {
+                    "standard_pass": {50000: 319.0, 100000: 569.0, 200000: 799.0},
+                    "guaranteed_pass": {50000: 519.0, 100000: 869.0, 200000: 1299.0}
+                }
+                canonical_price = fallback_matrix.get(pass_type, {}).get(int(account_size))
+                if canonical_price:
+                    registration_data["propfirm_account_cost"] = canonical_price
+        except Exception as e:
+            from app.core.logging_config import logger
+            logger.error(f"Error fetching canonical plan price for prop firm registration: {e}")
+
         return await self.repo.create(registration_data)
 
     async def get_registrations_by_user(self, user_id: UUID, status: str | None = None) -> List[PropFirmRegistration]:
@@ -41,7 +77,7 @@ class PropFirmRegistrationService:
             if field not in excluded_fields:
                 current_val = getattr(registration, field)
                 if current_val != value:
-                    print(f"DEBUG: Field {field} changed from {current_val} to {value}")
+                    logger.debug(f"Field {field} changed from {current_val} to {value}")
                     details_changed = True
                     break
 

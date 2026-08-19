@@ -69,6 +69,18 @@ class PropFirmRegistrationUpdate(BaseModel):
     account_status: AccountStatus | None = None
     payment_status: PaymentStatus | None = None
 
+# SECURITY: Restricted schema for user self-updates on their own registrations.
+# Excludes account_status, payment_status, and propfirm_account_cost to prevent
+# users from marking their own registrations as paid/passed or changing the price.
+class UserPropFirmRegistrationUpdate(BaseModel):
+    login_id: str | None = None
+    password: str | None = None
+    server_name: str | None = None
+    server_type: str | None = None
+    trading_platform: str | None = None
+    whatsapp_no: str | None = None
+    telegram_username: str | None = None
+
 class PropFirmRegistrationAdminRead(PropFirmRegistrationRead):
     user_name: str
     user_email: str

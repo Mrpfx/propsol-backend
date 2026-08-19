@@ -337,21 +337,21 @@ async def send_email(
     # Priority 1: Resend (PRIMARY)
     if resend_configured:
         if await send_email_via_resend(email_to, subject, html_content, text_content, recipient_name):
-            print(f"Email sent to {email_to} via Resend")
+            logger.info(f"Email sent to {email_to} via Resend")
             return
         logger.warning("Resend failed, falling back to next provider")
 
     # Priority 2: Mailjet
     if mailjet_configured:
         if await send_email_via_mailjet(email_to, subject, html_content, text_content, recipient_name):
-            print(f"Email sent to {email_to} via Mailjet")
+            logger.info(f"Email sent to {email_to} via Mailjet")
             return
         logger.warning("Mailjet failed, falling back to SMTP")
 
     # Priority 3: SMTP
     if smtp_configured:
         if await send_email_via_smtp(email_to, subject, html_content, text_content, recipient_name):
-            print(f"Email sent to {email_to} via SMTP")
+            logger.info(f"Email sent to {email_to} via SMTP")
             return
 
     logger.error(f"✗ All email sending methods failed for {email_to}")

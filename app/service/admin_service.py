@@ -25,6 +25,7 @@ class AdminService:
 
     async def create_admin(self, admin_in: AdminCreate) -> Admin:
         admin_data = admin_in.dict()
+        admin_data.pop("security_code", None)
         admin_data["password"] = get_password_hash(admin_in.password)
         return await self.repo.create(admin_data)
 

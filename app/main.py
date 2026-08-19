@@ -122,9 +122,11 @@ app.include_router(whop.router, prefix="/api/v1/whop", tags=["whop"])
 app.include_router(prop_firm_plans.router, prefix="/api/v1/plans", tags=["plans"])
 app.include_router(booking_links.router, prefix="/api/v1/booking-links", tags=["booking-links"])
 app.include_router(banners.router, prefix="/api/v1/banners", tags=["banners"])
-from app.api.v1.endpoints import admin_payment
+from app.api.v1.endpoints import admin_payment, partnership_plans
 app.include_router(admin_payment.router, prefix="/api/v1/admin/payments", tags=["admin-payments"])
 app.include_router(partnership.router, prefix="/api/v1/partnership", tags=["partnership"])
+app.include_router(partnership_plans.router, prefix="/api/v1/partnership-plans", tags=["partnership-plans"])
+
 
 
 

@@ -12,7 +12,8 @@ from app.schema.partnership_registration import (
     PartnershipRegistrationCreate,
     PartnershipRegistrationRead,
     PartnershipRegistrationUpdate,
-    PartnershipRegistrationAdminRead
+    PartnershipRegistrationAdminRead,
+    UserPartnershipRegistrationUpdate
 )
 from app.service.partnership_registration_service import PartnershipRegistrationService
 
@@ -62,10 +63,12 @@ async def read_user_partnership_registration(
     return registration
 
 
+# SECURITY: Uses UserPartnershipRegistrationUpdate (not PartnershipRegistrationUpdate)
+# to prevent users from modifying account_status, payment_status, or propfirm_account_cost.
 @router.patch("/{registration_id}", response_model=PartnershipRegistrationRead)
 async def update_user_partnership_registration(
     registration_id: UUID,
-    registration_in: PartnershipRegistrationUpdate,
+    registration_in: UserPartnershipRegistrationUpdate,
     background_tasks: BackgroundTasks,
     current_user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
@@ -77,9 +80,12 @@ async def update_user_partnership_registration(
     if not registration or registration.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Partnership registration not found")
 
+    # Convert restricted schema to full update schema (only fields user is allowed to change)
+    update_data = PartnershipRegistrationUpdate(**registration_in.dict(exclude_unset=True))
+
     updated = await service.update_registration(
         registration_id=registration_id,
-        update_data=registration_in,
+        update_data=update_data,
         background_tasks=background_tasks
     )
     return updated

@@ -7,7 +7,7 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 from app.db.session import get_session
 from app.dependencies.auth import get_current_user
 from app.models.user import User
-from app.schema.propfirm_registration import PropFirmRegistrationCreate, PropFirmRegistrationRead, PropFirmRegistrationUpdate
+from app.schema.propfirm_registration import PropFirmRegistrationCreate, PropFirmRegistrationRead, PropFirmRegistrationUpdate, UserPropFirmRegistrationUpdate
 from app.service.propfirm_registration_service import PropFirmRegistrationService
 
 router = APIRouter()
@@ -70,10 +70,12 @@ async def read_propfirm_registration(
         raise HTTPException(status_code=404, detail="Registration not found")
     return registration
 
+# SECURITY: Uses UserPropFirmRegistrationUpdate (not PropFirmRegistrationUpdate)
+# to prevent users from modifying account_status, payment_status, or propfirm_account_cost.
 @router.patch("/{registration_id}", response_model=PropFirmRegistrationRead)
 async def update_propfirm_registration(
     registration_id: UUID,
-    registration_in: PropFirmRegistrationUpdate,
+    registration_in: UserPropFirmRegistrationUpdate,
     background_tasks: BackgroundTasks,
     current_user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
@@ -84,9 +86,12 @@ async def update_propfirm_registration(
     if not registration or registration.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Registration not found")
 
+    # Convert restricted schema to full update schema (only fields user is allowed to change)
+    update_data = PropFirmRegistrationUpdate(**registration_in.dict(exclude_unset=True))
+
     updated_registration = await service.update_registration(
         registration_id=registration_id,
-        update_data=registration_in,
+        update_data=update_data,
         background_tasks=background_tasks
     )
 

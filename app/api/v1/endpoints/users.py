@@ -9,7 +9,7 @@ from app.dependencies.auth import get_current_user
 from app.models.user import User
 from app.models.propfirm_registration import PropFirmRegistration, AccountStatus
 from app.models.user_purchased_package import UserPurchasedPackage
-from app.schema.user import UserCreate, UserRead, UserUpdate
+from app.schema.user import UserCreate, UserRead, UserUpdate, UserSelfUpdate
 from app.schema.referral import ReferralStatsResponse
 from app.schema.user_purchased_package import UserPurchasedPackageRead
 from app.service.user_service import UserService
@@ -40,9 +40,11 @@ async def read_user_me(
 ) -> Any:
     return current_user
 
+# SECURITY: Uses UserSelfUpdate (not UserUpdate) to prevent privilege escalation.
+# Users can only change their name and password — not Status, email_verified, or referred_by.
 @router.put("/me", response_model=UserRead)
 async def update_user_me(
-    user_in: UserUpdate,
+    user_in: UserSelfUpdate,
     current_user: User = Depends(get_current_user),
     session: AsyncSession = Depends(get_session),
 ) -> Any:

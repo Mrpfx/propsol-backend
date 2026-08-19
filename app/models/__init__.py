@@ -12,5 +12,9 @@ from .affiliate_settings import AffiliateSettings
 from .global_affiliate_settings import GlobalAffiliateSettings
 from .support import Support, SupportTicket, SupportMessage, TicketStatus, TicketPriority, SenderType
 from .prop_firm_plan import PropFirmPlan, PropFirmPlanPrice
+from .partnership_plan import PartnershipPlan, PartnershipPlanPrice
+from .partnership_registration import PartnershipRegistration
 from .booking_link import BookingLink
 from .banner import Banner
+
+

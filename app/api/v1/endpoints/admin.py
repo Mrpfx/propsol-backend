@@ -23,6 +23,8 @@ from app.models.user import User
 router = APIRouter()
 
 
+from app.config import settings
+
 @router.post("", response_model=AdminRead)
 async def create_admin(
     admin_in: AdminCreate,
@@ -31,7 +33,17 @@ async def create_admin(
 ) -> Any:
     """
     Create new admin.
+    Requires valid 10-character admin security code from .env / settings.
     """
+    expected_code = (settings.ADMIN_SECURITY_CODE or "").strip()
+    provided_code = (admin_in.security_code or "").strip()
+
+    if not provided_code or provided_code != expected_code:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid security code. You must provide the valid 10-character security code stored in system settings to add an admin.",
+        )
+
     service = AdminService(session)
     admin = await service.get_admin_by_email(admin_in.email)
     if admin:

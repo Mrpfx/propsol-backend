@@ -14,6 +14,13 @@ class AdminBase(BaseModel):
 # Properties to receive via API on creation
 class AdminCreate(AdminBase):
     password: str
+    security_code: Optional[str] = None
+
+    @validator('password')
+    def password_strength(cls, v):
+        if len(v) < 8:
+            raise ValueError('Password must be at least 8 characters long')
+        return v
 
 # Properties to receive via API on update
 class AdminUpdate(BaseModel):
@@ -30,6 +37,12 @@ class AdminUpdate(BaseModel):
             return None
         return v
 
+    @validator('password')
+    def password_strength(cls, v):
+        if v is not None and len(v) < 8:
+            raise ValueError('Password must be at least 8 characters long')
+        return v
+
 class AdminEmailRequest(BaseModel):
     user_ids: List[UUID] = []
     send_to_all: bool = False
@@ -41,6 +54,12 @@ class AdminEmailRequest(BaseModel):
 class AdminPasswordReset(BaseModel):
     token: str
     new_password: str
+
+    @validator('new_password')
+    def password_strength(cls, v):
+        if len(v) < 8:
+            raise ValueError('Password must be at least 8 characters long')
+        return v
 
 class AdminRead(BaseModel):
     email: EmailStr

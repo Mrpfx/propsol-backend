@@ -185,12 +185,15 @@ class WhopService:
 
     async def create_payment_link(self, amount: float, currency: str, title: str, registration_id: UUID) -> str:
         logger.info(f"Creating payment link for {registration_id} - {amount} {currency}")
+        if not self.api_key or not settings.WHOP_BIZ_ID:
+            raise ValueError("Whop integration is not configured. Please set WHOP_API_KEY and WHOP_BIZ_ID in the backend .env file.")
+
         try:
             async with httpx.AsyncClient(timeout=30.0) as client:
                 # First, ensure we have a product ID
                 product_id = await self.get_or_create_product_id()
                 if not product_id:
-                    raise Exception("Failed to retrieve or create a product in Whop.")
+                    raise ValueError("Failed to retrieve or create a product in Whop.")
 
                 # Create a plan (hidden/one-time)
                 plan_payload = {
@@ -199,11 +202,11 @@ class WhopService:
                     "plan_type": "one_time",
                     "currency": currency.lower(),
                     "base_currency": currency.lower(),
-                    "initial_price": amount, # Changed from price
+                    "initial_price": amount,
                     "title": title[:30],
                     "description": f"Registration ID: {registration_id}",
                     "internal_notes": f"Generated for Registration {registration_id}",
-                    "visibility": "hidden" # Don't show on public marketplace
+                    "visibility": "hidden"
                 }
 
                 logger.info(f"Creating plan with payload: {plan_payload}")
@@ -213,12 +216,15 @@ class WhopService:
                     headers=self.headers
                 )
                 logger.info(f"Plan creation response: {plan_response.status_code} - {plan_response.text}")
-                plan_response.raise_for_status()
+                if plan_response.status_code not in (200, 201):
+                    raise ValueError(f"Whop API error ({plan_response.status_code}): {plan_response.text}")
                 plan_data = plan_response.json()
 
-                # The plan object has a 'direct_link' or 'checkout_link'?
-                # The prompt says: "The response ... will include the purchase_url data"
                 return plan_data.get("purchase_url") or f"https://whop.com/checkout/{plan_data.get('id')}"
+        except httpx.HTTPStatusError as e:
+            error_msg = f"Whop API Error ({e.response.status_code}): {e.response.text}"
+            logger.error(error_msg)
+            raise ValueError(error_msg)
         except Exception as e:
             logger.error(f"Error creating Whop payment link: {e}")
             raise e
@@ -281,7 +287,8 @@ class WhopService:
 
     def verify_signature(self, raw_body: bytes, headers: dict) -> bool:
         if not settings.WHOP_WEBHOOK_SECRET:
-            return True
+            logger.error("WHOP_WEBHOOK_SECRET not configured. Rejecting webhook for security.")
+            return False
 
         msg_id = headers.get("webhook-id")
         msg_timestamp = headers.get("webhook-timestamp")

@@ -60,18 +60,6 @@ async def delete_vat(
         raise HTTPException(status_code=404, detail="VAT not found")
     return deleted_vat
 
-@router.delete("/vat/{vat_id}", response_model=VatRead)
-async def delete_vat(
-    vat_id: UUID,
-    current_admin: Admin = Depends(get_current_admin),
-    session: AsyncSession = Depends(get_session),
-):
-    service = VatDiscountService(session)
-    deleted_vat = await service.delete_vat(vat_id)
-    if not deleted_vat:
-        raise HTTPException(status_code=404, detail="VAT not found")
-    return deleted_vat
-
 # Discount Codes Endpoints (Admin)
 @router.post("/discounts", response_model=DiscountCodesRead)
 async def create_discount_code(

@@ -9,6 +9,8 @@ from app.service.propfirm_registration_service import PropFirmRegistrationServic
 from pydantic import BaseModel
 from uuid import UUID
 
+from app.core.logging_config import logger
+
 router = APIRouter()
 
 from pydantic import BaseModel, Field
@@ -37,16 +39,16 @@ async def create_checkout_link(
         reg_uuid = UUID(request.registration_id)
         registration = await reg_service.get_registration(reg_uuid)
     except ValueError:
-        # If not UUID, try looking up by order_id
-        # We need to expose get_by_order_id in service or use repo directly (via service private access or add method)
-        # Service wrapper is better. But for quick fix I can access repo via service.repo if public?
-        # Service init: self.repo = ...
-        # But get_by_order_id is in repo.
-        # Let's add get_registration_by_order_id to service wrapper quickly or just use repo here?
-        # Ideally add to service. I'll add a helper method to service class in separate tool call if needed.
-        # Check service file again... it doesn't have it.
-        # I will just access repo for now if Python allows (it does).
         registration = await reg_service.repo.get_by_order_id(request.registration_id)
+
+    if not registration:
+        from app.service.partnership_registration_service import PartnershipRegistrationService
+        p_service = PartnershipRegistrationService(session)
+        try:
+            reg_uuid = UUID(request.registration_id)
+            registration = await p_service.get_registration(reg_uuid)
+        except ValueError:
+            registration = await p_service.repo.get_by_order_id(request.registration_id)
 
     if not registration:
         raise HTTPException(status_code=404, detail="Registration not found")
@@ -55,6 +57,7 @@ async def create_checkout_link(
 
     if registration.payment_status == PaymentStatus.completed:
         raise HTTPException(status_code=400, detail="Registration already paid")
+
 
     # Calculate discount for new users (first purchase)
     # Check if user has any completed payments
@@ -80,8 +83,12 @@ async def create_checkout_link(
             registration_id=registration.id
         )
         return {"checkout_url": checkout_url}
+    except ValueError as e:
+        logger.error(f"Whop configuration/validation error: {e}")
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Error creating Whop checkout link: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to create Whop checkout link: {str(e)}")
 
 @router.post("/webhook")
 async def whop_webhook(
@@ -160,57 +167,56 @@ async def whop_webhook(
 
                 # Fetch registration to check status (Idempotency)
                 existing_reg = await reg_service.get_registration(reg_id)
-                if not existing_reg:
-                     print(f"PropFirm Registration not found for ID: {reg_id}")
-                     return {"status": "skipped", "reason": "not_found"}
-
-                from app.models.propfirm_registration import AccountStatus, PaymentStatus
-
-                if existing_reg.account_status != AccountStatus.pending or existing_reg.payment_status == PaymentStatus.completed:
-                     print(f"Skipping Whop webhook for {reg_id} - already processed.")
-                     return {"status": "skipped", "reason": "already_processed"}
-
-                # Update registration payment status
-                # We need to use update_registration but it requires schema.
-                # Or we can just update the model directly since we are in backend.
-                # PropFirmRegistrationService.update_registration handles notifications, so best to use that.
-
-                from app.schema.propfirm_registration import PropFirmRegistrationUpdate
-
-                from app.models.propfirm_registration import AccountStatus
-
-                update_data = PropFirmRegistrationUpdate(
-                    payment_status=PaymentStatus.completed,
-                    account_status=AccountStatus.pending
-                )
-
-                # We need to await the update.
-                # Warning: background_tasks in webhook context might be tricky if we want immediate consistency,
-                # but 'update_registration' signature requires background_tasks for email sending.
-
-                updated_reg = await reg_service.update_registration(reg_id, update_data, background_tasks)
-
-                # Process referral earnings
-                if updated_reg and updated_reg.user_id:
-                    user = await session.get(User, updated_reg.user_id)
-                    if user and user.referred_by:
-                        from app.service.wallet_service import process_referral_purchase
-                        # We need to determine pass type from registration
-                        # updated_reg is the model instance, so we can access fields directly.
-
-                        # Ensure we have the latest data
-                        await session.refresh(updated_reg)
-
-                        await process_referral_purchase(
-                            db=session,
-                            referred_user_id=user.id,
-                            referrer_code=user.referred_by,
-                            pass_type=updated_reg.pass_type,
-                            purchase_amount=updated_reg.propfirm_account_cost,
-                            registration_id=updated_reg.id
+                if existing_reg:
+                    from app.models.propfirm_registration import AccountStatus, PaymentStatus
+                    if existing_reg.account_status == AccountStatus.pending and existing_reg.payment_status != PaymentStatus.completed:
+                        from app.schema.propfirm_registration import PropFirmRegistrationUpdate
+                        update_data = PropFirmRegistrationUpdate(
+                            payment_status=PaymentStatus.completed,
+                            account_status=AccountStatus.pending
                         )
+                        updated_reg = await reg_service.update_registration(reg_id, update_data, background_tasks)
+                        if updated_reg and updated_reg.user_id:
+                            user = await session.get(User, updated_reg.user_id)
+                            if user and user.referred_by:
+                                from app.service.wallet_service import process_referral_purchase
+                                await session.refresh(updated_reg)
+                                await process_referral_purchase(
+                                    db=session,
+                                    referred_user_id=user.id,
+                                    referrer_code=user.referred_by,
+                                    pass_type=updated_reg.pass_type,
+                                    purchase_amount=updated_reg.propfirm_account_cost,
+                                    registration_id=updated_reg.id
+                                )
+                else:
+                    from app.service.partnership_registration_service import PartnershipRegistrationService
+                    p_service = PartnershipRegistrationService(session)
+                    p_reg = await p_service.get_registration(reg_id)
+                    if p_reg:
+                        from app.models.propfirm_registration import AccountStatus, PaymentStatus
+                        from app.schema.partnership_registration import PartnershipRegistrationUpdate
+                        p_update = PartnershipRegistrationUpdate(
+                            payment_status=PaymentStatus.completed,
+                            account_status=AccountStatus.pending
+                        )
+                        updated_preg = await p_service.update_registration(reg_id, p_update, background_tasks)
+                        if updated_preg and updated_preg.user_id:
+                            user = await session.get(User, updated_preg.user_id)
+                            if user and user.referred_by:
+                                from app.service.wallet_service import process_referral_purchase
+                                await session.refresh(updated_preg)
+                                await process_referral_purchase(
+                                    db=session,
+                                    referred_user_id=user.id,
+                                    referrer_code=user.referred_by,
+                                    pass_type=updated_preg.pass_type,
+                                    purchase_amount=updated_preg.propfirm_account_cost,
+                                    registration_id=updated_preg.id
+                                )
 
             except ValueError:
-                print(f"Invalid UUID in webhook: {registration_id_str}")
+                logger.warning(f"Invalid UUID in webhook: {registration_id_str}")
 
     return {"status": "success"}
+
