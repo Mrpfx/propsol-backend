@@ -30,15 +30,17 @@ async def get_current_user(
         token_data = TokenPayload(**payload)
     except (JWTError, ValidationError):
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Could not validate credentials",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     # SECURITY: Verify this is a user token, not an admin token
     if token_data.role and token_data.role != "user":
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid token type for this endpoint",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     # Use selectinload for relationships as requested
@@ -68,15 +70,17 @@ async def get_current_admin(
         token_data = TokenPayload(**payload)
     except (JWTError, ValidationError):
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Could not validate credentials",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     # SECURITY: Verify this is an admin token, not a user token
     if token_data.role and token_data.role != "admin":
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid token type for this endpoint",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     query = select(Admin).where(Admin.id == uuid.UUID(token_data.sub))
